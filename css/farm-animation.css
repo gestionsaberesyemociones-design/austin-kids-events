@@ -1,0 +1,407 @@
+/* ==========================================================================
+   AUSTIN KIDS EVENTS - FONDO ANIMADO DE GRANJA (CORREGIDO Y LIMPIO)
+   ========================================================================== */
+
+/* Contenedor fijo del fondo general */
+.farm-global-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; /* Lo ubicamos en la base de la página pero sin apagar las imágenes */
+    background: linear-gradient(180deg, #9EC5E6 0%, #dff1f3 54%, #52B79A 55%, #2f987d 100%);
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.farm-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.22;
+    background-image: radial-gradient(#ffffff 1.2px, transparent 1.2px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 55%);
+    z-index: 1;
+}
+
+.farm-global-background::before,
+.farm-global-background::after {
+    content: "";
+    position: absolute;
+    left: -8%;
+    width: 116%;
+    border-radius: 50% 50% 0 0;
+    z-index: 2;
+}
+
+.farm-global-background::before {
+    bottom: 9%;
+    height: 31%;
+    background: #52B79A;
+    transform: rotate(-3deg);
+}
+
+.farm-global-background::after {
+    bottom: -8%;
+    height: 29%;
+    background: #3c9f82;
+    transform: rotate(3deg);
+    box-shadow: inset 0 20px 0 rgba(10, 37, 64, 0.18);
+}
+
+.farm-global-background::after {
+    background-image: radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px);
+    background-size: 34px 24px;
+}
+
+.farm-orbit {
+    position: absolute;
+    width: 54vw;
+    height: 22vw;
+    min-width: 420px;
+    min-height: 180px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+    transform: rotate(-17deg);
+    z-index: 1;
+}
+
+.orbit-one { top: 10%; left: -12%; }
+.orbit-two { right: -14%; bottom: 12%; transform: rotate(18deg); }
+
+.farm-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #FFB400;
+    box-shadow: 0 0 16px rgba(255, 180, 0, 0.8);
+    animation: farm-blink 2.8s ease-in-out infinite;
+    z-index: 2;
+}
+
+.dot-one { top: 18%; left: 22%; }
+.dot-two { top: 32%; right: 18%; animation-delay: 0.8s; }
+.dot-three { bottom: 24%; left: 13%; animation-delay: 1.5s; }
+
+.farm-prop {
+    position: absolute;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 7px rgba(19, 86, 47, 0.22));
+    z-index: 3;
+    pointer-events: auto;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.farm-prop.is-pressed {
+    animation: prop-press 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes prop-press {
+    0% { scale: 1; }
+    35% { scale: 1.12; translate: 0 -18px; }
+    70% { scale: 0.96; translate: 0 3px; }
+    100% { scale: 1; translate: 0 0; }
+}
+
+.prop-cloud { width: 170px; opacity: 0.95; }
+.cloud-one { top: 11%; left: 5%; }
+.cloud-two { top: 18%; right: 5%; transform: scale(0.72); }
+.cloud-three { top: 5%; left: 31%; transform: scale(0.58); }
+.cloud-four { top: 25%; left: 17%; transform: scale(0.68); }
+.cloud-five { top: 8%; right: 25%; transform: scale(0.48); }
+.cloud-six { top: 29%; right: 29%; transform: scale(0.62); }
+.cloud-seven { top: 3%; left: 10%; transform: scale(0.38); }
+.cloud-eight { top: 15%; left: 47%; transform: scale(0.42); }
+.cloud-nine { top: 20%; right: 14%; transform: scale(0.38); }
+.cloud-ten { top: 34%; left: 38%; transform: scale(0.46); }
+
+.prop-barn { width: 250px; left: 8%; bottom: 2%; animation: barn-sway 5s ease-in-out infinite; transform-origin: bottom center; }
+.prop-farmer { width: 190px; left: 39%; bottom: 4%; animation: farmer-bob 4.2s ease-in-out infinite; transform-origin: bottom center; }
+.prop-tractor { width: 190px; bottom: 3%; }
+.tractor-one { left: 23%; transform: rotate(-5deg); animation: tractor-roll-one 8s ease-in-out infinite; }
+.tractor-two { right: 20%; transform: scaleX(-1) rotate(-5deg); animation: tractor-roll-two 9s ease-in-out infinite; }
+.prop-horse { width: 250px; bottom: 22%; animation: horse-step 4.5s ease-in-out infinite; transform-origin: bottom center; }
+.horse-one { right: 4%; }
+.horse-two { right: 23%; bottom: 18%; width: 215px; transform: scaleX(-1); animation-delay: 0.8s; }
+.prop-cow { width: 190px; bottom: 19%; animation: cow-bob 3.8s ease-in-out infinite; transform-origin: bottom center; }
+.cow-one { left: 5%; }
+.cow-two { left: 20%; width: 165px; bottom: 17%; animation-delay: 0.5s; }
+
+@keyframes barn-sway {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-1deg); }
+}
+
+@keyframes tractor-roll-one {
+    0%, 100% { translate: 0 0; rotate: -5deg; }
+    50% { translate: 14px -3px; rotate: -2deg; }
+}
+
+@keyframes tractor-roll-two {
+    0%, 100% { translate: 0 0; rotate: -5deg; }
+    50% { translate: -12px -3px; rotate: -8deg; }
+}
+
+@keyframes horse-step {
+    0%, 100% { translate: 0 0; rotate: -1deg; }
+    35% { translate: -8px -5px; rotate: 1deg; }
+    70% { translate: 5px 0; rotate: -2deg; }
+}
+
+@keyframes cow-bob {
+    0%, 100% { translate: 0 0; rotate: 0deg; }
+    50% { translate: 5px -7px; rotate: 2deg; }
+}
+
+@keyframes chicken-hop {
+    0%, 100% { translate: 0 0; }
+    45% { translate: -4px -10px; }
+    60% { translate: 3px 0; }
+}
+
+@keyframes flowers-sway {
+    from { rotate: -2deg; }
+    to { rotate: 2deg; }
+}
+
+@keyframes farm-blink {
+    0%, 100% { opacity: 0.45; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Sol radiante en la esquina superior derecha */
+.farm-sun {
+    position: absolute;
+    top: 8%;
+    right: 12%;
+    width: 84px;
+    height: 84px;
+    background-color: #ffe45c;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(251, 191, 36, 0.6);
+    animation: pulse-sun 4s ease-in-out infinite alternate;
+    display: none;
+}
+
+.farm-sun,
+.farm-cloud,
+.farm-rainbow,
+.farm-balloon,
+.farm-mountains,
+.farm-hills-silhouette,
+.farm-background-elements,
+.hero-backdrop-decor { display: none; }
+
+/* Nubes flotantes a lo ancho de la pantalla */
+.farm-cloud {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50px;
+    opacity: 0.85;
+    animation: float-clouds linear infinite;
+}
+
+.farm-cloud::before,
+.farm-cloud::after {
+    content: "";
+    position: absolute;
+    bottom: 6px;
+    width: 46%;
+    height: 90%;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.farm-cloud::before { left: 12%; }
+.farm-cloud::after { right: 10%; width: 38%; height: 72%; }
+
+.farm-cloud.c1 { width: 100px; height: 30px; top: 17%; left: 5%; animation: none; }
+.farm-cloud.c2 { width: 130px; height: 38px; top: 28%; right: 5%; left: auto; animation: none; }
+.farm-cloud.c3 { width: 76px; height: 24px; top: 10%; left: 46%; animation: none; }
+
+.farm-rainbow {
+    position: absolute;
+    left: 7%;
+    bottom: 24%;
+    width: 170px;
+    height: 85px;
+    border: 12px solid #ff5964;
+    border-bottom: 0;
+    border-radius: 170px 170px 0 0;
+    transform: rotate(-8deg);
+    opacity: 0.9;
+    box-shadow: inset 0 0 0 12px #ffbf3f, inset 0 0 0 24px #60c96e, inset 0 0 0 36px #55b8ed;
+    display: none;
+}
+
+.farm-balloon {
+    position: absolute;
+    top: 17%;
+    right: 7%;
+    width: 72px;
+    height: 105px;
+    animation: balloon-drift 6s ease-in-out infinite alternate;
+    display: none;
+}
+
+.balloon-envelope {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    width: 64px;
+    height: 74px;
+    border-radius: 50% 50% 45% 45%;
+    background: repeating-linear-gradient(90deg, #ef4f4f 0 12px, #ffd44d 12px 24px);
+    border: 3px solid rgba(255,255,255,0.75);
+}
+
+.balloon-basket {
+    position: absolute;
+    bottom: 5px;
+    left: 26px;
+    width: 22px;
+    height: 16px;
+    background: #9a5d32;
+    border: 2px solid #703d25;
+}
+
+.farm-mountains {
+    position: absolute;
+    left: -5%;
+    bottom: 18%;
+    width: 110%;
+    height: 32%;
+    background: #83cce8;
+    clip-path: polygon(0 100%, 0 72%, 13% 28%, 22% 63%, 34% 12%, 45% 62%, 57% 24%, 70% 70%, 82% 18%, 100% 66%, 100% 100%);
+    opacity: 0.9;
+    display: none;
+}
+
+.farm-mountains::after {
+    content: "";
+    position: absolute;
+    inset: 20% 0 0;
+    background: #62b86c;
+    clip-path: polygon(0 100%, 0 55%, 15% 28%, 27% 67%, 40% 25%, 52% 72%, 66% 38%, 78% 68%, 91% 30%, 100% 58%, 100% 100%);
+}
+
+/* Pradera inferior sutil */
+.farm-hills-silhouette {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: #69cf3b;
+    clip-path: ellipse(70% 65% at 50% 100%);
+    opacity: 0.95;
+    display: none;
+}
+
+/* Elementos animados de fondo (Tractor y animales cruzando por detrás) */
+.farm-background-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.farm-tree {
+    position: absolute;
+    bottom: 12%;
+    width: 34px;
+    height: 125px;
+    background: #7a492c;
+    border-radius: 12px;
+    display: none;
+}
+
+.farm-tree::before,
+.farm-tree::after,
+.farm-tree span {
+    content: "";
+    position: absolute;
+    width: 92px;
+    height: 92px;
+    background: #218c3b;
+    border-radius: 50%;
+}
+
+.farm-tree::before { top: -38px; left: -34px; }
+.farm-tree::after { top: -63px; left: -4px; background: #39a843; }
+.farm-tree span { top: -25px; left: 24px; background: #157532; }
+.tree-left { left: 3%; transform: scale(0.8); }
+.tree-right { right: 2%; transform: scale(0.65); }
+
+@keyframes balloon-drift {
+    from { transform: translateY(0) rotate(-3deg); }
+    to { transform: translateY(-18px) rotate(3deg); }
+}
+
+/* Aseguramos que la tarjeta principal del carrusel y el header estén por encima del fondo */
+.site-header, 
+.site-main {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ==========================================================================
+   KEYFRAMES DE ANIMACIÓN
+   ========================================================================== */
+
+@keyframes pulse-sun {
+    0% { transform: scale(1); box-shadow: 0 0 30px rgba(251, 191, 36, 0.4); }
+    100% { transform: scale(1.06); box-shadow: 0 0 50px rgba(251, 191, 36, 0.7); }
+}
+
+@keyframes float-clouds {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(120vw); }
+}
+
+@keyframes drive-tractor-bg {
+    0% { transform: translateX(0) translateY(0); }
+    30% { transform: translateX(35vw) translateY(-3px) rotate(-2deg); }
+    60% { transform: translateX(70vw) translateY(0) rotate(0deg); }
+    100% { transform: translateX(115vw) translateY(0); }
+}
+
+@keyframes bounce-animal-bg {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 700px) {
+    .farm-orbit { min-width: 280px; min-height: 120px; }
+    .farm-prop:not(.prop-cloud) { display: block; }
+    .prop-cloud { width: 92px; }
+    .prop-barn { width: 72px; left: -2%; top: 47%; bottom: auto; }
+    .prop-farmer { width: 88px; left: 37%; top: 73%; bottom: auto; }
+    .prop-tractor { width: 62px; top: 79%; bottom: auto; }
+    .tractor-one { left: 13%; }
+    .tractor-two { right: 8%; }
+    .prop-horse { width: 78px; top: 48%; bottom: auto; }
+    .horse-one { right: -3%; }
+    .horse-two { right: 18%; top: 65%; bottom: auto; width: 70px; }
+    .prop-cow { width: 68px; top: 60%; bottom: auto; }
+    .cow-one { left: -1%; }
+    .cow-two { left: 15%; top: 69%; bottom: auto; width: 60px; }
+}
+
+@media (min-width: 701px) and (max-width: 1100px) {
+    .prop-cloud { width: 125px; }
+    .prop-barn { width: 185px; left: 1%; }
+    .prop-tractor { width: 135px; }
+    .tractor-one { left: 16%; }
+    .tractor-two { right: 14%; }
+    .prop-horse { width: 180px; right: 0; bottom: 24%; }
+    .prop-cow { width: 140px; left: 10%; bottom: 23%; }
+}

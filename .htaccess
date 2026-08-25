@@ -1,0 +1,6 @@
+# Limpia URLs: de 'servicios.html' pasa a '/servicios'
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^servicios/?$ servicios.html [L,QSA]
+RewriteRule ^contacto/?$ contacto.html [L,QSA]

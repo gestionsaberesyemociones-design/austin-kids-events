@@ -1,0 +1,70 @@
+/* ==========================================
+   ESTILOS: BOTONES INTERACTIVOS Y DIVERTIDOS
+   ========================================== */
+
+.interactive-car-btn {
+    width: 280px; 
+    height: 190px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    outline: none;
+    /* Transición suave y divertida con efecto resorte */
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
+}
+
+/* Efecto al pasar el mouse (hover juguetón) */
+.interactive-car-btn:hover {
+    transform: scale(1.08) rotate(-1deg);
+}
+
+/* Efecto al presionar (clic divertido) */
+.interactive-car-btn:active {
+    transform: scale(0.92) rotate(1deg);
+}
+
+/* Estilo del texto: más pequeño, elegante y legible */
+.button-text {
+    position: absolute;
+    top: 82px;
+    margin-top: 0;
+    padding: 7px 18px 8px;
+    border: 3px solid #F4B942;
+    border-radius: 10px;
+    background: #39235F;
+    box-shadow: 0 4px 0 #201334, 0 7px 10px rgba(0, 0, 0, 0.22);
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    pointer-events: none;
+    user-select: none;
+    animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.button-text.hidden {
+    display: none;
+}
+
+/* Animación de aparición divertida para el texto */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

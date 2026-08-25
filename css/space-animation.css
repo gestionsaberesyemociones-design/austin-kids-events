@@ -1,0 +1,238 @@
+/* SPACE EXPLORERS THEME */
+
+body[data-theme="space"] {
+    --space-ink: #ffffff;
+    --space-muted: #9EC5E6;
+    --space-cyan: #52B79A;
+    --space-lime: #FFB400;
+    --space-violet: #FF5A60;
+    background: #0A2540;
+    color: var(--space-ink);
+}
+
+body[data-theme="space"] .site-header {
+    background: #ffffff;
+    border-bottom-color: #e2e8f0;
+    box-shadow: 0 4px 15px rgba(10, 37, 64, 0.04);
+}
+
+body[data-theme="space"] .site-main {
+    background: transparent;
+}
+
+body[data-theme="space"] .farm-global-background {
+    display: none;
+}
+
+.space-global-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    display: none;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 72% 18%, rgba(255, 180, 0, 0.18), transparent 24%),
+        radial-gradient(circle at 18% 72%, rgba(82, 183, 154, 0.2), transparent 25%),
+        linear-gradient(145deg, #0A2540 0%, #16476a 58%, #0A2540 100%);
+}
+
+body[data-theme="space"] .space-global-background {
+    display: block;
+}
+
+.space-stars {
+    position: absolute;
+    inset: 0;
+    opacity: 0.75;
+    background-image: radial-gradient(#9EC5E6 1px, transparent 1px);
+    background-size: 58px 58px;
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 95%);
+    animation: space-stars-drift 18s linear infinite;
+}
+
+.space-orbit {
+    position: absolute;
+    width: 58vw;
+    height: 24vw;
+    min-width: 430px;
+    min-height: 180px;
+    border: 1px solid rgba(158, 197, 230, 0.32);
+    border-radius: 50%;
+}
+
+.space-orbit.orbit-one {
+    top: 12%;
+    left: -12%;
+    transform: rotate(-16deg);
+}
+
+.space-orbit.orbit-two {
+    right: -14%;
+    bottom: 9%;
+    transform: rotate(17deg);
+}
+
+.space-prop {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 14px 10px rgba(0, 0, 0, 0.3));
+    pointer-events: auto;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.space-astronaut {
+    width: 230px;
+    left: 7%;
+    bottom: 13%;
+    animation: astronaut-float 5s ease-in-out infinite;
+}
+
+.space-ship {
+    width: 250px;
+    right: 5%;
+    bottom: 17%;
+    animation: ship-hover 4.5s ease-in-out infinite;
+}
+
+.space-planet {
+}
+
+.planet-one { width: 145px; left: 3%; top: 17%; animation: planet-drift 8s ease-in-out infinite alternate; }
+.planet-two { width: 125px; right: 8%; top: 23%; animation: planet-drift 9s 0.8s ease-in-out infinite alternate; }
+.planet-three { width: 170px; left: 27%; bottom: 8%; animation: planet-pulse 6s ease-in-out infinite; }
+.planet-four { width: 130px; right: 28%; top: 7%; animation: planet-drift 7s ease-in-out infinite alternate; }
+.planet-five { width: 105px; left: 17%; bottom: 24%; animation: planet-pulse 7s 0.5s ease-in-out infinite; }
+.planet-six { width: 105px; right: 3%; bottom: 29%; animation: planet-drift 8s 0.3s ease-in-out infinite alternate; }
+
+.space-car {
+    width: 150px;
+    bottom: 5%;
+    animation: car-roll 6s ease-in-out infinite;
+}
+
+.car-one { left: 4%; }
+.car-two { left: 43%; width: 125px; bottom: 2%; animation-delay: 0.8s; }
+.car-three { right: 5%; width: 155px; bottom: 7%; animation-delay: 1.5s; }
+
+.space-star {
+    width: 54px;
+    animation: star-twinkle 2.5s ease-in-out infinite;
+}
+
+.space-star.star-one { left: 25%; top: 20%; }
+.space-star.star-two { right: 26%; top: 31%; animation-delay: 0.7s; }
+.space-star.star-three { left: 17%; bottom: 28%; width: 38px; animation-delay: 1.4s; }
+.space-star.star-four { right: 13%; top: 12%; width: 42px; animation-delay: 0.35s; }
+.space-star.star-five { left: 36%; top: 32%; width: 32px; animation-delay: 1.05s; }
+.space-star.star-six { right: 39%; bottom: 26%; width: 44px; animation-delay: 1.7s; }
+.space-star.star-seven { left: 8%; bottom: 17%; width: 28px; animation-delay: 2.1s; }
+
+body[data-theme="space"] .hero-kicker {
+    color: var(--space-lime);
+}
+
+body[data-theme="space"] .hero-copy h1 {
+    color: var(--space-ink);
+    text-shadow: 0 4px 14px rgba(82, 183, 154, 0.35);
+}
+
+body[data-theme="space"] .hero-subtitle {
+    color: var(--space-muted);
+}
+
+body[data-theme="space"] .carousel-caption {
+    background: rgba(82, 183, 154, 0.94);
+    border-color: #ffffff;
+    color: #0A2540;
+}
+
+body[data-theme="space"] .caption-spark {
+    color: #FFB400;
+}
+
+body[data-theme="space"] .action-services {
+    background: #FF5A60;
+    color: #ffffff;
+}
+
+body[data-theme="space"] .action-contact {
+    background: #0A2540;
+    color: #ffffff;
+}
+
+.space-prop.is-pressed {
+    animation: space-press 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes astronaut-float {
+    0%, 100% { translate: 0 0; rotate: -3deg; }
+    50% { translate: 12px -16px; rotate: 3deg; }
+}
+
+@keyframes ship-hover {
+    0%, 100% { translate: 0 0; rotate: 4deg; }
+    50% { translate: -14px -10px; rotate: -3deg; }
+}
+
+@keyframes car-roll {
+    0%, 100% { translate: 0 0; rotate: -2deg; }
+    50% { translate: 10px -5px; rotate: 2deg; }
+}
+
+@keyframes planet-drift {
+    from { translate: 0 0; }
+    to { translate: 10px -14px; }
+}
+
+@keyframes planet-pulse {
+    0%, 100% { scale: 1; }
+    50% { scale: 1.04; }
+}
+
+@keyframes saturn-float {
+    0%, 100% { translate: 0 0; rotate: -8deg; }
+    50% { translate: -10px 12px; rotate: 3deg; }
+}
+
+@keyframes star-twinkle {
+    0%, 100% { opacity: 0.45; scale: 0.85; }
+    50% { opacity: 1; scale: 1.2; }
+}
+
+@keyframes space-stars-drift {
+    from { background-position: 0 0; }
+    to { background-position: 58px 58px; }
+}
+
+@keyframes space-press {
+    0% { scale: 1; }
+    35% { scale: 1.14; translate: 0 -18px; }
+    70% { scale: 0.97; translate: 0 3px; }
+    100% { scale: 1; translate: 0 0; }
+}
+
+@media (max-width: 700px) {
+    .space-orbit { min-width: 280px; min-height: 120px; }
+    .space-ship { width: 125px; right: -5%; bottom: 25%; }
+    .planet-one { width: 72px; left: 1%; top: 16%; }
+    .planet-two { width: 66px; right: 2%; top: 22%; }
+    .planet-three { width: 92px; left: 23%; bottom: 11%; }
+    .planet-four { width: 72px; right: 27%; top: 8%; }
+    .planet-five { width: 60px; left: 8%; bottom: 27%; }
+    .planet-six { width: 58px; right: 4%; bottom: 32%; }
+    .space-car { width: 78px; bottom: 3%; }
+    .car-one { left: 2%; }
+    .car-two { left: 39%; width: 68px; bottom: 2%; }
+    .car-three { right: 2%; width: 82px; bottom: 4%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .space-stars,
+    .space-prop,
+    .space-star { animation: none; }
+}

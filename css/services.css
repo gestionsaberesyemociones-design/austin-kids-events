@@ -1,0 +1,702 @@
+/* ==========================================================================
+   ESTILOS DE SERVICIOS - MULTITEMÁTICO CON EMOJIS FLOTANTES
+   ========================================================================== */
+
+.services-main {
+    position: relative;
+    padding: 3rem 1rem 6rem 1rem;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    min-height: calc(100vh - 140px);
+    overflow: hidden;
+    isolation: isolate;
+    transition: background 1.2s ease-in-out;
+}
+
+/* ==========================================================================
+   TEMAS DINÁMICOS (Controlados por JS)
+   ========================================================================== */
+.services-main[data-theme="ranch"] {
+    background: linear-gradient(180deg, #9EC5E6 0%, #dff1f3 56%, #52B79A 56%, #2f987d 100%);
+}
+
+.services-main[data-theme="space"] {
+    background: radial-gradient(circle at 20% 30%, rgba(82, 183, 154, 0.2) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 180, 0, 0.16) 0%, transparent 45%), linear-gradient(135deg, #0A2540 0%, #16476a 50%, #0A2540 100%);
+}
+
+.services-main[data-theme="city"] {
+    background: radial-gradient(circle at 50% 10%, rgba(255, 90, 96, 0.15) 0%, transparent 35%), radial-gradient(circle at 10% 90%, rgba(255, 180, 0, 0.15) 0%, transparent 40%), linear-gradient(135deg, #9EC5E6 0%, #dff1f3 50%, #52B79A 100%);
+}
+
+/* ==========================================================================
+   CAPA DECORATIVA Y EMOJIS FLOTANTES DINÁMICOS
+   ========================================================================== */
+.services-decor-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.services-sun {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    left: -80px;
+    top: -80px;
+    background-image: url('../assets/brand/sun.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 12px 25px rgba(255, 180, 0, 0.3));
+    animation: sunPulse 6s ease-in-out infinite alternate;
+    transition: opacity 0.8s ease;
+}
+
+.services-main[data-theme="space"] .services-sun {
+    opacity: 0.15;
+    filter: drop-shadow(0 12px 25px rgba(82, 183, 154, 0.3));
+}
+
+.services-cloud {
+    position: absolute;
+    background-image: url('../assets/brand/clouds.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    transition: filter 0.8s ease;
+}
+
+.services-main[data-theme="space"] .services-cloud {
+    filter: brightness(0.7) drop-shadow(0 0 10px rgba(255, 180, 0, 0.3));
+}
+
+.services-cloud-1 { width: 280px; height: 150px; top: 8%; left: -15%; opacity: 0.85; animation: cloudDriftSlow 28s linear infinite, cloudBobbing 5s ease-in-out infinite alternate; }
+.services-cloud-2 { width: 220px; height: 120px; top: 22%; right: -15%; opacity: 0.7; animation: cloudDriftFast 22s linear infinite, cloudBobbing 4s ease-in-out infinite alternate; animation-delay: -3s; }
+.services-cloud-3 { width: 310px; height: 170px; top: 48%; left: -20%; opacity: 0.55; animation: cloudDriftSlow 35s linear infinite; animation-delay: -8s; }
+.services-cloud-4 { width: 250px; height: 135px; bottom: 25%; right: -15%; opacity: 0.8; animation: cloudDriftFast 24s linear infinite, cloudBobbing 6s ease-in-out infinite alternate; animation-delay: -5s; }
+
+/* Estilo para los emojis flotantes generados por JavaScript */
+.floating-emoji {
+    position: absolute;
+    font-size: 2rem;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatEmojiUp linear infinite;
+    opacity: 0.6;
+    will-change: transform, opacity;
+}
+
+@keyframes floatEmojiUp {
+    0% {
+        transform: translateY(105vh) translateX(0px) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+    12% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-18vh) translateX(55px) rotate(360deg) scale(1.15);
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   ESTRUCTURA Y TARJETAS DE SERVICIOS (CORREGIDAS)
+   ========================================================================== */
+.services-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.services-header-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    transition: color 0.5s ease;
+}
+
+.services-header-title h1 {
+    color: #0A2540;
+    font-size: 2.6rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.services-main[data-theme="space"] .services-header-title h1 { color: #F8FAFC; }
+
+.services-header-title p {
+    color: #5F7D95;
+    font-size: 1.15rem;
+}
+
+.services-main[data-theme="space"] .services-header-title p { color: #94A3B8; }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 2.4rem;
+    align-items: stretch;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.97);
+    border: 3px solid #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 18px 42px rgba(10, 37, 64, 0.2);
+    backdrop-filter: blur(8px);
+    overflow: visible;
+    display: block;
+    height: auto;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease, border-color 0.5s ease;
+}
+
+.services-main[data-theme="space"] .service-card {
+    background: rgba(15, 23, 42, 0.85);
+    border: 3px solid rgba(255, 255, 255, 0.92);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.service-card:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(10, 37, 64, 0.26); }
+
+.card-center {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 540px);
+}
+
+.card-image-container {
+    position: relative;
+    width: 100%;
+    height: clamp(250px, 27vw, 360px) !important;
+    min-height: 250px;
+    background-color: #f0f4f8;
+    overflow: hidden;
+    flex-shrink: 0;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .card-image { transform: scale(1.03); }
+
+.card-title-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    padding: 18px 20px 24px;
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(180deg, rgba(10, 37, 64, 0.86), rgba(10, 37, 64, 0));
+    color: #ffffff;
+    font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    text-align: center;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.service-ranch-card .card-title-overlay {
+    background: linear-gradient(180deg, rgba(108, 42, 53, 0.88), rgba(108, 42, 53, 0));
+}
+
+.service-space-card .card-title-overlay {
+    background: linear-gradient(180deg, rgba(10, 73, 82, 0.88), rgba(10, 73, 82, 0));
+}
+
+.service-city-card .card-title-overlay {
+    background: linear-gradient(180deg, rgba(35, 85, 116, 0.88), rgba(35, 85, 116, 0));
+}
+
+.rental-vehicle {
+    position: absolute;
+    z-index: 3;
+    display: block;
+    height: auto;
+    opacity: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 12px 8px rgba(10, 37, 64, 0.35));
+}
+
+.rental-tractor { width: 48%; left: -52%; bottom: 5%; }
+.rental-ship { width: 50%; right: -55%; bottom: 8%; transform: scaleX(-1); }
+.rental-car { width: 46%; left: -52%; bottom: 4%; }
+
+.service-card.is-active .rental-vehicle {
+    opacity: 1;
+    animation: rental-vehicle-enter 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.service-card:hover .rental-vehicle {
+    opacity: 1;
+    animation: rental-vehicle-enter 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.service-card.is-active .rental-ship { animation-name: rental-ship-enter; }
+
+.rental-cta {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    border: 0;
+    border-radius: 0;
+    background: rgba(255, 90, 96, 0.88);
+    color: #ffffff;
+    font-size: clamp(1.05rem, 2vw, 1.55rem);
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(14px);
+    pointer-events: none;
+    box-shadow: 0 8px 20px rgba(10, 37, 64, 0.25);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+}
+
+.service-card.is-active .rental-cta {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.service-ranch-card .rental-cta { background: rgba(255, 90, 96, 0.88); }
+.service-space-card .rental-cta { background: rgba(82, 183, 154, 0.88); color: #0A2540; }
+.service-city-card .rental-cta { background: rgba(158, 197, 230, 0.92); color: #0A2540; }
+
+.rental-cta:hover { filter: brightness(1.08); }
+
+@keyframes rental-vehicle-enter {
+    0% { opacity: 0; translate: 0 0; }
+    100% { opacity: 1; translate: 135% 0; }
+}
+
+@keyframes rental-ship-enter {
+    0% { opacity: 0; translate: 0 0; }
+    100% { opacity: 1; translate: -135% 0; }
+}
+
+.card-price {
+    position: absolute;
+    bottom: -25px;
+    right: 15px;
+    background-color: #FFB400;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.4rem;
+    padding: 0.4rem 1.1rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 8;
+    border: 3px solid #ffffff;
+}
+
+.service-ranch-card .card-price { background-color: #FF5A60; }
+.service-space-card .card-price { background-color: #52B79A; color: #0A2540; }
+.service-city-card .card-price { background-color: #9EC5E6; color: #0A2540; }
+
+.card-content {
+    display: none;
+}
+
+.card-content h3 {
+    color: #0A2540;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    transition: color 0.5s ease;
+}
+
+.services-main[data-theme="space"] .card-content h3 { color: #F8FAFC; }
+
+.card-content p {
+    color: #5F7D95;
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 1.8rem;
+    flex-grow: 1;
+    transition: color 0.5s ease;
+}
+
+.services-main[data-theme="space"] .card-content p { color: #94A3B8; }
+
+.card-footer {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Asegura que el botón no se estire de más */
+}
+
+/* Botón corregido en formato píldora estricto y elegante */
+.service-card .action-btn {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 200px;
+    height: auto;
+    border-radius: 50px;
+    border: 2px solid #ffffff;
+    background-color: #52B79A;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(82, 183, 154, 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.service-card .action-btn:hover {
+    background-color: #439E82;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(82, 183, 154, 0.35);
+}
+
+/* ==========================================================================
+   BARRA INFERIOR Y VEHÍCULO DINÁMICO
+   ========================================================================== */
+.brand-bottom-color-bar {
+    display: flex;
+    height: 12px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: visible;
+}
+
+.brand-bottom-color-bar::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    width: 115px;
+    height: 65px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+    animation: carDriveNatural 14s linear infinite;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.services-main[data-theme="ranch"] .brand-bottom-color-bar::after { background-image: url('../assets/brand/cow.png'); }
+.services-main[data-theme="space"] .brand-bottom-color-bar::after { background-image: url('../assets/brand/spaceship.png'); }
+.services-main[data-theme="city"] .brand-bottom-color-bar::after { background-image: url('../assets/brand/car red.png'); }
+
+.color-segment { flex: 1; }
+.color-1 { background-color: #0A2540; } 
+.color-2 { background-color: #52B79A; } 
+.color-3 { background-color: #FF5A60; } 
+.color-4 { background-color: #FFB400; } 
+.color-5 { background-color: #9EC5E6; } 
+
+/* ==========================================================================
+   ANIMACIONES CLAVE
+   ========================================================================== */
+@keyframes sunPulse {
+    0% { transform: scale(1) rotate(0deg); }
+    100% { transform: scale(1.06) rotate(6deg); }
+}
+
+@keyframes cloudDriftSlow {
+    0% { transform: translateX(-180px); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { transform: translateX(calc(100vw + 220px)); opacity: 0; }
+}
+
+@keyframes cloudDriftFast {
+    0% { transform: translateX(calc(100vw + 220px)); opacity: 0; }
+    10% { opacity: 0.75; }
+    90% { opacity: 0.75; }
+    100% { transform: translateX(-220px); opacity: 0; }
+}
+
+@keyframes cloudBobbing {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-14px); }
+}
+
+@keyframes carDriveNatural {
+    0% { left: -130px; transform: scaleX(1); }
+    49.9% { left: calc(100% + 20px); transform: scaleX(1); }
+    50% { left: calc(100% + 20px); transform: scaleX(-1); }
+    99.9% { left: -130px; transform: scaleX(-1); }
+    100% { left: -130px; transform: scaleX(1); }
+}
+
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+@media (max-width: 768px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .card-center { width: 100%; grid-column: auto; }
+}
+
+.services-theme-art {
+    position: absolute;
+    inset: 0;
+    display: none;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.services-main[data-theme="ranch"] .services-ranch-art,
+.services-main[data-theme="space"] .services-space-art,
+.services-main[data-theme="city"] .services-city-art {
+    display: block;
+}
+
+.services-art {
+    position: absolute;
+    display: block;
+    height: auto;
+    filter: drop-shadow(0 12px 9px rgba(10, 37, 64, 0.2));
+}
+
+.ranch-tree { width: 310px; bottom: -2%; }
+.ranch-tree-left { left: -4%; }
+.ranch-tree-right { right: -4%; transform: scaleX(-1); }
+.ranch-barn { width: 220px; left: 10%; bottom: -4%; }
+.ranch-tractor { width: 180px; right: 14%; bottom: 2%; animation: services-vehicle-bob 4s ease-in-out infinite; }
+.ranch-horse { width: 220px; right: 3%; bottom: 20%; animation: services-animal-bob 4.5s ease-in-out infinite; }
+.ranch-cow { width: 150px; left: 22%; top: 24%; animation: services-animal-bob 4.2s 0.6s ease-in-out infinite; }
+.ranch-chicken { width: 95px; right: 23%; top: 28%; animation: services-animal-bob 3.5s 0.9s ease-in-out infinite; }
+.ranch-flowers { width: 125px; bottom: 3%; }
+.ranch-flowers-left { left: 28%; }
+.ranch-flowers-right { right: 28%; transform: scale(0.8); transform-origin: bottom right; }
+
+.services-space-art {
+    background-image: radial-gradient(#d8f5ff 1px, transparent 1px);
+    background-size: 52px 52px;
+}
+
+.services-main[data-theme="space"] .services-decor-layer {
+    background: linear-gradient(145deg, rgba(7, 11, 37, 0.92), rgba(17, 23, 71, 0.92));
+}
+
+.services-space-art .services-art { filter: drop-shadow(0 0 14px rgba(72, 200, 232, 0.45)); }
+.space-astronaut { width: 190px; left: 8%; bottom: 14%; animation: services-astronaut-float 5s ease-in-out infinite; }
+.space-ship { width: 220px; right: 7%; bottom: 18%; animation: services-ship-hover 4s ease-in-out infinite; }
+.space-saturn { width: 180px; right: 18%; top: 8%; animation: services-planet-drift 7s ease-in-out infinite alternate; }
+.space-mars { width: 130px; left: 4%; top: 32%; animation: services-planet-drift 8s 0.4s ease-in-out infinite alternate; }
+.space-neptune { width: 115px; right: 4%; top: 43%; animation: services-planet-drift 9s 0.8s ease-in-out infinite alternate; }
+.space-star { width: 48px; animation: services-star-twinkle 2.4s ease-in-out infinite; }
+.space-star-one { left: 25%; top: 20%; }
+.space-star-two { right: 30%; top: 36%; animation-delay: 0.7s; }
+.space-star-three { left: 12%; bottom: 25%; width: 34px; animation-delay: 1.3s; }
+.space-star-four { right: 13%; top: 18%; width: 34px; animation-delay: 0.3s; }
+.space-star-five { left: 35%; bottom: 21%; width: 28px; animation-delay: 1.7s; }
+
+.services-city-art {
+    background: linear-gradient(180deg, #9EC5E6 0%, #dff1f3 63%, #52B79A 63%, #52B79A 100%);
+}
+
+.services-city-road {
+    position: absolute;
+    left: -4%;
+    right: -4%;
+    height: 18%;
+    background: #0A2540;
+    transform: perspective(220px) rotateX(8deg);
+    transform-origin: bottom;
+    box-shadow: inset 0 10px 0 #52B79A, inset 0 20px 0 #FFB400;
+}
+
+.services-city-road-upper { bottom: 29%; }
+.services-city-road-lower { bottom: 0; }
+
+.services-city-road::before {
+    content: "";
+    position: absolute;
+    inset: 46% 0 auto;
+    height: 6px;
+    background: repeating-linear-gradient(90deg, #ffffff 0 45px, transparent 45px 84px);
+}
+
+.services-city-road::after {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 70%;
+    height: 5px;
+    background: repeating-linear-gradient(90deg, #FFB400 0 38px, transparent 38px 68px);
+}
+
+.services-city-prop {
+    position: absolute;
+    z-index: 3;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 7px rgba(10, 37, 64, 0.2));
+}
+
+.services-city-sign { width: 68px; }
+.services-city-art .sign-one { left: 5%; bottom: 21%; }
+.services-city-art .sign-two { left: 22%; bottom: 7%; width: 56px; }
+.services-city-art .sign-three { right: 5%; bottom: 21%; }
+.services-city-art .sign-four { right: 22%; bottom: 7%; width: 54px; }
+.services-city-art .sign-five { left: 42%; bottom: 21%; width: 58px; }
+.services-city-art .sign-six { right: 41%; bottom: 7%; width: 52px; }
+
+.services-city-car {
+    width: 112px;
+    bottom: 4%;
+    animation: services-city-drive 7s ease-in-out infinite;
+}
+
+.services-city-art .city-car-one { left: 3%; bottom: 31%; }
+.services-city-art .city-car-two { left: 25%; width: 96px; bottom: 4%; animation-delay: 0.7s; }
+.services-city-art .city-car-three { left: 53%; width: 104px; bottom: 31%; animation-delay: 1.2s; }
+.services-city-art .city-car-four { right: 18%; width: 90px; bottom: 4%; animation-delay: 1.7s; }
+.services-city-art .city-car-five { right: 2%; width: 114px; bottom: 31%; animation-delay: 2.2s; }
+
+.services-city-car.city-car-left { transform: scaleX(-1); animation-name: services-city-drive-left; }
+
+@keyframes services-city-drive {
+    0%, 100% { translate: -8px 0; }
+    50% { translate: 24px -3px; }
+}
+
+@keyframes services-city-drive-left {
+    0%, 100% { translate: 8px 0; }
+    50% { translate: -24px -3px; }
+}
+
+@keyframes services-vehicle-bob { 0%, 100% { translate: 0 0; } 50% { translate: -10px -5px; } }
+@keyframes services-animal-bob { 0%, 100% { translate: 0 0; rotate: -2deg; } 50% { translate: 5px -8px; rotate: 2deg; } }
+@keyframes services-astronaut-float { 0%, 100% { translate: 0 0; rotate: -3deg; } 50% { translate: 12px -14px; rotate: 3deg; } }
+@keyframes services-ship-hover { 0%, 100% { translate: 0 0; rotate: 4deg; } 50% { translate: -12px -8px; rotate: -3deg; } }
+@keyframes services-planet-drift { from { translate: 0 0; } to { translate: -12px 10px; } }
+@keyframes services-star-twinkle { 0%, 100% { opacity: 0.4; scale: 0.85; } 50% { opacity: 1; scale: 1.2; } }
+
+@media (max-width: 768px) {
+    .ranch-tree { width: 170px; }
+    .ranch-barn { width: 130px; left: -5%; }
+    .ranch-tractor { width: 110px; right: 8%; }
+    .ranch-horse { width: 135px; right: -5%; bottom: 22%; }
+    .ranch-cow { width: 88px; left: 4%; top: 24%; }
+    .ranch-chicken { width: 58px; right: 4%; top: 28%; }
+    .ranch-flowers { width: 80px; }
+    .ranch-flowers-left { left: 23%; }
+    .ranch-flowers-right { right: 21%; }
+    .space-astronaut { width: 115px; left: -5%; bottom: 18%; }
+    .space-ship { width: 135px; right: -6%; bottom: 21%; }
+    .space-saturn { width: 105px; right: 14%; top: 8%; }
+    .space-mars { width: 75px; left: 1%; top: 34%; }
+    .space-neptune { width: 68px; right: 1%; top: 43%; }
+    .space-star { width: 30px; }
+    .space-star-three { width: 24px; }
+    .space-star-four { width: 22px; }
+    .space-star-five { width: 18px; }
+    .services-city-road { left: -8%; right: -8%; height: 17%; }
+    .services-city-road-upper { bottom: 30%; }
+    .services-city-sign { width: 42px; }
+    .services-city-art .sign-two { width: 35px; }
+    .services-city-art .sign-four { width: 34px; }
+    .services-city-art .sign-five { width: 36px; }
+    .services-city-art .sign-six { width: 33px; }
+    .services-city-car { width: 56px; }
+    .services-city-art .city-car-two { width: 48px; }
+    .services-city-art .city-car-three { width: 52px; }
+    .services-city-art .city-car-four { width: 46px; }
+    .services-city-art .city-car-five { width: 58px; }
+    .service-card { border-radius: 22px; }
+    .card-image-container { height: clamp(230px, 68vw, 330px) !important; min-height: 230px; }
+    .card-title-overlay { padding: 13px 12px 22px; }
+    .rental-vehicle { width: 52%; }
+    .rental-cta { padding: 18px; }
+}
+
+.service-card:hover .rental-cta {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Nuevos vectores por tema */
+.services-ranch-art .ranch-cloud { width: 150px; filter: drop-shadow(0 8px 6px rgba(10, 37, 64, 0.12)); }
+.services-ranch-art .ranch-cloud-one { left: 5%; top: 12%; }
+.services-ranch-art .ranch-cloud-two { right: 8%; top: 20%; transform: scale(0.72); }
+.services-ranch-art .ranch-barn { width: 190px; left: 5%; bottom: 2%; }
+.services-ranch-art .ranch-farmer { width: 150px; left: 42%; bottom: 3%; }
+.services-ranch-art .ranch-tractor { width: 135px; bottom: 3%; }
+.services-ranch-art .ranch-tractor-one { left: 22%; }
+.services-ranch-art .ranch-tractor-two { right: 20%; transform: scaleX(-1); }
+.services-ranch-art .ranch-horse { width: 170px; bottom: 17%; }
+.services-ranch-art .ranch-horse-one { right: 4%; }
+.services-ranch-art .ranch-horse-two { right: 22%; bottom: 15%; width: 145px; transform: scaleX(-1); }
+.services-ranch-art .ranch-cow { width: 125px; bottom: 16%; top: auto; }
+.services-ranch-art .ranch-cow-one { left: 4%; }
+.services-ranch-art .ranch-cow-two { left: 18%; width: 110px; bottom: 14%; }
+
+.services-space-art { background-image: radial-gradient(#9EC5E6 1px, transparent 1px); background-size: 52px 52px; }
+.services-space-art .space-ship { width: 190px; right: 6%; bottom: 18%; }
+.services-space-art .space-planet { position: absolute; filter: drop-shadow(0 0 14px rgba(82, 183, 154, 0.42)); }
+.services-space-art .planet-one { width: 120px; left: 4%; top: 18%; }
+.services-space-art .planet-two { width: 105px; right: 8%; top: 27%; }
+.services-space-art .planet-three { width: 145px; left: 29%; bottom: 8%; }
+.services-space-art .planet-four { width: 115px; right: 28%; top: 8%; }
+.services-space-art .planet-five { width: 90px; left: 16%; bottom: 25%; }
+.services-space-art .planet-six { width: 90px; right: 4%; bottom: 29%; }
+.services-space-art .space-car { width: 125px; bottom: 5%; animation: services-space-car-drive 7s ease-in-out infinite; }
+.services-space-art .space-car-one { left: 4%; }
+.services-space-art .space-car-two { left: 42%; width: 105px; bottom: 2%; animation-delay: 0.8s; }
+.services-space-art .space-car-three { right: 5%; width: 130px; bottom: 7%; animation-delay: 1.5s; }
+
+@keyframes services-space-car-drive {
+    0%, 100% { translate: -8px 0; }
+    50% { translate: 24px -4px; }
+}
+
+@media (max-width: 768px) {
+    .services-ranch-art .ranch-cloud { width: 88px; }
+    .services-ranch-art .ranch-barn { width: 92px; left: 0; }
+    .services-ranch-art .ranch-farmer { width: 82px; left: 39%; }
+    .services-ranch-art .ranch-tractor { width: 68px; }
+    .services-ranch-art .ranch-tractor-one { left: 13%; }
+    .services-ranch-art .ranch-tractor-two { right: 9%; }
+    .services-ranch-art .ranch-horse { width: 88px; bottom: 8%; }
+    .services-ranch-art .ranch-horse-one { right: 0; }
+    .services-ranch-art .ranch-horse-two { right: 18%; width: 76px; bottom: 7%; }
+    .services-ranch-art .ranch-cow { width: 70px; bottom: 8%; }
+    .services-ranch-art .ranch-cow-one { left: 1%; }
+    .services-ranch-art .ranch-cow-two { left: 14%; width: 62px; bottom: 7%; }
+    .services-space-art .space-ship { width: 120px; right: -4%; bottom: 22%; }
+    .services-space-art .planet-one { width: 70px; left: 1%; top: 18%; }
+    .services-space-art .planet-two { width: 60px; right: 2%; top: 27%; }
+    .services-space-art .planet-three { width: 88px; left: 25%; bottom: 9%; }
+    .services-space-art .planet-four { width: 66px; right: 27%; top: 8%; }
+    .services-space-art .planet-five { width: 54px; left: 9%; bottom: 26%; }
+    .services-space-art .planet-six { width: 54px; right: 4%; bottom: 30%; }
+    .services-space-art .space-car { width: 66px; bottom: 4%; }
+    .services-space-art .space-car-two { width: 56px; }
+    .services-space-art .space-car-three { width: 70px; }
+}

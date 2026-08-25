@@ -1,0 +1,266 @@
+/* ==========================================================================
+   THEME SWITCHER SYSTEM (data-theme)
+   ========================================================================== */
+
+/* 1. DEFAULT / FARM THEME */
+body[data-theme="farm"] {
+  --bg-current: #F2F7F2;
+  --accent-current: #70E000;
+  --cloud-current: #E8F5E9;
+  background-color: var(--bg-current);
+  transition: background-color var(--transition-theme);
+}
+
+body[data-theme="farm"] .icon-1::before { content: "🚜"; }
+body[data-theme="farm"] .icon-2::before { content: "🐮"; }
+body[data-theme="farm"] .icon-3::before { content: "🌾"; }
+
+/* 2. ASTRONAUT / SPACE THEME */
+body[data-theme="astronaut"] {
+  --bg-current: #0B0D17;
+  --accent-current: #7B2CBF;
+  --cloud-current: #1A1C29;
+  background-color: var(--bg-current);
+  color: #F8F9FA; /* Transición a texto claro en fondo oscuro */
+  transition: background-color var(--transition-theme), color var(--transition-theme);
+}
+
+body[data-theme="astronaut"] .nav-links a {
+  color: #FFFFFF;
+}
+
+body[data-theme="astronaut"] .main-header {
+  background-color: rgba(11, 13, 23, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="astronaut"] .icon-1::before { content: "🚀"; }
+body[data-theme="astronaut"] .icon-2::before { content: "👨‍🚀"; }
+body[data-theme="astronaut"] .icon-3::before { content: "⭐"; }
+
+body[data-theme="city"] {
+  --bg-current: #9EC5E6;
+  --accent-current: #FF5A60;
+  --cloud-current: #ffffff;
+  background-color: var(--bg-current);
+  transition: background-color var(--transition-theme);
+}
+
+body[data-theme="city"] .farm-global-background,
+body[data-theme="city"] .space-global-background {
+  display: none;
+}
+
+body[data-theme="city"] .hero-copy {
+  color: #0A2540 !important;
+  text-shadow: 0 3px 8px rgba(255, 255, 255, 0.55) !important;
+}
+
+body[data-theme="city"] .hero-kicker {
+  color: #FF5A60 !important;
+}
+
+body[data-theme="city"] .hero-copy h1 {
+  color: #0A2540 !important;
+  text-shadow: 0 3px 0 rgba(255, 255, 255, 0.72) !important;
+}
+
+body[data-theme="city"] .hero-subtitle {
+  color: #0A2540 !important;
+}
+
+body[data-theme="city"] .hero-copy h1 {
+  max-width: 860px;
+  font-size: clamp(1.4rem, 2.7vw, 2.8rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+body[data-theme="city"] .hero-subtitle {
+  margin-top: 12px;
+}
+
+.city-global-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: none;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(180deg, #9EC5E6 0%, #dff1f3 58%, #FFB400 58%, #FFB400 100%);
+}
+
+body[data-theme="city"] .city-global-background {
+  display: block;
+}
+
+.city-global-background {
+  background: linear-gradient(180deg, #9EC5E6 0%, #cfeaf2 58%, #52B79A 58%, #52B79A 100%);
+}
+
+.city-cloud {
+  position: absolute;
+  z-index: 1;
+  width: 170px;
+  height: auto;
+  opacity: 0.92;
+  filter: drop-shadow(0 8px 6px rgba(10, 37, 64, 0.12));
+}
+
+.city-cloud-one { left: 3%; top: 10%; }
+.city-cloud-two { right: 5%; top: 15%; transform: scale(0.72); }
+.city-cloud-three { left: 27%; top: 5%; transform: scale(0.58); }
+.city-cloud-four { left: 14%; top: 27%; transform: scale(0.68); }
+.city-cloud-five { right: 27%; top: 8%; transform: scale(0.48); }
+.city-cloud-six { right: 17%; top: 30%; transform: scale(0.62); }
+
+.city-road {
+  position: absolute;
+  left: -8%;
+  right: -8%;
+  bottom: 0;
+  height: 18%;
+  z-index: 2;
+  background: #0A2540;
+  transform: perspective(280px) rotateX(8deg);
+  transform-origin: bottom;
+  box-shadow: inset 0 12px 0 #52B79A, inset 0 24px 0 #FFB400;
+}
+
+.city-road-upper {
+  bottom: 29%;
+}
+
+.city-road-lower {
+  bottom: 0;
+}
+
+.city-road::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 46%;
+  height: 8px;
+  background: repeating-linear-gradient(90deg, #ffffff 0 54px, transparent 54px 98px);
+  opacity: 0.9;
+}
+
+.city-road::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 69%;
+  height: 7px;
+  background: repeating-linear-gradient(90deg, #FFB400 0 42px, transparent 42px 76px);
+}
+
+.city-prop {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 7px rgba(10, 37, 64, 0.2));
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.city-sign { width: 95px; }
+.sign-one { left: 5%; bottom: 21%; }
+.sign-two { left: 25%; bottom: 7%; width: 75px; }
+.sign-three { right: 6%; bottom: 21%; }
+.sign-four { right: 24%; bottom: 7%; width: 72px; }
+.sign-five { left: 43%; bottom: 21%; width: 78px; }
+.sign-six { right: 43%; bottom: 7%; width: 70px; }
+
+.city-car {
+  width: 170px;
+  bottom: 4%;
+  animation: city-car-drive 7s ease-in-out infinite;
+}
+
+.city-car.car-one { left: 3%; bottom: 31%; }
+.city-car.car-two { left: 25%; width: 145px; bottom: 4%; animation-delay: 0.7s; }
+.city-car.car-three { left: 53%; width: 155px; bottom: 31%; animation-delay: 1.2s; }
+.city-car.car-four { right: 18%; width: 135px; bottom: 4%; animation-delay: 1.7s; }
+.city-car.car-five { right: 2%; width: 175px; bottom: 31%; animation-delay: 2.2s; }
+
+.car-left { transform: scaleX(-1); animation-name: city-car-drive-left; }
+
+@keyframes city-car-drive {
+  0%, 100% { translate: -10px 0; }
+  50% { translate: 32px -3px; }
+}
+
+@keyframes city-car-drive-left {
+  0%, 100% { translate: 10px 0; }
+  50% { translate: -32px -3px; }
+}
+
+@media (max-width: 700px) {
+  .city-cloud { width: 92px; }
+  .city-cloud-one { left: 1%; top: 11%; }
+  .city-cloud-two { right: 1%; top: 17%; }
+  .city-cloud-three { left: 31%; top: 5%; }
+  .city-cloud-four { left: 12%; top: 28%; }
+  .city-cloud-five { right: 25%; top: 9%; }
+  .city-cloud-six { right: 8%; top: 31%; }
+  .city-road { height: 17%; }
+  .city-road-upper { bottom: 30%; }
+  .city-road-lower { bottom: 0; }
+  .city-sign { width: 54px; }
+  .sign-one { left: 1%; bottom: 22%; }
+  .sign-two { left: 18%; bottom: 7%; width: 45px; }
+  .sign-three { right: 1%; bottom: 22%; }
+  .sign-four { right: 17%; bottom: 7%; width: 44px; }
+  .sign-five,
+  .sign-six { display: none; }
+  .city-car { width: 82px; bottom: 4%; }
+  .city-car.car-one { left: 0; bottom: 31%; }
+  .city-car.car-two { left: 20%; width: 72px; bottom: 4%; }
+  .city-car.car-three { left: 43%; width: 76px; bottom: 31%; }
+  .city-car.car-four { right: 18%; width: 68px; bottom: 4%; }
+  .city-car.car-five { right: -1%; width: 84px; bottom: 31%; }
+
+  body[data-theme="city"] .hero-copy {
+    margin-top: 0;
+  }
+
+  body[data-theme="city"] .hero-copy h1 {
+    max-width: none;
+    font-size: clamp(0.82rem, 4.3vw, 1.12rem);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  body[data-theme="city"] .hero-subtitle {
+    max-width: 260px;
+    margin-top: 14px;
+  }
+
+  body[data-theme="city"] .hero-carousel-section {
+    margin-top: 2px;
+  }
+
+  body[data-theme="city"] .city-road-upper {
+    bottom: 8%;
+  }
+
+  body[data-theme="city"] .city-sign-two,
+  body[data-theme="city"] .city-sign-four,
+  body[data-theme="city"] .city-sign-six {
+    display: none;
+  }
+}
+
+/* 3. FUTURE PROOFING: FACILIDAD DE ESCALABILIDAD
+   Para agregar un nuevo tema (ej. Princesas), solo añades un bloque aquí:
+   
+   body[data-theme="princess"] {
+     --bg-current: #FFF0F5;
+     --accent-current: #FF69B4;
+     ...
+   }
+*/

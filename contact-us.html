@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Austin Kids Events</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body class="contact-page">
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      <a href="index.html" aria-label="Austin Kids Events - Home">
+        <img src="assets/brand/AUSTIN KE LOGO-1.png" alt="Austin Kids Events" class="site-logo">
+      </a>
+    </div>
+  </header>
+
+  <main class="contact-main">
+    <div class="contact-cloud contact-cloud-one" aria-hidden="true"></div>
+    <div class="contact-cloud contact-cloud-two" aria-hidden="true"></div>
+    <section class="contact-panel" aria-labelledby="contact-title">
+      <div class="contact-intro">
+        <p class="contact-kicker">AUSTIN KIDS EVENTS</p>
+        <h1 id="contact-title">Let’s plan their big day</h1>
+        <p>Tell us about your celebration and we’ll help you choose the perfect setup.</p>
+      </div>
+
+      <form class="event-form" action="#" method="post">
+        <div class="form-grid form-grid-two">
+          <label class="form-field">
+            <span>First name</span>
+            <input type="text" name="firstName" autocomplete="given-name" required>
+          </label>
+          <label class="form-field">
+            <span>Last name</span>
+            <input type="text" name="lastName" autocomplete="family-name" required>
+          </label>
+        </div>
+
+        <div class="form-grid form-grid-two">
+          <label class="form-field">
+            <span>Phone number</span>
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required>
+          </label>
+          <label class="form-field">
+            <span>Email address</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+        </div>
+
+        <div class="form-grid form-grid-two">
+          <label class="form-field">
+            <span>Event ZIP code</span>
+            <input type="text" name="zipCode" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required>
+          </label>
+          <label class="form-field">
+            <span>Event date</span>
+            <input type="date" name="eventDate" aria-describedby="date-help" required>
+            <small id="date-help">Choose a date from the calendar.</small>
+          </label>
+        </div>
+
+        <fieldset class="form-group">
+          <legend>Where will the celebration take place?</legend>
+          <div class="check-grid">
+            <label class="check-option">
+              <input type="checkbox" name="location" value="private-home">
+              <span>Private home</span>
+            </label>
+            <label class="check-option">
+              <input type="checkbox" name="location" value="park">
+              <span>Park</span>
+            </label>
+            <label class="check-option">
+              <input type="checkbox" name="location" value="venue">
+              <span>Venue</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <label class="form-field">
+          <span>Which setup would you like a quote for?</span>
+          <select name="setup" required>
+            <option value="" selected disabled>Select a setup</option>
+            <option value="texas-ranch">Texas Ranch</option>
+            <option value="space-explorers">Space Explorers</option>
+            <option value="mini-city">Mini City</option>
+          </select>
+        </label>
+
+        <button class="form-submit" type="submit">Request a quote <span aria-hidden="true">→</span></button>
+      </form>
+    </section>
+  </main>
+
+  <div class="brand-bottom-color-bar" aria-hidden="true">
+    <span class="color-segment color-1"></span>
+    <span class="color-segment color-2"></span>
+    <span class="color-segment color-3"></span>
+    <span class="color-segment color-4"></span>
+    <span class="color-segment color-5"></span>
+  </div>
+
+</body>
+</html>

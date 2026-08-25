@@ -1,0 +1,547 @@
+/* ==========================================================================
+   AUSTIN KIDS EVENTS - ESTILOS PRINCIPALES (STYLES.CSS)
+   ========================================================================== */
+
+/* 1. Reseteo y Variables Globales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #0A2540;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* ==========================================================================
+   2. HEADER Y LOGO PRINCIPAL (Cabecera limpia y destacada)
+   ========================================================================== */
+.site-header {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 24px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #e2e8f0;
+    position: relative;
+    z-index: 40;
+    box-shadow: 0 4px 15px rgba(10, 37, 64, 0.04);
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Logo con gran protagonismo visual en la parte superior */
+.site-logo {
+    height: 110px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ==========================================================================
+   3. LAYOUT PRINCIPAL (Contenedor central del Banner y Botones)
+   ========================================================================== */
+.site-main {
+    width: 100%;
+    min-height: calc(100vh - 158px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(34px, 5vw, 72px) 10px clamp(58px, 6vw, 86px);
+    background: transparent;
+}
+
+/* Lienzo amplio para dar espacio al cuadro ampliado del carrusel */
+.hero-showcase-container {
+    position: relative;
+    width: 100%;
+    max-width: 1320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px 30px;
+}
+
+.hero-copy {
+    position: absolute;
+    top: clamp(-122px, -8vw, -70px);
+    left: 8%;
+    right: 8%;
+    z-index: 3;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 3px 8px rgba(10, 37, 64, 0.3);
+    animation: hero-copy-enter 0.8s ease both;
+}
+
+.hero-kicker {
+    margin-bottom: 4px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: #ffe36e;
+}
+
+.hero-copy h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: clamp(1.8rem, 3.6vw, 3.6rem);
+    line-height: 1.08;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    margin: 10px auto 0;
+    max-width: 680px;
+    font-size: clamp(0.78rem, 1.35vw, 1.15rem);
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.hero-backdrop-decor {
+    position: absolute;
+    inset: -72px -165px -48px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.scene-vector {
+    position: absolute;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 6px rgba(10, 37, 64, 0.12));
+}
+
+.scene-cloud {
+    width: 220px;
+    opacity: 0.9;
+}
+
+.cloud-left { left: 10%; top: 0; }
+.cloud-right { right: 10%; top: 8%; transform: scale(0.8); }
+
+.scene-tree {
+    width: 470px;
+    top: 18%;
+}
+
+.scene-tree-left { left: 2%; transform: scale(0.98); transform-origin: bottom left; }
+.scene-tree-right { right: 2%; transform: scale(0.86); transform-origin: bottom right; }
+
+.scene-farmer {
+    width: 255px;
+    left: 14%;
+    bottom: -12%;
+    transform: rotate(-4deg);
+}
+
+.scene-horse {
+    width: 440px;
+    right: 0;
+    bottom: 3%;
+    transform: scaleX(-1) rotate(-2deg);
+}
+
+.scene-barn {
+    width: 350px;
+    left: -1%;
+    bottom: -3%;
+    transform: scale(0.82);
+    transform-origin: bottom left;
+}
+
+.scene-tractor {
+    width: 275px;
+    right: 13%;
+    bottom: -2%;
+    transform: rotate(-5deg);
+}
+
+.scene-cow {
+    width: 245px;
+    left: 26%;
+    bottom: -4%;
+    transform: scaleX(-1);
+}
+
+.scene-chicken {
+    width: 155px;
+    right: 25%;
+    bottom: -2%;
+}
+
+.scene-flowers {
+    width: 220px;
+    bottom: -5%;
+}
+
+.flowers-left { left: 32%; }
+.flowers-right { right: 31%; transform: scale(0.8); transform-origin: bottom right; }
+
+@keyframes prop-float {
+    from { translate: 0 0; }
+    to { translate: 0 -10px; }
+}
+
+
+/* ==========================================================================
+   4. SECCIÓN DEL CARRUSEL (Más grande hacia arriba, izquierda y derecha)
+   ========================================================================== */
+.hero-carousel-section {
+    width: 100%;
+    max-width: 1080px;
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 20px;
+    box-shadow: 0 20px 45px rgba(10, 37, 64, 0.09);
+    border: 2px solid #e2e8f0;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 20px;
+    aspect-ratio: 16 / 9.5; 
+    background-color: #f1f5f9;
+    position: relative;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 5%;
+    bottom: 18px;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(6px, 1.2vw, 14px);
+    padding: clamp(7px, 0.8vw, 10px) clamp(10px, 1.5vw, 18px);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 999px;
+    background: rgba(82, 183, 154, 0.94);
+    color: #0A2540;
+    font-size: clamp(0.72rem, 1.25vw, 1rem);
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    z-index: 4;
+    animation: caption-rise 0.9s 0.25s ease both;
+}
+
+.caption-spark {
+    color: #FFB400;
+    font-size: 1.25em;
+    animation: spark-pulse 1.8s ease-in-out infinite;
+}
+
+.carousel-track {
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.carousel-slide.current {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Flechas de navegación laterales del carrusel */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #9EC5E6;
+    border: 3px solid #ffffff;
+    width: clamp(34px, 3.5vw, 48px);
+    height: clamp(34px, 3.5vw, 48px);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-size: clamp(0.85rem, 1.1vw, 1.1rem);
+    color: #0A2540;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.carousel-control:hover {
+    background-color: #52B79A;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.carousel-control.prev { left: clamp(-24px, -2vw, -12px); }
+.carousel-control.next { right: clamp(-24px, -2vw, -12px); }
+
+
+/* ==========================================================================
+   5. BOTONES CIRCULARES (Anclados firmemente en la base inferior)
+   ========================================================================== */
+.action-btn {
+    position: absolute;
+    bottom: clamp(8px, 1vw, 16px);
+    width: clamp(86px, 14vw, 190px);
+    height: clamp(86px, 14vw, 190px);
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: clamp(8px, 1.6vw, 22px);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: clamp(0.64rem, 1.05vw, 1rem);
+    line-height: 1.3;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(10, 37, 64, 0.15);
+    z-index: 20;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: action-breathe 3s ease-in-out infinite;
+}
+
+.action-btn:hover {
+    transform: translateY(-50px) scale(1.04);
+    box-shadow: 0 15px 30px rgba(10, 37, 64, 0.22);
+}
+
+.action-services {
+    left: max(0px, calc((100% - 1080px) / 2));
+    background-color: #FF5A60;
+    color: #ffffff;
+}
+
+.action-contact {
+    right: max(0px, calc((100% - 1080px) / 2));
+    background-color: #0A2540;
+    color: #ffffff;
+}
+
+@keyframes hero-copy-enter {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes caption-rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spark-pulse {
+    0%, 100% { transform: scale(1) rotate(0); }
+    50% { transform: scale(1.25) rotate(12deg); }
+}
+
+@keyframes action-breathe {
+    0%, 100% { box-shadow: 0 10px 25px rgba(10, 37, 64, 0.15); }
+    50% { box-shadow: 0 14px 30px rgba(10, 37, 64, 0.24); }
+}
+
+
+/* ==========================================================================
+   6. BARRA INFERIOR DE COLORES GLOBAL (Fija al fondo de la pantalla)
+   ========================================================================== */
+.brand-bottom-color-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px; /* Grosor elegante de la franja */
+    display: flex;
+    z-index: 9999;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+
+.color-segment {
+    flex: 1;
+    height: 100%;
+}
+
+/* Paleta de colores oficial basada en la referencia visual */
+.color-1 { background-color: #0f172a; } /* Azul oscuro / Marino */
+.color-2 { background-color: #5eead4; } /* Turquesa suave / Menta */
+.color-3 { background-color: #ff6b6b; } /* Coral vibrante */
+.color-4 { background-color: #fbbf24; } /* Amarillo cálido / Oro */
+.color-5 { background-color: #93c5fd; } /* Azul cielo claro */
+
+
+/* ==========================================================================
+   7. ADAPTABILIDAD MÓVIL (Responsive Design)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .hero-showcase-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 10px;
+    }
+
+    .hero-copy {
+        top: -82px;
+        left: 5%;
+        right: 5%;
+    }
+    
+    .hero-carousel-section {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-logo {
+        height: 58px;
+    }
+
+    .hero-showcase-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto auto auto;
+        align-items: center;
+        column-gap: 12px;
+        row-gap: 24px;
+        min-height: 0;
+        padding: 22px 16px 26px;
+    }
+
+    .hero-copy {
+        position: relative;
+        grid-column: 1 / -1;
+        grid-row: 1;
+        top: auto;
+        margin: 0 0 2px;
+    }
+
+    .hero-copy h1 { font-size: clamp(1.45rem, 7vw, 2rem); }
+    .hero-subtitle { max-width: 300px; font-size: 0.78rem; }
+
+    .hero-showcase-container::before {
+        display: none;
+    }
+
+    .hero-showcase-container::after {
+        display: none;
+    }
+
+    .hero-carousel-section {
+        position: relative;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .hero-backdrop-decor {
+        inset: -35px -62px -28px;
+    }
+
+    .scene-tree { width: 260px; }
+    .scene-cloud { width: 112px; }
+    .scene-farmer { width: 135px; left: 4%; }
+    .scene-horse { width: 230px; right: -8%; }
+    .scene-barn { width: 190px; }
+    .scene-tractor { width: 150px; right: 5%; }
+    .scene-cow { width: 132px; left: 18%; }
+    .scene-chicken { width: 84px; right: 18%; }
+    .scene-flowers { width: 120px; }
+
+    .carousel-container {
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .carousel-caption {
+        right: 4%;
+        bottom: 12px;
+        left: 4%;
+        gap: 7px;
+        padding: 8px 10px;
+        line-height: 1.15;
+    }
+
+    .carousel-track-container {
+        aspect-ratio: 4 / 3;
+    }
+
+    .action-btn {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        width: 86px;
+        height: 86px;
+        border-width: 3px;
+        line-height: 1.15;
+        padding: 8px;
+        justify-self: center;
+    }
+
+    .action-services {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .action-contact {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .action-btn:hover {
+        transform: translateY(-5px) scale(1.04);
+    }
+}
+
+body[data-theme="city"] {
+    background: #9EC5E6;
+}

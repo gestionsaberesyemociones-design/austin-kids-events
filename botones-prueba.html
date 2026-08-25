@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Botones - Austin Kids Events</title>
+    <!-- Tailwind CSS por CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/botones-prueba.css">
+</head>
+<body class="bg-white min-h-screen p-8 flex flex-col items-center justify-center">
+
+    <h1 class="text-gray-800 mb-10 text-2xl font-bold tracking-wide">Selecciona un Botón</h1>
+
+    <!-- Contenedor de la galería de los 4 botones -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl w-full place-items-center">
+
+        <!-- 1. CAR-BOTTOM -->
+        <button class="interactive-car-btn"
+                style="background-image: url('/assets/brand//boton carro.png');"
+                data-color="/assets/brand//boton carro.png"
+            data-mono="/assets/brand/boton carro 2..png"
+            data-sound="/assets/sounds/sound-minicity.mp3">
+            <span class="button-text hidden">
+                BRING IT TO<br>MY PARTY
+            </span>
+        </button>
+
+        <!-- 2. NAVE ESPACIAL -->
+        <button class="interactive-car-btn"
+                style="background-image: url('/assets/brand/nave espacial.png');"
+                data-color="/assets/brand/nave espacial.png"
+            data-mono="/assets/brand/nave-espacial2.png"
+            data-sound="/assets/sounds/sound-space.mp3">
+            <span class="button-text hidden">
+                BRING IT TO<br>MY PARTY
+            </span>
+        </button>
+
+        <!-- 3. CARRO ESPACIAL -->
+        <button class="interactive-car-btn"
+                style="background-image: url('/assets/brand/carro espacial.png');"
+                data-color="/assets/brand/carro espacial.png"
+            data-mono="/assets/brand/carro espacial2.png"
+            data-sound="/assets/sounds/sound-space.mp3">
+            <span class="button-text hidden">
+                BRING IT TO<br>MY PARTY
+            </span>
+        </button>
+
+        <!-- 4. TEXAS CAR -->
+        <button class="interactive-car-btn"
+                style="background-image: url('/assets/brand/texas-car.png');"
+                data-color="/assets/brand/texas-car.png"
+                data-mono="/assets/brand/texas car2.png">
+            <span class="button-text hidden">
+                BRING IT TO<br>MY PARTY
+            </span>
+        </button>
+
+    </div>
+
+    <div class="brand-bottom-color-bar" aria-hidden="true">
+        <span class="color-segment color-1"></span>
+        <span class="color-segment color-2"></span>
+        <span class="color-segment color-3"></span>
+        <span class="color-segment color-4"></span>
+        <span class="color-segment color-5"></span>
+    </div>
+
+    <!-- Archivo JS independiente -->
+    <script src="js/botones-prueba.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+.contact-page {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #9EC5E6 0%, #dff1f3 52%, #52B79A 100%);
+    color: #0A2540;
+}
+
+.contact-page .site-header {
+    padding: 18px 30px;
+    background: #ffffff;
+    border-bottom-color: rgba(10, 37, 64, 0.12);
+}
+
+.contact-page .site-logo {
+    height: 82px;
+}
+
+.contact-main {
+    position: relative;
+    min-height: calc(100vh - 138px);
+    padding: 56px 18px 84px;
+    overflow: hidden;
+}
+
+.contact-panel {
+    position: relative;
+    z-index: 2;
+    width: min(760px, 100%);
+    margin: 0 auto;
+    padding: clamp(24px, 5vw, 52px);
+    border: 3px solid #ffffff;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 22px 45px rgba(10, 37, 64, 0.18);
+}
+
+.contact-intro { margin-bottom: 30px; text-align: center; }
+.contact-kicker { margin-bottom: 8px; color: #FF5A60; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; }
+.contact-intro h1 { margin: 0; color: #0A2540; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; }
+.contact-intro p:last-child { max-width: 520px; margin: 14px auto 0; color: #5F7D95; font-size: 1rem; line-height: 1.5; }
+
+.event-form { display: grid; gap: 22px; }
+.form-grid { display: grid; gap: 18px; }
+.form-grid-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.form-field { display: grid; gap: 8px; color: #0A2540; font-size: 0.85rem; font-weight: 800; }
+.form-field input,
+.form-field select { width: 100%; min-height: 48px; padding: 11px 13px; border: 2px solid #9EC5E6; border-radius: 8px; background: #f8fcff; color: #0A2540; font: inherit; font-weight: 500; outline: none; }
+.form-field input:focus,
+.form-field select:focus { border-color: #52B79A; box-shadow: 0 0 0 3px rgba(82, 183, 154, 0.2); }
+.form-field small { color: #5F7D95; font-size: 0.72rem; font-weight: 500; }
+
+.form-group { padding: 0; border: 0; }
+.form-group legend { margin-bottom: 12px; color: #0A2540; font-size: 0.85rem; font-weight: 800; }
+.check-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.check-option { display: flex; align-items: center; gap: 9px; min-height: 48px; padding: 10px 12px; border: 2px solid #9EC5E6; border-radius: 8px; background: #f8fcff; color: #0A2540; font-size: 0.86rem; font-weight: 700; cursor: pointer; }
+.check-option:has(input:checked) { border-color: #52B79A; background: #e8f7f2; }
+.check-option input { width: 18px; height: 18px; accent-color: #FF5A60; }
+
+.form-submit { justify-self: center; display: inline-flex; align-items: center; gap: 16px; min-height: 52px; padding: 13px 22px; border: 0; border-radius: 999px; background: #FF5A60; color: #ffffff; font: inherit; font-weight: 800; cursor: pointer; box-shadow: 0 6px 0 rgba(10, 37, 64, 0.18); transition: transform 0.2s ease, background-color 0.2s ease; }
+.form-submit:hover { transform: translateY(-2px); background: #0A2540; }
+
+.contact-cloud { position: absolute; z-index: 1; width: 190px; height: 110px; background: url('../assets/setups/texas ranch/VECTORES/clouds.png') center / contain no-repeat; opacity: 0.72; }
+.contact-cloud-one { top: 8%; left: -35px; }
+.contact-cloud-two { top: 28%; right: -45px; transform: scale(0.72); }
+
+@media (max-width: 600px) {
+    .contact-page .site-header { padding: 14px 18px; }
+    .contact-page .site-logo { height: 62px; }
+    .contact-main { padding: 28px 12px 62px; }
+    .contact-panel { padding: 24px 18px 28px; border-radius: 18px; }
+    .form-grid-two,
+    .check-grid { grid-template-columns: 1fr; }
+    .contact-cloud { width: 110px; }
+}
