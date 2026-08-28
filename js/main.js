@@ -1,25 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Preloader inicializado");
     const preloader = document.getElementById('preloader');
-    const leftContainer = document.getElementById('curtain-left');
-    const rightContainer = document.getElementById('curtain-right');
+    const curtainContainer = document.querySelector('.clouds-curtain-container');
 
     // Generar nubes
     function generateClouds(container) {
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 28; i++) {
             const cloud = document.createElement('div');
             cloud.className = 'curtain-cloud';
-            cloud.style.left = (Math.random() * 80) + '%';
-            cloud.style.top = (Math.random() * 90) + '%';
-            const size = 200 + Math.random() * 150;
+            cloud.style.left = (Math.random() * 88) + '%';
+            cloud.style.top = (Math.random() * 82) + '%';
+            cloud.style.setProperty('--cloud-x', `${(Math.random() > 0.5 ? 1 : -1) * (80 + Math.random() * 180)}px`);
+            cloud.style.setProperty('--cloud-y', `${-20 - Math.random() * 80}px`);
+            cloud.style.setProperty('--cloud-delay', `${Math.random() * 0.45}s`);
+            const size = 210 + Math.random() * 190;
             cloud.style.width = size + 'px';
             cloud.style.height = (size * 0.6) + 'px';
             container.appendChild(cloud);
         }
     }
 
-    generateClouds(leftContainer);
-    generateClouds(rightContainer);
+    if (curtainContainer) generateClouds(curtainContainer);
 
     document.querySelectorAll('.farm-prop, .space-prop').forEach((prop) => {
         prop.addEventListener('pointerdown', () => {
@@ -39,9 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = carousel ? [...carousel.querySelectorAll('[data-slide]')] : [];
     const previousButton = carousel?.querySelector('[data-carousel-button="prev"]');
     const nextButton = carousel?.querySelector('[data-carousel-button="next"]');
-    const heroKicker = document.querySelector('.hero-kicker');
-    const heroTitle = document.querySelector('.hero-copy h1');
-    const heroSubtitle = document.querySelector('.hero-subtitle');
     const carouselCaption = document.querySelector('.carousel-caption span:nth-child(2)');
     let currentSlide = 0;
     let touchStartX = null;
@@ -49,24 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const slideThemes = [
         {
             theme: 'ranch',
-            kicker: 'AUSTIN KIDS EVENTS',
-            title: 'Create magical memories',
-            subtitle: 'Unforgettable parties and events for kids in Austin',
-            caption: 'Certified play areas for celebrating big'
+            caption: 'Texas Ranch'
         },
         {
             theme: 'space',
-            kicker: 'SPACE EXPLORERS',
-            title: 'Explore new galaxies',
-            subtitle: 'A space mission filled with play and discovery',
-            caption: 'Blast off into a celebration out of this world'
+            caption: 'Space Explorers'
         },
         {
             theme: 'city',
-            kicker: 'MINI CITY',
-            title: 'Make every adventure count',
-            subtitle: 'A little city made for big imaginations',
-            caption: 'Drive, discover and create your own story'
+            caption: 'Mini City'
         }
     ];
 
@@ -81,9 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = slideThemes[currentSlide];
         document.body.setAttribute('data-theme', content.theme);
 
-        if (heroKicker) heroKicker.textContent = content.kicker;
-        if (heroTitle) heroTitle.textContent = content.title;
-        if (heroSubtitle) heroSubtitle.textContent = content.subtitle;
         if (carouselCaption) carouselCaption.textContent = content.caption;
     }
 
@@ -122,9 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
         setTimeout(() => {
             preloader.classList.add('open-curtain');
-            preloader.classList.add('show-logo');
-            setTimeout(() => preloader.classList.add('fade-out'), 2000);
-            setTimeout(() => preloader.remove(), 3500);
+            setTimeout(() => preloader.classList.add('show-logo'), 700);
+            setTimeout(() => preloader.classList.add('fade-out'), 3000);
+            setTimeout(() => preloader.remove(), 4300);
         }, 500);
     });
 });

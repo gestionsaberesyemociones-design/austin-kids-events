@@ -5,6 +5,8 @@
 function initializeRentalCards() {
     const cards = document.querySelectorAll('[data-rental-card]');
     let activeSound = null;
+    let lastSoundTouch = 0;
+    let navigationTimer = null;
 
     cards.forEach(card => {
         const button = card.querySelector('.rental-cta');
@@ -13,17 +15,20 @@ function initializeRentalCards() {
 
         const activateCard = () => {
             card.classList.add('is-active');
+        };
 
-            if (buttonSound) {
-                if (activeSound && activeSound !== buttonSound) {
-                    activeSound.pause();
-                    activeSound.currentTime = 0;
-                }
-
-                activeSound = buttonSound;
-                buttonSound.currentTime = 0;
-                buttonSound.play().catch(() => {});
+        const playButtonSound = () => {
+            if (!buttonSound) return;
+            const now = Date.now();
+            if (now - lastSoundTouch < 350) return;
+            lastSoundTouch = now;
+            if (activeSound && activeSound !== buttonSound) {
+                activeSound.pause();
+                activeSound.currentTime = 0;
             }
+            activeSound = buttonSound;
+            buttonSound.currentTime = 0;
+            buttonSound.play().catch(() => {});
         };
 
         card.addEventListener('mouseenter', activateCard);
@@ -44,10 +49,13 @@ function initializeRentalCards() {
         });
 
         button?.addEventListener('click', (event) => {
-            if (!card.classList.contains('is-active')) {
-                event.preventDefault();
-                activateCard();
-            }
+            event.preventDefault();
+            playButtonSound();
+
+            if (navigationTimer) return;
+            navigationTimer = window.setTimeout(() => {
+                window.location.href = button.href;
+            }, 700);
         });
 
     });

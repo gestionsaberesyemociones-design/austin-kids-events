@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+
 /* ==========================================================================
    AUSTIN KIDS EVENTS - ESTILOS PRINCIPALES (STYLES.CSS)
    ========================================================================== */
@@ -12,7 +14,7 @@
 body, html {
     width: 100%;
     min-height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Fredoka', sans-serif;
     background-color: #f8fafc;
     color: #0A2540;
     overflow-x: hidden;
@@ -58,7 +60,7 @@ body, html {
    3. LAYOUT PRINCIPAL (Contenedor central del Banner y Botones)
    ========================================================================== */
 .site-main {
-    width: 100%;
+    width: auto;
     min-height: calc(100vh - 158px);
     display: flex;
     align-items: center;
@@ -81,31 +83,50 @@ body, html {
 
 .hero-copy {
     position: absolute;
-    top: clamp(-122px, -8vw, -70px);
-    left: 8%;
-    right: 8%;
+    top: clamp(-34px, -1vw, 0px);
+    left: 0;
+    right: 0;
+    width: auto;
+    margin-inline: auto;
     z-index: 3;
     text-align: center;
     color: #ffffff;
-    text-shadow: 0 3px 8px rgba(10, 37, 64, 0.3);
+    text-shadow: 0 2px 0 rgba(10, 37, 64, 0.7), 0 4px 12px rgba(10, 37, 64, 0.55);
     animation: hero-copy-enter 0.8s ease both;
 }
 
-.hero-kicker {
-    margin-bottom: 4px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    color: #ffe36e;
-}
-
 .hero-copy h1 {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: 'Fredoka', sans-serif;
     max-width: 1000px;
     margin: 0 auto;
-    font-size: clamp(1.8rem, 3.6vw, 3.6rem);
+    font-size: 2.6rem;
     line-height: 1.08;
+    font-weight: 800;
     text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.title-letter { color: inherit; }
+
+body[data-theme="ranch"] .hero-copy h1,
+body[data-theme="city"] .hero-copy h1 {
+    color: #0A2540;
+    text-shadow: 0 3px 0 rgba(255, 255, 255, 0.78), 0 7px 16px rgba(10, 37, 64, 0.18);
+}
+
+body[data-theme="space"] .hero-copy h1 {
+    color: #F8FAFC;
+    text-shadow: 0 4px 14px rgba(82, 183, 154, 0.35);
+}
+
+body[data-theme="ranch"] .hero-copy {
+    color: #0A2540;
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.78), 0 4px 12px rgba(10, 37, 64, 0.16);
+}
+
+body[data-theme="ranch"] .hero-subtitle,
+body[data-theme="ranch"] .hero-description {
+    color: #0A2540;
 }
 
 .hero-subtitle {
@@ -113,7 +134,17 @@ body, html {
     max-width: 680px;
     font-size: clamp(0.78rem, 1.35vw, 1.15rem);
     line-height: 1.25;
-    font-weight: 700;
+    font-weight: 400;
+    text-wrap: balance;
+}
+
+.hero-description {
+    max-width: 760px;
+    margin: 12px auto 0;
+    font-size: clamp(0.76rem, 1.05vw, 0.98rem);
+    line-height: 1.35;
+    font-weight: 400;
+    text-wrap: balance;
 }
 
 .hero-backdrop-decor {
@@ -209,13 +240,18 @@ body, html {
 .hero-carousel-section {
     width: 100%;
     max-width: 1080px;
+    min-width: 0;
     position: relative;
+    margin-top: 115px;
+    margin-inline: auto;
     z-index: 2;
 }
 
 .carousel-container {
     position: relative;
     width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     background: #ffffff;
     border-radius: 28px;
     padding: 20px;
@@ -457,13 +493,16 @@ body, html {
 
     .hero-copy {
         position: relative;
+        width: auto;
+        margin-inline: 0;
         grid-column: 1 / -1;
         grid-row: 1;
         top: auto;
         margin: 0 0 2px;
     }
 
-    .hero-copy h1 { font-size: clamp(1.45rem, 7vw, 2rem); }
+    .hero-copy { left: 0; right: 0; text-align: center; }
+    .hero-copy h1 { max-width: 340px; margin-inline: auto; font-size: clamp(1.75rem, 8.5vw, 2.35rem); line-height: 1.05; }
     .hero-subtitle { max-width: 300px; font-size: 0.78rem; }
 
     .hero-showcase-container::before {
@@ -480,6 +519,9 @@ body, html {
         grid-row: 2;
         z-index: 2;
         width: 100%;
+        margin-top: 0;
+        justify-self: center;
+        margin-inline: auto;
     }
 
     .hero-backdrop-decor {
@@ -544,4 +586,46 @@ body, html {
 
 body[data-theme="city"] {
     background: #9EC5E6;
+}
+
+h1, h2, h3, .card-title-overlay, .rental-cta {
+    font-family: 'Fredoka', sans-serif;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    padding: 10px 16px;
+    border: 2px solid #ffffff;
+    border-radius: 999px;
+    background: #0A2540;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 6px 0 rgba(10, 37, 64, 0.16), 0 10px 20px rgba(10, 37, 64, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-link:hover {
+    transform: translateY(-3px);
+    background: #FFB400;
+    color: #0A2540;
+}
+
+.services-back-link {
+    position: absolute;
+    top: 1.5rem;
+    left: max(1rem, calc((100% - 1180px) / 2));
+    margin-bottom: 0;
+    z-index: 5;
+}
+
+.contact-back-link {
+    position: relative;
+    z-index: 3;
+    background: #9EC5E6;
+    color: #0A2540;
 }

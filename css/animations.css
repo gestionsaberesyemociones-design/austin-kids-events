@@ -18,14 +18,14 @@ body, html { margin: 0; padding: 0; overflow-x: hidden; }
     position: absolute;
     inset: 0;
     display: flex;
-    z-index: 5;
+    z-index: 12;
 }
 
 .curtain-half {
     width: 50%;
     height: 100%;
-    background-color: #ffffff;
-    transition: transform 2.2s cubic-bezier(0.25, 1, 0.5, 1);
+    background-color: transparent;
+    pointer-events: none;
 }
 
 /* Animación de apertura */
@@ -37,7 +37,18 @@ body, html { margin: 0; padding: 0; overflow-x: hidden; }
     background-image: url('../assets/brand/clouds.png');
     background-size: contain;
     background-repeat: no-repeat;
-    z-index: 6;
+    z-index: 12;
+    opacity: 1;
+    animation-fill-mode: both;
+}
+
+.preloader.open-curtain .curtain-cloud {
+    animation: cloud-clear 2.8s cubic-bezier(0.25, 1, 0.5, 1) var(--cloud-delay) forwards;
+}
+
+@keyframes cloud-clear {
+    from { opacity: 1; transform: translate(0, 0) scale(1); }
+    to { opacity: 0; transform: translate(var(--cloud-x), var(--cloud-y)) scale(0.78); }
 }
 
 /* Logo */
@@ -46,7 +57,7 @@ body, html { margin: 0; padding: 0; overflow-x: hidden; }
     width: 400px;
     opacity: 0;
     transform: scale(0.3);
-    transition: opacity 1.8s ease 0.3s, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+    transition: opacity 1.4s ease, transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .preloader.show-logo .brand-logo-loader { opacity: 1; transform: scale(1); }
 

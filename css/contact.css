@@ -35,7 +35,7 @@
 
 .contact-intro { margin-bottom: 30px; text-align: center; }
 .contact-kicker { margin-bottom: 8px; color: #FF5A60; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; }
-.contact-intro h1 { margin: 0; color: #0A2540; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; }
+.contact-intro h1 { margin: 0; color: #0A2540; font-family: 'Fredoka', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; }
 .contact-intro p:last-child { max-width: 520px; margin: 14px auto 0; color: #5F7D95; font-size: 1rem; line-height: 1.5; }
 
 .event-form { display: grid; gap: 22px; }

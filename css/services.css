@@ -33,8 +33,10 @@
    CAPA DECORATIVA Y EMOJIS FLOTANTES DINÁMICOS
    ========================================================================== */
 .services-decor-layer {
-    position: absolute;
+    position: fixed;
     inset: 0;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
@@ -142,7 +144,7 @@
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2.4rem;
     align-items: stretch;
 }
@@ -169,10 +171,18 @@
 .service-card:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(10, 37, 64, 0.26); }
 
 .card-center {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: min(100%, 540px);
+    width: 100%;
 }
+
+.service-mini-space-card .card-title-overlay {
+    background: linear-gradient(180deg, rgba(24, 54, 92, 0.9), rgba(24, 54, 92, 0));
+}
+
+.service-mini-space-card .rental-cta { background: rgba(255, 180, 0, 0.9); color: #0A2540; }
+
+.rental-mini-ship { width: 52%; right: -58%; bottom: 8%; transform: scaleX(-1); }
+
+.service-card.is-active .rental-mini-ship { animation-name: rental-ship-enter; }
 
 .card-image-container {
     position: relative;
@@ -207,7 +217,7 @@
     border-radius: 0;
     background: linear-gradient(180deg, rgba(10, 37, 64, 0.86), rgba(10, 37, 64, 0));
     color: #ffffff;
-    font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+    font-size: 1.2rem;
     font-weight: 800;
     line-height: 1.15;
     text-align: center;
@@ -453,7 +463,20 @@
 /* ==========================================================================
    RESPONSIVO
    ========================================================================== */
+@media (max-width: 1100px) {
+    .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 @media (max-width: 768px) {
+    .services-main { display: block; }
+    .services-back-link {
+        position: relative;
+        top: auto;
+        left: auto;
+        display: flex;
+        width: max-content;
+        margin: 0 auto 1.5rem;
+    }
     .services-grid { grid-template-columns: 1fr; }
     .card-center { width: 100%; grid-column: auto; }
 }
@@ -630,7 +653,7 @@
     .services-city-art .city-car-five { width: 58px; }
     .service-card { border-radius: 22px; }
     .card-image-container { height: clamp(230px, 68vw, 330px) !important; min-height: 230px; }
-    .card-title-overlay { padding: 13px 12px 22px; }
+    .card-title-overlay { padding: 13px 12px 22px; font-size: 1.05rem; }
     .rental-vehicle { width: 52%; }
     .rental-cta { padding: 18px; }
 }

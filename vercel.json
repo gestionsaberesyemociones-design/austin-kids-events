@@ -1,6 +1,11 @@
 {
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/servicios", "destination": "/servicios.html" },
-    { "source": "/contacto", "destination": "/contacto.html" }
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/contact-us", "destination": "/contact-us.html" },
+    { "source": "/service-ranch", "destination": "/service-ranch.html" },
+    { "source": "/service-space", "destination": "/service-space.html" },
+    { "source": "/service-city", "destination": "/service-city.html" },
+    { "source": "/service-mini-space", "destination": "/service-mini-space.html" }
   ]
 }
