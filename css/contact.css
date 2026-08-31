@@ -17,8 +17,58 @@
 .contact-main {
     position: relative;
     min-height: calc(100vh - 138px);
-    padding: 56px 18px 84px;
+    padding: 36px 18px 84px;
     overflow: hidden;
+}
+
+.top-nav-bar {
+    width: min(760px, 100%);
+    margin: 0 auto 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    position: relative;
+    z-index: 10;
+}
+
+.contact-tabs-toggle {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 5px;
+    border-radius: 999px;
+    border: 2px solid #9EC5E6;
+    box-shadow: 0 8px 24px rgba(10, 37, 64, 0.08);
+    gap: 4px;
+}
+
+.tab-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 800;
+    color: #5F7D95;
+    transition: all 0.25s ease;
+}
+
+.tab-pill:hover {
+    color: #0A2540;
+    background: rgba(158, 197, 230, 0.2);
+}
+
+.tab-pill.active {
+    background: #FF5A60;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 90, 96, 0.35);
+}
+
+.tab-icon {
+    font-size: 1.1em;
 }
 
 .contact-panel {
@@ -56,7 +106,126 @@
 .check-option input { width: 18px; height: 18px; accent-color: #FF5A60; }
 
 .form-submit { justify-self: center; display: inline-flex; align-items: center; gap: 16px; min-height: 52px; padding: 13px 22px; border: 0; border-radius: 999px; background: #FF5A60; color: #ffffff; font: inherit; font-weight: 800; cursor: pointer; box-shadow: 0 6px 0 rgba(10, 37, 64, 0.18); transition: transform 0.2s ease, background-color 0.2s ease; }
-.form-submit:hover { transform: translateY(-2px); background: #0A2540; }
+.form-submit:hover:not(:disabled) { transform: translateY(-2px); background: #0A2540; }
+.form-submit:disabled { opacity: 0.75; cursor: not-allowed; }
+
+/* Tarjeta de Confirmación / Éxito */
+.form-success-card {
+    text-align: center;
+    padding: 10px 0;
+    animation: fadeInScale 0.45s ease forwards;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.94); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.success-icon {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+    animation: bounceIcon 1s ease infinite alternate;
+}
+
+@keyframes bounceIcon {
+    from { transform: translateY(0); }
+    to { transform: translateY(-6px); }
+}
+
+.form-success-card h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: #0A2540;
+    margin-bottom: 8px;
+}
+
+.success-lead {
+    font-size: 1.1rem;
+    color: #5F7D95;
+    margin-bottom: 24px;
+}
+
+.success-lead strong {
+    color: #0A2540;
+}
+
+.success-summary-box {
+    background: #f8fcff;
+    border: 2px dashed #9EC5E6;
+    border-radius: 16px;
+    padding: 18px 24px;
+    max-width: 480px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.92rem;
+}
+
+.summary-label {
+    color: #5F7D95;
+    font-weight: 700;
+}
+
+.summary-item strong {
+    color: #0A2540;
+    font-weight: 800;
+}
+
+.success-note {
+    max-width: 500px;
+    margin: 0 auto 24px;
+    font-size: 0.92rem;
+    color: #5F7D95;
+    line-height: 1.5;
+}
+
+.success-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.success-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    background: #25D366;
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.success-wa-btn:hover {
+    transform: translateY(-2px);
+}
+
+.success-reset-btn {
+    background: transparent;
+    border: none;
+    color: #5F7D95;
+    font-family: inherit;
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.success-reset-btn:hover {
+    color: #0A2540;
+}
 
 .contact-cloud { position: absolute; z-index: 1; width: 190px; height: 110px; background: url('../assets/setups/texas ranch/VECTORES/clouds.png') center / contain no-repeat; opacity: 0.72; }
 .contact-cloud-one { top: 8%; left: -35px; }

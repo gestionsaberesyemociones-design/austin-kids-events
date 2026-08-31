@@ -17,7 +17,17 @@
   </header>
 
   <main class="contact-main">
-    <a class="back-link contact-back-link" href="/">&larr; Back to home</a>
+    <div class="top-nav-bar">
+      <a class="back-link contact-back-link" href="/">&larr; Back to home</a>
+      <div class="contact-tabs-toggle" role="navigation" aria-label="Contact options">
+        <a href="/directory" class="tab-pill">
+          <span class="tab-icon">⭐</span> Directory &amp; Story
+        </a>
+        <a href="/contact-us" class="tab-pill active" aria-current="page">
+          <span class="tab-icon">📋</span> Request a Quote
+        </a>
+      </div>
+    </div>
     <div class="contact-cloud contact-cloud-one" aria-hidden="true"></div>
     <div class="contact-cloud contact-cloud-two" aria-hidden="true"></div>
     <section class="contact-panel" aria-labelledby="contact-title">
@@ -27,37 +37,42 @@
         <p>Tell us about your celebration and we’ll help you choose the perfect setup.</p>
       </div>
 
-      <form class="event-form" action="#" method="post">
+      <form id="quoteForm" class="event-form" action="https://formsubmit.co/ajax/hello@austinkidsevents.com" method="POST">
+        <!-- Anti-spam Honeypot -->
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="🎉 New Quote Request - Austin Kids Events">
+
         <div class="form-grid form-grid-two">
           <label class="form-field">
             <span>First name</span>
-            <input type="text" name="firstName" autocomplete="given-name" required>
+            <input type="text" name="First Name" autocomplete="given-name" required>
           </label>
           <label class="form-field">
             <span>Last name</span>
-            <input type="text" name="lastName" autocomplete="family-name" required>
+            <input type="text" name="Last Name" autocomplete="family-name" required>
           </label>
         </div>
 
         <div class="form-grid form-grid-two">
           <label class="form-field">
             <span>Phone number</span>
-            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required>
+            <input type="tel" name="Phone Number" autocomplete="tel" inputmode="tel" placeholder="(512) 000-0000" required>
           </label>
           <label class="form-field">
             <span>Email address</span>
-            <input type="email" name="email" autocomplete="email" required>
+            <input type="email" name="Email Address" autocomplete="email" placeholder="example@gmail.com" required>
           </label>
         </div>
 
         <div class="form-grid form-grid-two">
           <label class="form-field">
             <span>Event ZIP code</span>
-            <input type="text" name="zipCode" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required>
+            <input type="text" name="Event ZIP Code" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="78701" required>
           </label>
           <label class="form-field">
             <span>Event date</span>
-            <input type="date" name="eventDate" aria-describedby="date-help" required>
+            <input type="date" name="Event Date" aria-describedby="date-help" required>
             <small id="date-help">Choose a date from the calendar.</small>
           </label>
         </div>
@@ -66,33 +81,57 @@
           <legend>Where will the celebration take place?</legend>
           <div class="check-grid">
             <label class="check-option">
-              <input type="checkbox" name="location" value="private-home">
+              <input type="radio" name="Event Location" value="Private home" checked>
               <span>Private home</span>
             </label>
             <label class="check-option">
-              <input type="checkbox" name="location" value="park">
+              <input type="radio" name="Event Location" value="Park">
               <span>Park</span>
             </label>
             <label class="check-option">
-              <input type="checkbox" name="location" value="venue">
-              <span>Venue</span>
+              <input type="radio" name="Event Location" value="Venue">
+              <span>Venue / Hall</span>
             </label>
           </div>
         </fieldset>
 
         <label class="form-field">
           <span>Which setup would you like a quote for?</span>
-          <select name="setup" required>
+          <select name="Setup Requested" required>
             <option value="" selected disabled>Select a setup</option>
-            <option value="texas-ranch">Texas Ranch</option>
-            <option value="space-explorers">Space Explorers</option>
-            <option value="baby-space-explorers">Baby Space Explorers</option>
-            <option value="mini-city">Mini City</option>
+            <option value="Texas Ranch">Texas Ranch</option>
+            <option value="Space Explorers">Space Explorers</option>
+            <option value="Baby Space Explorers">Baby Space Explorers</option>
+            <option value="Mini City">Mini City</option>
           </select>
         </label>
 
-        <button class="form-submit" type="submit">Request a quote <span aria-hidden="true">→</span></button>
+        <button id="formSubmitBtn" class="form-submit" type="submit">
+          <span class="btn-text">Request a quote</span> <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
       </form>
+
+      <!-- MENSAJE DE ÉXITO TRAS ENVIAR -->
+      <div id="formSuccessMessage" class="form-success-card" style="display: none;" aria-live="polite">
+        <div class="success-icon">🎉</div>
+        <h2>Request Received!</h2>
+        <p class="success-lead">Thank you, <strong id="successCustomerName">there</strong>! We’ve received your celebration details.</p>
+        
+        <div class="success-summary-box">
+          <div class="summary-item"><span class="summary-label">Setup:</span> <strong id="successSetup">Texas Ranch</strong></div>
+          <div class="summary-item"><span class="summary-label">Date:</span> <strong id="successDate">2026-09-01</strong></div>
+          <div class="summary-item"><span class="summary-label">Location:</span> <strong id="successLocation">Private home</strong></div>
+        </div>
+
+        <p class="success-note">We will review your party venue and date, and reply directly to your email with a personalized quote within 24 hours.</p>
+
+        <div class="success-actions">
+          <a href="https://wa.me/15125550199?text=Hi%20Austin%20Kids%20Events!%20I%20just%20submitted%20a%20quote%20request%20on%20your%20website." target="_blank" rel="noopener noreferrer" class="success-wa-btn">
+            <span>💬 Message us on WhatsApp</span>
+          </a>
+          <button id="btnSendAnother" class="success-reset-btn" type="button">Send another request</button>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -104,5 +143,6 @@
     <span class="color-segment color-5"></span>
   </div>
 
+  <script src="js/contact.js" defer></script>
 </body>
 </html>
