@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/png" href="assets/brand/AUSTIN%20KE%20LOGO-2.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Texas Ranch - Austin Kids Events</title>
@@ -13,6 +14,11 @@
             <a href="/" aria-label="Austin Kids Events - Inicio">
                 <img src="assets/brand/AUSTIN KE LOGO-1.png" alt="Austin Kids Events" class="site-logo">
             </a>
+
+            <div class="header-lang-switch" aria-label="Language selector">
+                <button type="button" class="lang-option is-active" data-lang="es" aria-label="Cambiar a español" aria-pressed="true">ES</button>
+                <button type="button" class="lang-option" data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+            </div>
         </div>
     </header>
 
@@ -29,21 +35,19 @@
             <img src="assets/setups/texas ranch/VECTORES/vaca1.png" alt="" class="detail-prop ranch-cow-one">
             <img src="assets/setups/texas ranch/VECTORES/vaca2.png" alt="" class="detail-prop ranch-cow-two">
         </div>
-        <a class="back-link" href="/services">&larr; View all setups</a>
+        <a class="back-link" href="/services" data-i18n="ranchBack">&larr; View all setups</a>
         <section class="detail-hero" aria-labelledby="service-title">
             <div class="detail-carousel" data-carousel>
                 <div class="carousel-window">
                     <div class="carousel-track">
-                        <figure class="detail-slide is-active"><img src="assets/setups/texas%20ranch/images/1786072513496.jpg" alt="Montaje Texas Ranch"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/1786072513511.jpg" alt="Montaje Texas Ranch"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/1786072513561.jpg" alt="Montaje Texas Ranch"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/1786072513583.jpg" alt="Montaje Texas Ranch"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/1786072513597.jpg" alt="Montaje Texas Ranch"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/1786072513613.jpg" alt="Montaje Texas Ranch"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/1786072513626.jpg" alt="Montaje Texas Ranch"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/1786072513653.jpg" alt="Montaje Texas Ranch"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/1786072513670.jpg" alt="Montaje Texas Ranch"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/1786072513692.jpg" alt="Montaje Texas Ranch"></figure>
+                        <figure class="detail-slide is-active"><img src="assets/setups/texas%20ranch/images/principal.jpeg" alt="Texas Ranch principal"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/12-img.png" alt="Texas Ranch play setup"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/13%20img%202h.jpg.jpeg" alt="Texas Ranch play area"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/14-img.png" alt="Texas Ranch details"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/15%20rhcx.jpg.jpeg" alt="Texas Ranch activity setup"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/16-img.png" alt="Texas Ranch setup view"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/17-img.png" alt="Texas Ranch toys and props"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/texas%20ranch/images/1786072513933.jpg" alt="Texas Ranch full setup"></figure>
                     </div>
                 </div>
                 <button class="detail-arrow previous" type="button" aria-label="Foto anterior">&#10094;</button>
@@ -51,23 +55,29 @@
                 <div class="carousel-dots" aria-label="Seleccionar foto"></div>
             </div>
             <div class="detail-intro">
-                <span class="detail-kicker">Set de juegos</span>
+                <span class="detail-kicker" data-i18n="ranchKicker">Set de juegos</span>
                 <h1 id="service-title">Texas Ranch</h1>
-                <p class="detail-lead">Una aventura campirana para que los pequenos jueguen, exploren y disfruten una fiesta con mucha personalidad.</p>
-                <a class="detail-cta" href="/contact-us?setup=texas-ranch">Quiero este set <span>&rarr;</span></a>
+                <p class="detail-lead" data-i18n="ranchLead">Una aventura campirana para que los pequenos jueguen, exploren y disfruten una fiesta con mucha personalidad.</p>
+                <a class="party-pill-btn btn-ranch" href="/contact-us?setup=texas-ranch">
+                    <span class="party-btn-icon" aria-hidden="true">🤠</span>
+                    <span class="party-btn-text">
+                        <span class="party-btn-line">BRING IT TO</span>
+                        <span class="party-btn-line">MY PARTY &rarr;</span>
+                    </span>
+                </a>
             </div>
         </section>
 
         <section class="detail-info" aria-labelledby="info-title">
             <div>
-                <span class="detail-kicker">La experiencia</span>
-                <h2 id="info-title">Diversion con sabor a rancho</h2>
-                <p>Cerco perimetral, animales inflables, alfombra de cesped artificial y decoracion tematica campirana para transformar tu evento en un pequeno rancho.</p>
+                <span class="detail-kicker" data-i18n="detailExperience">La experiencia</span>
+                <h2 id="info-title" data-i18n="ranchInfoTitle">Diversion con sabor a rancho</h2>
+                <p data-i18n="ranchInfoText">Cerco perimetral, animales inflables, alfombra de cesped artificial y decoracion tematica campirana para transformar tu evento en un pequeno rancho.</p>
             </div>
             <dl class="spec-list">
-                <div><dt>Precio desde</dt><dd>$350</dd></div>
-                <div><dt>Ideal para</dt><dd>Fiestas infantiles</dd></div>
-                <div><dt>Tematica</dt><dd>Rancho texano</dd></div>
+                <div><dt data-i18n="ranchSpecPrice">Precio desde</dt><dd>$350</dd></div>
+                <div><dt data-i18n="ranchSpecIdeal">Ideal para</dt><dd>Fiestas infantiles</dd></div>
+                <div><dt data-i18n="ranchSpecTheme">Tematica</dt><dd>Rancho texano</dd></div>
             </dl>
         </section>
     </main>
@@ -80,5 +90,6 @@
         <span class="color-segment color-5"></span>
     </div>
     <script src="js/service-detail.js"></script>
+    <script src="js/lang-switch.js" defer></script>
 </body>
 </html>

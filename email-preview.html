@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="assets/brand/AUSTIN%20KE%20LOGO-2.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Previa del Correo Oficial - Austin Kids Events</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 40px 15px; 
+            background-color: #e2e8f0; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            -webkit-font-smoothing: antialiased; 
+        }
+        .preview-banner {
+            max-width: 600px;
+            margin: 0 auto 16px;
+            background: #0A2540;
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 13px;
+            text-align: center;
+            font-weight: 700;
+        }
+        .wrapper { 
+            width: 100%; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background-color: #ffffff; 
+            border-radius: 22px; 
+            overflow: hidden; 
+            box-shadow: 0 16px 45px rgba(10,37,64,0.14); 
+            border: 2px solid #cbd5e1; 
+        }
+        .header { 
+            background: #ffffff; 
+            padding: 28px 24px 20px; 
+            text-align: center; 
+            color: #0A2540; 
+        }
+        .header img {
+            height: 85px;
+            width: auto;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        .header h1 { 
+            margin: 0; 
+            font-size: 21px; 
+            font-weight: 800; 
+            color: #0A2540; 
+            letter-spacing: 0.05em; 
+            text-transform: uppercase;
+        }
+        .header p { 
+            margin: 4px 0 0; 
+            color: #5F7D95; 
+            font-size: 14px; 
+            font-weight: 600;
+        }
+        .color-bar { 
+            display: flex; 
+            height: 6px; 
+            width: 100%; 
+        }
+        .c-1 { background-color: #0A2540; width: 20%; }
+        .c-2 { background-color: #52B79A; width: 20%; }
+        .c-3 { background-color: #FF5A60; width: 20%; }
+        .c-4 { background-color: #FFB400; width: 20%; }
+        .c-5 { background-color: #9EC5E6; width: 20%; }
+        
+        .content { 
+            padding: 34px 30px; 
+            color: #0A2540; 
+        }
+        .intro-box { 
+            background-color: #f0fdf4; 
+            border: 1.5px solid #bbf7d0; 
+            border-left: 5px solid #52B79A; 
+            padding: 16px 20px; 
+            border-radius: 0 12px 12px 0; 
+            margin-bottom: 26px; 
+            font-size: 15px; 
+            line-height: 1.5; 
+            color: #0A2540; 
+        }
+        .table-wrap { 
+            width: 100%; 
+            border-collapse: separate; 
+            border-spacing: 0; 
+            border-radius: 14px; 
+            overflow: hidden; 
+            border: 1.5px solid #e2e8f0; 
+            margin-bottom: 28px; 
+        }
+        .table-wrap tr:nth-child(even) { 
+            background-color: #f8fafc; 
+        }
+        .table-wrap td { 
+            padding: 15px 18px; 
+            font-size: 14px; 
+            border-bottom: 1px solid #e2e8f0; 
+        }
+        .table-wrap tr:last-child td { 
+            border-bottom: none; 
+        }
+        .label-col { 
+            font-weight: 800; 
+            color: #5F7D95; 
+            width: 38%; 
+            text-transform: uppercase; 
+            font-size: 11.5px; 
+            letter-spacing: 0.08em; 
+        }
+        .val-col { 
+            font-weight: 700; 
+            color: #0A2540; 
+            font-size: 14.5px;
+        }
+        .badge-setup { 
+            display: inline-block; 
+            background-color: #FF5A60; 
+            color: #ffffff; 
+            padding: 5px 14px; 
+            border-radius: 999px; 
+            font-weight: 800; 
+            font-size: 13px; 
+            letter-spacing: 0.02em;
+        }
+        .actions-box { 
+            text-align: center; 
+            padding: 24px; 
+            background-color: #f8fcff; 
+            border: 2px dashed #9EC5E6;
+            border-radius: 16px; 
+            margin-top: 10px; 
+        }
+        .btn-reply { 
+            display: inline-block; 
+            background-color: #0A2540; 
+            color: #ffffff !important; 
+            text-decoration: none; 
+            padding: 13px 26px; 
+            border-radius: 999px; 
+            font-weight: 800; 
+            font-size: 14px; 
+            margin: 6px; 
+            box-shadow: 0 4px 12px rgba(10,37,64,0.2);
+        }
+        .btn-wa { 
+            display: inline-block; 
+            background-color: #25D366; 
+            color: #ffffff !important; 
+            text-decoration: none; 
+            padding: 13px 26px; 
+            border-radius: 999px; 
+            font-weight: 800; 
+            font-size: 14px; 
+            margin: 6px; 
+            box-shadow: 0 4px 12px rgba(37,211,102,0.25);
+        }
+        .footer { 
+            padding: 22px; 
+            text-align: center; 
+            font-size: 12px; 
+            color: #94A3B8; 
+            background-color: #f8fafc; 
+            border-top: 1px solid #e2e8f0; 
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="preview-banner">
+        ✨ VISTA PREVIA: Así llega el correo real enviado desde tu servidor Namecheap (send-email.php)
+    </div>
+
+    <div class="wrapper">
+        <!-- Cabecera -->
+        <div class="header">
+            <img src="assets/brand/AUSTIN KE LOGO-1.png" alt="Austin Kids Events Logo">
+            <h1>Austin Kids Events</h1>
+            <p>Nueva Solicitud de Cotización Recibida</p>
+        </div>
+
+        <!-- Barra de colores de marca -->
+        <div class="color-bar">
+            <div class="c-1"></div>
+            <div class="c-2"></div>
+            <div class="c-3"></div>
+            <div class="c-4"></div>
+            <div class="c-5"></div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <div class="intro-box">
+                🎈 ¡Tienes una nueva solicitud de cotización desde el sitio web de <strong>Austin Kids Events</strong>!
+            </div>
+
+            <!-- Tabla de datos ordenados -->
+            <table class="table-wrap">
+                <tr>
+                    <td class="label-col">Cliente</td>
+                    <td class="val-col">Erna Vasquez</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Setup Solicitado</td>
+                    <td class="val-col"><span class="badge-setup">Baby Space Explorers</span></td>
+                </tr>
+                <tr>
+                    <td class="label-col">Fecha del Evento</td>
+                    <td class="val-col">📅 2026-09-05</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Código Postal (ZIP)</td>
+                    <td class="val-col">📍 78251</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Lugar de la Fiesta</td>
+                    <td class="val-col">🎪 Venue / Hall</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Teléfono</td>
+                    <td class="val-col">
+                        <a href="tel:(111) 111-1111" style="color: #0A2540; text-decoration: none; font-weight: 800;">📞 (111) 111-1111</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-col">Correo Electrónico</td>
+                    <td class="val-col">
+                        <a href="mailto:erna@gmail.com" style="color: #52B79A; text-decoration: none; font-weight: 800;">✉️ erna@gmail.com</a>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Acciones rápidas -->
+            <div class="actions-box">
+                <p style="margin: 0 0 12px; font-size: 13px; color: #5F7D95; font-weight: 800; text-transform: uppercase;">ACCIONES DIRECTAS CON EL CLIENTE:</p>
+                <a href="mailto:erna@gmail.com?subject=Respuesta%20a%20tu%20cotización%20-%20Austin%20Kids%20Events" class="btn-reply">✉️ Responder por Correo</a>
+            </div>
+        </div>
+
+        <!-- Pie de página -->
+        <div class="footer">
+            Enviado automáticamente desde el formulario web de <strong>Austin Kids Events</strong>.<br>
+            Hosting: Namecheap Server • Austin, TX
+        </div>
+    </div>
+
+</body>
+</html>
+

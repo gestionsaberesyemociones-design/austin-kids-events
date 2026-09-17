@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/png" href="assets/brand/AUSTIN%20KE%20LOGO-2.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini City - Austin Kids Events</title>
@@ -13,6 +14,11 @@
             <a href="/" aria-label="Austin Kids Events - Inicio">
                 <img src="assets/brand/AUSTIN KE LOGO-1.png" alt="Austin Kids Events" class="site-logo">
             </a>
+
+            <div class="header-lang-switch" aria-label="Language selector">
+                <button type="button" class="lang-option is-active" data-lang="es" aria-label="Cambiar a español" aria-pressed="true">ES</button>
+                <button type="button" class="lang-option" data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+            </div>
         </div>
     </header>
 
@@ -30,21 +36,22 @@
             <img src="assets/setups/mini city/VECTORES/CARRO4.png" alt="" class="detail-prop city-car-four">
             <img src="assets/setups/mini city/VECTORES/CARRO5.png" alt="" class="detail-prop city-car-five">
         </div>
-        <a class="back-link" href="/services">&larr; View all setups</a>
+        <a class="back-link" href="/services" data-i18n="cityBack">&larr; View all setups</a>
         <section class="detail-hero" aria-labelledby="service-title">
             <div class="detail-carousel" data-carousel>
                 <div class="carousel-window">
                     <div class="carousel-track">
-                        <figure class="detail-slide is-active"><img src="assets/setups/mini%20city/images/1778099414191.jpg" alt="Montaje Mini City"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/1778099414198.jpg" alt="Montaje Mini City"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/1778099414204.jpg" alt="Montaje Mini City"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/1778099414248.jpg" alt="Montaje Mini City"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/1778099414319.jpg" alt="Montaje Mini City"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/1778099414330.jpg" alt="Montaje Mini City"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/1778099414347.jpg" alt="Montaje Mini City"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/IMG_20260804_192033.jpg" alt="Montaje Mini City"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/IMG_20260804_192312.jpg" alt="Montaje Mini City"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/IMG_20260804_193827.jpg" alt="Montaje Mini City"></figure>
+                        <figure class="detail-slide is-active"><img src="assets/setups/mini%20city/images/principal.png" alt="Mini City principal"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/1%20--%20ryw2jvryw2j.jpg.jpeg" alt="Mini City cars and track"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/2-img.png" alt="Mini City cars"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/8-img.png" alt="Mini City road setup"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/9-img.png" alt="Mini City play tracks"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/10-img.png" alt="Mini City traffic signs"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/11-img.png" alt="Mini City roadway"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/18-img.png" alt="Mini City play area"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/19%20lzf.jpg.jpeg" alt="Mini City details"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/20%20qbfk.jpg.jpeg" alt="Mini City cars and accessories"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/mini%20city/images/21--img.png" alt="Mini City complete setup"></figure>
                     </div>
                 </div>
                 <button class="detail-arrow previous" type="button" aria-label="Foto anterior">&#10094;</button>
@@ -52,31 +59,37 @@
                 <div class="carousel-dots" aria-label="Seleccionar foto"></div>
             </div>
             <div class="detail-intro">
-                <span class="detail-kicker">Open-ended play setup</span>
+                <span class="detail-kicker" data-i18n="cityKicker">Open-ended play setup</span>
                 <h1 id="service-title">Mini City</h1>
-                <p class="detail-lead">Mini City gives young children their own little world to drive through, explore and turn into whatever story they want to create.</p>
-                <a class="detail-cta" href="/contact-us?setup=mini-city">Build their city <span>&rarr;</span></a>
+                <p class="detail-lead" data-i18n="cityLead">Mini City gives young children their own little world to drive through, explore and turn into whatever story they want to create.</p>
+                <a class="party-pill-btn btn-city" href="/contact-us?setup=mini-city">
+                    <span class="party-btn-icon" aria-hidden="true">🚗</span>
+                    <span class="party-btn-text">
+                        <span class="party-btn-line">BRING IT TO</span>
+                        <span class="party-btn-line">MY PARTY &rarr;</span>
+                    </span>
+                </a>
             </div>
         </section>
 
         <section class="city-story" aria-labelledby="info-title">
             <div class="city-story-copy">
-                <span class="detail-kicker">The city story</span>
-                <h2 id="info-title">A little world with no wrong turn.</h2>
-                <p>The setup combines foot-powered ride-on cars, kid-sized roadways, traffic signs and interactive play elements in one organized space designed for active, open-ended play. Kids can drive, stop, turn, follow the road&mdash;or completely ignore it and invent their own route.</p>
-                <p>Families can choose between different Mini City configurations, from colorful classic ride-on vehicles to a more polished collection of luxury-style cars.</p>
-                <p>Each setup is delivered and fully arranged before your event, then picked up afterward. Rentals are available for up to 12 hours, and selected activity or entertainment add-ons can be included depending on the celebration.</p>
-                <p>Available for birthdays, family gatherings and children's events throughout the Greater Austin area.</p>
+                <span class="detail-kicker" data-i18n="cityInfoTitle">The city story</span>
+                <h2 id="info-title" data-i18n="cityStoryTitle">A little world with no wrong turn.</h2>
+                <p data-i18n="cityInfoText">The setup combines foot-powered ride-on cars, kid-sized roadways, traffic signs and interactive play elements in one organized space designed for active, open-ended play. Kids can drive, stop, turn, follow the road&mdash;or completely ignore it and invent their own route.</p>
+                <p data-i18n="cityChoiceText">Families can choose between different Mini City configurations, from colorful classic ride-on vehicles to a more polished collection of luxury-style cars.</p>
+                <p data-i18n="cityDeliveryText">Each setup is delivered and fully arranged before your event, then picked up afterward. Rentals are available for up to 12 hours, and selected activity or entertainment add-ons can be included depending on the celebration.</p>
+                <p data-i18n="cityAvailabilityText">Available for birthdays, family gatherings and children's events throughout the Greater Austin area.</p>
             </div>
             <div class="city-control-panel">
-                <span class="command-panel-label">City control</span>
-                <div class="city-status"><span class="traffic-light"><i></i><i></i><i></i></span><span>ALL ROUTES OPEN</span></div>
+                <span class="command-panel-label" data-i18n="cityControlLabel">City control</span>
+                <div class="city-status"><span class="traffic-light"><i></i><i></i><i></i></span><span data-i18n="cityStatus">ALL ROUTES OPEN</span></div>
                 <dl class="spec-list">
-                    <div><dt>Starting at</dt><dd>$360</dd></div>
-                    <div><dt>Rental window</dt><dd>Up to 12 hours</dd></div>
-                    <div><dt>Play zone</dt><dd>Greater Austin</dd></div>
+                    <div><dt data-i18n="citySpecStart">Starting at</dt><dd>$360</dd></div>
+                    <div><dt data-i18n="citySpecWindow">Rental window</dt><dd>Up to 12 hours</dd></div>
+                    <div><dt data-i18n="citySpecZone">Play zone</dt><dd>Greater Austin</dd></div>
                 </dl>
-                <p class="city-signoff">And unlike I-35, traffic in Mini City is actually part of the fun! &#x1F602;</p>
+                <p class="city-signoff" data-i18n="citySignoff">And unlike I-35, traffic in Mini City is actually part of the fun! &#x1F602;</p>
             </dl>
         </section>
     </main>
@@ -89,5 +102,6 @@
         <span class="color-segment color-5"></span>
     </div>
     <script src="js/service-detail.js"></script>
+    <script src="js/lang-switch.js" defer></script>
 </body>
 </html>

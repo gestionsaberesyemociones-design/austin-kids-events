@@ -77,8 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
         renderSlide(currentSlide + step);
     }
 
-    previousButton?.addEventListener('click', () => moveSlide(-1));
-    nextButton?.addEventListener('click', () => moveSlide(1));
+    previousButton?.addEventListener('click', () => {
+        moveSlide(-1);
+    });
+    nextButton?.addEventListener('click', () => {
+        moveSlide(1);
+    });
 
     carousel?.addEventListener('pointerdown', (event) => {
         if (event.target.closest('button')) {

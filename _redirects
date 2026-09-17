@@ -1,0 +1,10 @@
+# Netlify & Cloudflare Pages Clean URLs
+/services           /services.html           200
+/contact-us         /contact-us.html         200
+/directory          /directory.html          200
+/connect            /directory.html          200
+/service-ranch      /service-ranch.html      200
+/service-space      /service-space.html      200
+/service-city       /service-city.html       200
+/service-mini-space /service-mini-space.html 200
+

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="assets/brand/AUSTIN%20KE%20LOGO-2.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Austin Kids Events</title>
@@ -13,18 +14,23 @@
       <a href="/" aria-label="Austin Kids Events - Home">
         <img src="assets/brand/AUSTIN KE LOGO-1.png" alt="Austin Kids Events" class="site-logo">
       </a>
+
+      <div class="header-lang-switch" aria-label="Language selector">
+        <button type="button" class="lang-option is-active" data-lang="es" aria-label="Cambiar a español" aria-pressed="true">ES</button>
+        <button type="button" class="lang-option" data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+      </div>
     </div>
   </header>
 
   <main class="contact-main">
     <div class="top-nav-bar">
-      <a class="back-link contact-back-link" href="/">&larr; Back to home</a>
+      <a class="back-link contact-back-link" href="/" data-i18n="contactBackHome">&larr; Back to home</a>
       <div class="contact-tabs-toggle" role="navigation" aria-label="Contact options">
         <a href="/directory" class="tab-pill">
-          <span class="tab-icon">⭐</span> Directory &amp; Story
+          <span class="tab-icon">⭐</span><span data-i18n="directoryTab">Directory &amp; Story</span>
         </a>
         <a href="/contact-us" class="tab-pill active" aria-current="page">
-          <span class="tab-icon">📋</span> Request a Quote
+          <span class="tab-icon">📋</span><span data-i18n="quoteTab">Request a Quote</span>
         </a>
       </div>
     </div>
@@ -33,8 +39,8 @@
     <section class="contact-panel" aria-labelledby="contact-title">
       <div class="contact-intro">
         <p class="contact-kicker">AUSTIN KIDS EVENTS</p>
-        <h1 id="contact-title">Let’s plan their big day</h1>
-        <p>Tell us about your celebration and we’ll help you choose the perfect setup.</p>
+        <h1 id="contact-title" data-i18n="contactTitle">Let’s plan their big day</h1>
+        <p data-i18n="contactIntro">Tell us about your celebration and we’ll help you choose the perfect setup.</p>
       </div>
 
       <form id="quoteForm" class="event-form" action="send-email.php" method="POST">
@@ -43,60 +49,60 @@
 
         <div class="form-grid form-grid-two">
           <label class="form-field">
-            <span>First name</span>
+            <span data-i18n="formFirstName">First name</span>
             <input type="text" name="First Name" autocomplete="given-name" required>
           </label>
           <label class="form-field">
-            <span>Last name</span>
+            <span data-i18n="formLastName">Last name</span>
             <input type="text" name="Last Name" autocomplete="family-name" required>
           </label>
         </div>
 
         <div class="form-grid form-grid-two">
           <label class="form-field">
-            <span>Phone number</span>
+            <span data-i18n="formPhone">Phone number</span>
             <input type="tel" name="Phone Number" autocomplete="tel" inputmode="tel" placeholder="(512) 000-0000" required>
           </label>
           <label class="form-field">
-            <span>Email address</span>
+            <span data-i18n="formEmail">Email address</span>
             <input type="email" name="Email Address" autocomplete="email" placeholder="example@gmail.com" required>
           </label>
         </div>
 
         <div class="form-grid form-grid-two">
           <label class="form-field">
-            <span>Event ZIP code</span>
+            <span data-i18n="formZip">Event ZIP code</span>
             <input type="text" name="Event ZIP Code" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="78701" required>
           </label>
           <label class="form-field">
-            <span>Event date</span>
+            <span data-i18n="formDate">Event date</span>
             <input type="date" name="Event Date" aria-describedby="date-help" required>
-            <small id="date-help">Choose a date from the calendar.</small>
+            <small id="date-help" data-i18n="formDateHelp">Choose a date from the calendar.</small>
           </label>
         </div>
 
         <fieldset class="form-group">
-          <legend>Where will the celebration take place?</legend>
+          <legend data-i18n="locationLegend">Where will the celebration take place?</legend>
           <div class="check-grid">
             <label class="check-option">
               <input type="radio" name="Event Location" value="Private home" checked>
-              <span>Private home</span>
+              <span data-i18n="locationHome">Private home</span>
             </label>
             <label class="check-option">
               <input type="radio" name="Event Location" value="Park">
-              <span>Park</span>
+              <span data-i18n="locationPark">Park</span>
             </label>
             <label class="check-option">
               <input type="radio" name="Event Location" value="Venue">
-              <span>Venue / Hall</span>
+              <span data-i18n="locationVenue">Venue / Hall</span>
             </label>
           </div>
         </fieldset>
 
         <label class="form-field">
-          <span>Which setup would you like a quote for?</span>
+          <span data-i18n="setupPrompt">Which setup would you like a quote for?</span>
           <select name="Setup Requested" required>
-            <option value="" selected disabled>Select a setup</option>
+            <option value="" selected disabled data-i18n="setupDefault">Select a setup</option>
             <option value="Texas Ranch">Texas Ranch</option>
             <option value="Space Explorers">Space Explorers</option>
             <option value="Baby Space Explorers">Baby Space Explorers</option>
@@ -105,29 +111,29 @@
         </label>
 
         <button id="formSubmitBtn" class="form-submit" type="submit">
-          <span class="btn-text">Request a quote</span> <span class="btn-arrow" aria-hidden="true">→</span>
+          <span class="btn-text" data-i18n="requestQuote">Request a quote</span> <span class="btn-arrow" aria-hidden="true">→</span>
         </button>
       </form>
 
       <!-- MENSAJE DE ÉXITO TRAS ENVIAR -->
       <div id="formSuccessMessage" class="form-success-card" style="display: none;" aria-live="polite">
         <div class="success-icon">🎉</div>
-        <h2>Request Received!</h2>
-        <p class="success-lead">Thank you, <strong id="successCustomerName">there</strong>! We’ve received your celebration details.</p>
+        <h2 data-i18n="successTitle">Request Received!</h2>
+        <p class="success-lead" data-i18n="successLead">Thank you, <strong id="successCustomerName">there</strong>! We’ve received your celebration details.</p>
         
         <div class="success-summary-box">
-          <div class="summary-item"><span class="summary-label">Setup:</span> <strong id="successSetup">Texas Ranch</strong></div>
-          <div class="summary-item"><span class="summary-label">Date:</span> <strong id="successDate">2026-09-01</strong></div>
-          <div class="summary-item"><span class="summary-label">Location:</span> <strong id="successLocation">Private home</strong></div>
+          <div class="summary-item"><span class="summary-label" data-i18n="successSetup">Setup:</span> <strong id="successSetup">Texas Ranch</strong></div>
+          <div class="summary-item"><span class="summary-label" data-i18n="successDate">Date:</span> <strong id="successDate">2026-09-01</strong></div>
+          <div class="summary-item"><span class="summary-label" data-i18n="successLocation">Location:</span> <strong id="successLocation">Private home</strong></div>
         </div>
 
         <p class="success-note">We will review your party venue and date, and reply directly to your email with a personalized quote within 24 hours.</p>
 
         <div class="success-actions">
           <a href="https://wa.me/17373895627?text=Hi%20Austin%20Kids%20Events!%20I%20just%20submitted%20a%20quote%20request%20on%20your%20website." target="_blank" rel="noopener noreferrer" class="success-wa-btn">
-            <span>💬 Message us on WhatsApp</span>
+            <span data-i18n="whatsappBtn">💬 Message us on WhatsApp</span>
           </a>
-          <button id="btnSendAnother" class="success-reset-btn" type="button">Send another request</button>
+          <button id="btnSendAnother" class="success-reset-btn" type="button" data-i18n="sendAnother">Send another request</button>
         </div>
       </div>
     </section>
@@ -142,5 +148,6 @@
   </div>
 
   <script src="js/contact.js" defer></script>
+  <script src="js/lang-switch.js" defer></script>
 </body>
 </html>

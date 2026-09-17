@@ -291,26 +291,20 @@
     font-weight: 800;
     letter-spacing: 0.12em;
     color: #52B79A;
-    margin-bottom: 10px;
-}
+    margin-bottom: 14px;
 
 .story-body p {
     color: #0A2540;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 12px;
+    font-size: 1.02rem;
+    line-height: 1.65;
+    margin-bottom: 14px;
 }
-
-.story-body p:last-child {
-    margin-bottom: 0;
-}
-
-.story-mascot-row {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 36px;
-    margin-top: 32px;
+    font-weight: 700;
+    color: #0A2540 !important;
+    font-style: italic;
+    border-left: 3px solid #FF5A60;
+    margin-top: 18px !important;
+    margin-bottom: 16px !important;
     padding-top: 10px;
 }
 
@@ -508,10 +502,30 @@
 
 
 /* ==========================================================================
-   3. ESCAPARATE DE PERSONAJES E ILUSTRACIONES EN ALTA RESOLUCIÓN
+   3. SECCIÓN: MEET OUR PLAY WORLDS (DISEÑO EXACTO)
    ========================================================================== */
-.characters-showcase-section {
+.play-worlds-section {
     margin-top: 10px;
+}
+
+.explore-pill {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 999px;
+    background: #E6F7F3;
+    color: #52B79A;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    margin-bottom: 12px;
+}
+
+.worlds-main-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 800;
+    color: #0A2540;
+    line-height: 1.15;
+    margin-bottom: 12px;
 }
 
 /* Barra de filtros */
@@ -519,12 +533,12 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 18px;
+    gap: 10px;
+    margin-top: 22px;
 }
 
 .filter-btn {
-    border: 2px solid #9EC5E6;
+    border: 1.5px solid #CBD5E1;
     background: #ffffff;
     color: #0A2540;
     font-family: inherit;
@@ -533,12 +547,13 @@
     padding: 8px 18px;
     border-radius: 999px;
     cursor: pointer;
-    transition: all 0.25s ease;
-    box-shadow: 0 4px 10px rgba(10, 37, 64, 0.05);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(10, 37, 64, 0.04);
 }
 
 .filter-btn:hover {
-    background: #f0f7fb;
+    background: #f8fafc;
+    border-color: #94A3B8;
     transform: translateY(-2px);
 }
 
@@ -546,192 +561,244 @@
     background: #0A2540;
     color: #ffffff;
     border-color: #0A2540;
-    box-shadow: 0 6px 14px rgba(10, 37, 64, 0.2);
+    box-shadow: 0 6px 16px rgba(10, 37, 64, 0.22);
 }
 
-.worlds-container {
+/* Lista de Tarjetas de Mundos */
+.worlds-cards-list {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    margin-top: 28px;
 }
 
-.world-card {
+.world-showcase-card {
+    display: grid;
+    grid-template-columns: 42% 58%;
     background: #ffffff;
-    border-radius: 26px;
-    padding: clamp(24px, 4vw, 36px);
-    border: 3px solid #ffffff;
-    box-shadow: 0 16px 40px rgba(10, 37, 64, 0.09);
+    border-radius: 28px;
+    padding: clamp(24px, 3vw, 36px);
+    gap: clamp(20px, 3vw, 36px);
+    align-items: stretch;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 16px 40px rgba(10, 37, 64, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.world-showcase-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(10, 37, 64, 0.12);
+}
+
+/* Fondos y bordes personalizados por tema */
+.card-ranch { background: #FFFDF8; border-color: #FDE68A; }
+.card-space { background: #F3F9FD; border-color: #BAE6FD; }
+.card-mini-space { background: #F8F7FF; border-color: #DDD6FE; }
+.card-city { background: #F2FBF6; border-color: #BBF7D0; }
+
+/* Contenedor de la escena ilustrada (Izquierda) */
+.card-scene-wrapper {
     position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    border-radius: 20px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(10, 37, 64, 0.08);
 }
 
-.world-header {
-    margin-bottom: 24px;
+.scene-full-img {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.4s ease;
 }
 
-.world-tag {
+.world-showcase-card:hover .scene-full-img {
+    transform: scale(1.03);
+}
+
+/* Contenido de la Tarjeta (Derecha) */
+.card-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2px 0;
+}
+
+.theme-tag-pill {
     display: inline-block;
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 999px;
     font-size: 0.72rem;
     font-weight: 800;
-    letter-spacing: 0.15em;
-    margin-bottom: 4px;
-    padding: 3px 10px;
-    border-radius: 999px;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
 }
 
-.world-ranch .world-tag { background: rgba(255, 90, 96, 0.12); color: #FF5A60; }
-.world-space .world-tag { background: rgba(82, 183, 154, 0.15); color: #2c8c72; }
-.world-city .world-tag { background: rgba(255, 180, 0, 0.18); color: #a97700; }
+.tag-ranch { background: #FFE4E6; color: #FF5A60; }
+.tag-space { background: #E0F2FE; color: #0284C7; }
+.tag-mini-space { background: #F3E8FF; color: #7C3AED; }
+.tag-city { background: #DCFCE7; color: #16A34A; }
 
-.world-header h3 {
-    font-size: 1.8rem;
+.theme-title {
+    font-size: clamp(1.8rem, 2.5vw, 2.1rem);
     font-weight: 800;
     color: #0A2540;
     line-height: 1.15;
+    margin: 0 0 4px;
 }
 
-.world-header p {
+.theme-tagline {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0 0 8px;
+}
+
+.tagline-ranch { color: #FF5A60; }
+.tagline-space { color: #0284C7; }
+.tagline-mini-space { color: #7C3AED; }
+.tagline-city { color: #10B981; }
+
+.theme-copy {
+    font-size: 0.94rem;
     color: #5F7D95;
-    font-size: 0.96rem;
-    margin-top: 4px;
+    line-height: 1.5;
+    margin: 0 0 14px;
 }
 
-.world-illustrations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 16px;
-    margin-bottom: 24px;
+/* Fila de 5 Iconos de Características */
+.theme-features-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 4px 0 16px;
+    padding: 0;
+    background: transparent;
+    border: none;
 }
 
-.art-figure {
-    background: #f8fcff;
-    border: 2px solid #e2e8f0;
-    border-radius: 18px;
-    padding: 16px 10px;
+.feature-badge {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    gap: 10px;
-    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-    cursor: pointer;
-    user-select: none;
+    gap: 4px;
+    flex: 1;
+    min-width: 50px;
 }
 
-.art-figure img {
-    height: 85px;
+.feature-badge img {
+    height: 32px;
     width: auto;
-    max-width: 100%;
+    max-width: 42px;
     object-fit: contain;
-    filter: drop-shadow(0 6px 8px rgba(10, 37, 64, 0.12));
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 3px 5px rgba(10, 37, 64, 0.1));
+    transition: transform 0.2s ease;
 }
 
-.art-figure span {
-    font-size: 0.82rem;
+.feature-badge:hover img {
+    transform: scale(1.15);
+}
+
+.feature-badge span {
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: #5F7D95;
+    line-height: 1.15;
+}
+
+/* Botón de Acción */
+.card-action-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: 10px;
+    padding-right: 32px;
+    padding-bottom: 8px;
+}
+
+.theme-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 24px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.92rem;
+    text-decoration: none;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.06);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.btn-ranch { background: #FF5A60; }
+.btn-space { background: #3B82F6; }
+.btn-mini-space { background: #7C3AED; }
+.btn-city { background: #10B981; }
+
+/* ==========================================================================
+   BARRA INFERIOR DE VALORES / TRUST FOOTER (COMO EN LA IMAGEN)
+   ========================================================================== */
+.worlds-trust-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 22px;
+    padding: 24px 20px;
+    gap: 20px;
+    margin-top: 36px;
+    box-shadow: 0 10px 30px rgba(10, 37, 64, 0.05);
+}
+
+.trust-footer-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.trust-footer-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 2px;
+}
+
+.trust-footer-text strong {
+    display: block;
+    font-size: 0.88rem;
     font-weight: 800;
     color: #0A2540;
+    margin-bottom: 3px;
 }
 
-.art-figure:hover {
-    transform: translateY(-6px);
-    background: #ffffff;
-    border-color: #52B79A;
-    box-shadow: 0 12px 24px rgba(10, 37, 64, 0.1);
-}
-
-.art-figure:hover img {
-    transform: scale(1.14) rotate(3deg);
-}
-
-.art-figure.is-bopped {
-    animation: bopAnimation 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes bopAnimation {
-    0% { transform: scale(1); }
-    30% { transform: scale(1.25) rotate(-8deg); }
-    60% { transform: scale(0.95) rotate(6deg); }
-    100% { transform: scale(1) rotate(0deg); }
+.trust-footer-text p {
+    font-size: 0.78rem;
+    color: #5F7D95;
+    line-height: 1.4;
+    margin: 0;
 }
 
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-.world-explore-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 22px;
-    border-radius: 999px;
-    background: #f1f5f9;
-    color: #0A2540;
-    font-size: 0.88rem;
-    font-weight: 800;
-    text-decoration: none;
-    transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
-}
-
-.world-explore-btn:hover {
-    background: #0A2540;
-    color: #ffffff;
-    transform: translateX(4px);
-}
-
-
-/* ==========================================================================
-   4. TARJETA FINAL CTA (REQUEST A QUOTE)
-   ========================================================================== */
-.cta-booking-card {
-    background: linear-gradient(135deg, #0A2540 0%, #173859 100%);
-    border-radius: 26px;
-    padding: clamp(28px, 4.5vw, 42px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 24px;
-    color: #ffffff;
-    box-shadow: 0 20px 48px rgba(10, 37, 64, 0.25);
-    border: 3px solid rgba(255, 255, 255, 0.15);
-}
-
-.cta-booking-content h3 {
-    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 6px;
-}
-
-.cta-booking-content p {
-    color: #9EC5E6;
-    font-size: 0.98rem;
-}
-
-.cta-booking-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px 30px;
-    border-radius: 999px;
-    background: #FF5A60;
-    color: #ffffff;
-    font-size: 1.05rem;
-    font-weight: 800;
-    text-decoration: none;
-    box-shadow: 0 6px 0 #0A2540, 0 12px 24px rgba(255, 90, 96, 0.4);
-    transition: transform 0.2s ease, background 0.2s ease;
-    flex-shrink: 0;
-}
-
-.cta-booking-btn:hover {
-    transform: translateY(-3px);
-    background: #FFB400;
-    color: #0A2540;
 }
 
 /* ==========================================================================
@@ -761,14 +828,8 @@
     opacity: 1;
 }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN
-   ========================================================================== */
-@media (max-width: 768px) {
-    .directory-main {
-        padding: 24px 14px 70px;
-    }
-
+/* Responsividad para móviles y tablets */
+@media (max-width: 860px) {
     .top-nav-bar {
         flex-direction: column;
         align-items: stretch;
@@ -794,9 +855,39 @@
         grid-template-columns: 1fr;
     }
 
-    .cta-booking-card {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
+    .world-showcase-card {
+        grid-template-columns: 1fr;
+    }
+
+    .card-scene-wrapper {
+        min-height: 240px;
+        height: 240px;
+    }
+
+    .worlds-trust-footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-action-row {
+        justify-content: flex-end;
+        padding-right: 0;
+        padding-top: 12px;
+    }
+}
+
+@media (max-width: 540px) {
+    .worlds-trust-footer {
+        grid-template-columns: 1fr;
+    }
+    .theme-features-grid {
+        gap: 8px;
+    }
+    .card-action-row {
+        justify-content: center;
+        width: 100%;
+    }
+    .theme-btn {
+        width: 100%;
+        justify-content: center;
     }
 }

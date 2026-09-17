@@ -4,9 +4,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. FILTRADO INTERACTIVO DE PERSONAJES (THEME FILTER)
+    // 1. FILTRADO INTERACTIVO DE MUNDOS (THEME FILTER)
     const filterButtons = document.querySelectorAll('[data-world-filter]');
-    const worldCards = document.querySelectorAll('.world-card');
+    const worldCards = document.querySelectorAll('.world-showcase-card');
 
     if (filterButtons.length > 0 && worldCards.length > 0) {
         filterButtons.forEach(button => {
@@ -19,8 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Filtrar tarjetas
                 worldCards.forEach(card => {
-                    if (targetTheme === 'all' || card.classList.contains(`world-${targetTheme}`)) {
-                        card.style.display = 'block';
+                    const cardTheme = card.getAttribute('data-theme');
+                    if (targetTheme === 'all' || cardTheme === targetTheme) {
+                        card.style.display = 'grid';
                         card.style.animation = 'fadeInUp 0.4s ease forwards';
                     } else {
                         card.style.display = 'none';
@@ -40,7 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!textToCopy) return;
 
             navigator.clipboard.writeText(textToCopy).then(() => {
-                showToast(`Copied "${textToCopy}" to clipboard! ✨`);
+                const currentLang = document.body.dataset.lang || 'es';
+                const message = currentLang === 'es'
+                    ? `¡"${textToCopy}" copiado al portapapeles! ✨`
+                    : `Copied "${textToCopy}" to clipboard! ✨`;
+                showToast(message);
             }).catch(err => {
                 console.error('Error copying text:', err);
             });

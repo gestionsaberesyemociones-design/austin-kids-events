@@ -162,6 +162,97 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease, border-color 0.5s ease;
 }
 
+.party-pill-btn,
+.service-feature-button {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    width: calc(100% - 12px);
+    max-width: 100%;
+    margin: 0.8rem auto 0;
+    padding: 0.75rem 1rem 0.75rem 1.1rem;
+    border: 3.5px solid #ffffff;
+    border-radius: 999px;
+    box-shadow: 0 10px 24px rgba(10, 37, 64, 0.16);
+    color: #ffffff !important;
+    font-family: 'Fredoka', 'Quicksand', sans-serif;
+    font-size: clamp(0.75rem, 1vw, 0.95rem);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-align: left;
+    white-space: normal;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.party-btn-icon,
+.feature-button-icon {
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.party-pill-btn:hover,
+.service-feature-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    filter: brightness(1.06);
+    box-shadow: 0 14px 28px rgba(10, 37, 64, 0.22);
+}
+
+.party-btn-text,
+.feature-button-text {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 1.08;
+}
+
+.party-btn-line,
+.feature-button-line {
+    display: block;
+    white-space: nowrap;
+    color: #ffffff !important;
+    font-weight: 800;
+}
+
+/* Colores Temáticos Exactos (Según la imagen) */
+.btn-city,
+.service-feature-city {
+    background: #0B2238 !important; /* Dark Navy Blue */
+    color: #ffffff !important;
+}
+
+.btn-space,
+.service-feature-space {
+    background: #73CCA8 !important; /* Mint Green */
+    color: #ffffff !important;
+}
+
+.btn-mini-space,
+.service-feature-mini {
+    background: #9EC5E6 !important; /* Soft Sky Blue */
+    color: #ffffff !important;
+}
+
+.btn-ranch,
+.service-feature-ranch {
+    background: #E65D53 !important; /* Terracotta / Coral Red */
+    color: #ffffff !important;
+}
+
 .services-main[data-theme="space"] .service-card {
     background: rgba(15, 23, 42, 0.85);
     border: 3px solid rgba(255, 255, 255, 0.92);

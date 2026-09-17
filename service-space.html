@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/png" href="assets/brand/AUSTIN%20KE%20LOGO-2.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Explorers - Austin Kids Events</title>
@@ -13,6 +14,11 @@
             <a href="/" aria-label="Austin Kids Events - Inicio">
                 <img src="assets/brand/AUSTIN KE LOGO-1.png" alt="Austin Kids Events" class="site-logo">
             </a>
+
+            <div class="header-lang-switch" aria-label="Language selector">
+                <button type="button" class="lang-option is-active" data-lang="es" aria-label="Cambiar a español" aria-pressed="true">ES</button>
+                <button type="button" class="lang-option" data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+            </div>
         </div>
     </header>
 
@@ -31,20 +37,19 @@
         </div>
         <div class="space-orbit space-orbit-one" aria-hidden="true"></div>
         <div class="space-orbit space-orbit-two" aria-hidden="true"></div>
-        <a class="back-link" href="/services">&larr; View all setups</a>
+        <a class="back-link" href="/services" data-i18n="spaceBack">&larr; View all setups</a>
         <section class="detail-hero" aria-labelledby="service-title">
             <div class="detail-carousel" data-carousel>
                 <div class="carousel-window">
                     <div class="carousel-track">
-                        <figure class="detail-slide is-active"><img src="assets/setups/space%20explorers/images/1778099414261.jpg" alt="Montaje Space Explorers"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/1778099414269.jpg" alt="Montaje Space Explorers"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/1778099414278.jpg" alt="Montaje Space Explorers"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/1778099414285.jpg" alt="Montaje Space Explorers"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/1778099414296.jpg" alt="Montaje Space Explorers"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/1778099414303.jpg" alt="Montaje Space Explorers"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/1778099414311.jpg" alt="Montaje Space Explorers"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/WhatsApp%20Image%202026-05-06%20at%204.11.57%20PM.jpeg" alt="Montaje Space Explorers"></figure>
-                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/WhatsApp%20Image%202026-05-06%20at%204.11.58%20PM%20(1).jpeg" alt="Montaje Space Explorers"></figure>
+                        <figure class="detail-slide is-active"><img src="assets/setups/space%20explorers/images/principal.jpeg" alt="Space Explorers principal"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/2%20r4zexar4zex.jpg.jpeg" alt="Space Explorers rover and mission gear"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/3-img.png" alt="Space Explorers activity center"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/4-img.png" alt="Space Explorers setup"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/6-img.png" alt="Space Explorers setup view"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/7-img.png" alt="Space Explorers play area"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/WhatsApp%20Image%202026-05-06%20at%204.11.58%20PM%20(4).jpeg" alt="Space Explorers mission detail"></figure>
+                        <figure class="detail-slide"><img src="assets/setups/space%20explorers/images/WhatsApp%20Image%202026-05-06%20at%204.11.58%20PM%20(6).jpeg" alt="Space Explorers setup full view"></figure>
                     </div>
                 </div>
                 <button class="detail-arrow previous" type="button" aria-label="Foto anterior">&#10094;</button>
@@ -52,35 +57,41 @@
                 <div class="carousel-dots" aria-label="Seleccionar foto"></div>
             </div>
             <div class="detail-intro">
-                <span class="detail-kicker">Interactive party setup</span>
+                <span class="detail-kicker" data-i18n="spaceKicker">Interactive party setup</span>
                 <h1 id="service-title">Space Explorers</h1>
-                <div class="space-age-badge"><span>3-5</span> years</div>
-                <p class="detail-lead">Space Explorers turns part of your celebration into a small mission zone where kids can climb aboard, suit up and decide where the expedition goes next.</p>
-                <a class="detail-cta" href="/contact-us?setup=space-explorers">Book this mission <span>&rarr;</span></a>
+                <div class="space-age-badge"><span>3-5</span> <span data-i18n="spaceAgeSuffix">years</span></div>
+                <p class="detail-lead" data-i18n="spaceLead">Space Explorers turns part of your celebration into a small mission zone where kids can climb aboard, suit up and decide where the expedition goes next.</p>
+                <a class="party-pill-btn btn-space" href="/contact-us?setup=space-explorers">
+                    <span class="party-btn-icon" aria-hidden="true">🧑‍🚀</span>
+                    <span class="party-btn-text">
+                        <span class="party-btn-line">BRING IT TO</span>
+                        <span class="party-btn-line">MY PARTY &rarr;</span>
+                    </span>
+                </a>
             </div>
         </section>
 
         <section class="space-mission" aria-labelledby="info-title">
             <div class="space-mission-copy">
-                <span class="detail-kicker">The mission briefing</span>
-                <h2 id="info-title">A little universe built for big imaginations.</h2>
-                <p>The setup includes four kid-powered space rovers, astronaut helmets, a Space Command Center, moon-inspired scenery and balance-play elements, all arranged together to create one interactive environment rather than a collection of separate toys.</p>
-                <p>Designed especially for ages 3-5, children can drive their rovers, report back to command, cross the "lunar surface" and create their own missions as the party unfolds.</p>
-                <p>The complete setup is delivered and arranged before your event, then picked up afterward. Rentals are available for up to 12 hours, with selected activity and entertainment add-ons available depending on your celebration.</p>
-                <p>Available for birthdays and children's events throughout the Greater Austin area.</p>
+                <span class="detail-kicker" data-i18n="spaceMissionKicker">The mission briefing</span>
+                <h2 id="info-title" data-i18n="spaceMissionTitle">A little universe built for big imaginations.</h2>
+                <p data-i18n="spaceMissionText1">The setup includes four kid-powered space rovers, astronaut helmets, a Space Command Center, moon-inspired scenery and balance-play elements, all arranged together to create one interactive environment rather than a collection of separate toys.</p>
+                <p data-i18n="spaceMissionText2">Designed especially for ages 3-5, children can drive their rovers, report back to command, cross the "lunar surface" and create their own missions as the party unfolds.</p>
+                <p data-i18n="spaceMissionText3">The complete setup is delivered and arranged before your event, then picked up afterward. Rentals are available for up to 12 hours, with selected activity and entertainment add-ons available depending on your celebration.</p>
+                <p data-i18n="spaceMissionText4">Available for birthdays and children's events throughout the Greater Austin area.</p>
             </div>
             <div class="space-command-panel">
-                <span class="command-panel-label">Mission control</span>
+                <span class="command-panel-label" data-i18n="spaceCommandLabel">Mission control</span>
                 <div class="space-command-screen">
                     <span class="signal-dot"></span>
-                    <span>READY FOR TAKEOFF</span>
+                    <span data-i18n="spaceReady">READY FOR TAKEOFF</span>
                 </div>
                 <dl class="spec-list">
-                    <div><dt>Starting at</dt><dd>$380</dd></div>
-                    <div><dt>Rental window</dt><dd>Up to 12 hours</dd></div>
-                    <div><dt>Launch zone</dt><dd>Greater Austin</dd></div>
+                    <div><dt data-i18n="spaceSpecStart">Starting at</dt><dd>$380</dd></div>
+                    <div><dt data-i18n="spaceSpecWindow">Rental window</dt><dd>Up to 12 hours</dd></div>
+                    <div><dt data-i18n="spaceSpecZone">Launch zone</dt><dd>Greater Austin</dd></div>
                 </dl>
-                <p class="space-signoff">Once the helmets go on, somebody usually starts assigning missions.</p>
+                <p class="space-signoff" data-i18n="spaceSignoff">Once the helmets go on, somebody usually starts assigning missions.</p>
             </dl>
         </section>
     </main>
@@ -93,5 +104,6 @@
         <span class="color-segment color-5"></span>
     </div>
     <script src="js/service-detail.js"></script>
+    <script src="js/lang-switch.js" defer></script>
 </body>
 </html>

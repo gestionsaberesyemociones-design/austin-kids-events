@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="assets/brand/AUSTIN%20KE%20LOGO-2.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Directory & Story - Austin Kids Events</title>
@@ -17,6 +18,11 @@
             <a href="/" aria-label="Austin Kids Events - Home">
                 <img src="assets/brand/AUSTIN KE LOGO-1.png" alt="Austin Kids Events" class="site-logo">
             </a>
+
+            <div class="header-lang-switch" aria-label="Language selector">
+                <button type="button" class="lang-option is-active" data-lang="es" aria-label="Cambiar a español" aria-pressed="true">ES</button>
+                <button type="button" class="lang-option" data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+            </div>
         </div>
     </header>
 
@@ -34,15 +40,15 @@
         
         <!-- BARRA SUPERIOR DE NAVEGACIÓN RÁPIDA / RETORNO -->
         <div class="top-nav-bar">
-            <a class="back-link directory-back-link" href="/">&larr; Back to home</a>
+            <a class="back-link directory-back-link" href="/" data-i18n="directoryBackHome">&larr; Back to home</a>
             
             <!-- Pestañas de cambio rápido: Directorio vs Formulario -->
             <div class="contact-tabs-toggle" role="navigation" aria-label="Contact options">
                 <a href="/directory" class="tab-pill active" aria-current="page">
-                    <span class="tab-icon">⭐</span> Directory &amp; Story
+                    <span class="tab-icon">⭐</span><span data-i18n="directoryTab">Directory &amp; Story</span>
                 </a>
                 <a href="/contact-us" class="tab-pill">
-                    <span class="tab-icon">📋</span> Request a Quote
+                    <span class="tab-icon">📋</span><span data-i18n="quoteTab">Request a Quote</span>
                 </a>
             </div>
         </div>
@@ -55,19 +61,19 @@
                     <span>AUSTIN KIDS EVENTS</span>
                 </div>
                 
-                <h1 id="story-title" class="story-headline">
+                <h1 id="story-title" class="story-headline" data-i18n="directoryStoryTitle">
                     Thank you for stopping by! <span class="sparkle-emoji">✨</span>
                 </h1>
                 
-                <p class="story-intro">
+                <p class="story-intro" data-i18n="directoryStoryIntro">
                     We know planning a celebration takes time, love, and attention to every detail. We are so happy and grateful you are here exploring our playful universe!
                 </p>
 
                 <!-- Insignias de Confianza y Área de Cobertura -->
                 <div class="trust-pills-row" aria-label="Service highlights">
-                    <span class="trust-pill">📍 Serving Greater Austin &amp; Surrounding Areas</span>
-                    <span class="trust-pill">🧼 100% Cleaned &amp; Sanitized</span>
-                    <span class="trust-pill">🚚 Delivered &amp; Professionally Setup</span>
+                    <span class="trust-pill" data-i18n="trustAustin">📍 Serving Greater Austin &amp; Surrounding Areas</span>
+                    <span class="trust-pill" data-i18n="trustClean">🧼 100% Cleaned &amp; Sanitized</span>
+                    <span class="trust-pill" data-i18n="trustSetup">🚚 Delivered &amp; Professionally Setup</span>
                 </div>
 
                 <div class="story-divider" aria-hidden="true">
@@ -80,13 +86,25 @@
 
                 <!-- Bloque de Storytelling / About Us -->
                 <div class="story-body">
-                    <h2 class="about-kicker">OUR STORY &amp; MISSION</h2>
-                    <p>
-                        At <strong>Austin Kids Events</strong>, we believe every childhood celebration deserves real adventure and endless smiles. We bring immersive, screen-free themed vehicle experiences directly to your backyard, park, or party venue across Greater Austin.
+                    <h2 class="about-kicker" data-i18n="storyMission">OUR STORY &amp; MISSION</h2>
+                    <p class="story-highlight" data-i18n="storyHeadline">
+                        Some moments take years to dream about &mdash; and only a few hours to live.
                     </p>
-                    <p>
-                        From little cowpokes tending the farm to brave astronauts charting distant galaxies and mini city drivers navigating bustling streets, our custom-themed setups are designed to spark pure imagination, active movement, and unforgettable family memories.
+                    <p data-i18n="storyIntro1">
+                        That idea has always been at the heart of <strong>Austin Kids Events</strong>. We know how much can go into those first birthdays: the anticipation, the planning, the little details, and the hope that when the day finally comes, it feels truly special.
                     </p>
+                    <p data-i18n="storyIntro2">
+                        So we wanted to create something that does more than fill a party space. Our setups are made for kids to actually play, explore and imagine &mdash; while also becoming part of the celebration itself, creating beautiful photos and giving parents fewer things to manage.
+                    </p>
+                    <p data-i18n="storyIntro3">
+                        Because when the party starts, you should be able to enjoy it too.
+                    </p>
+                    <p class="story-quote" data-i18n="storyQuote">
+                        Childhood goes by fast. We&rsquo;re here to make some of it worth remembering.
+                    </p>
+                    <div class="story-tagline-wrap">
+                        <span class="story-tagline" data-i18n="storyTagline">Austin Kids Events &mdash; powered by imagination.</span>
+                    </div>
                 </div>
 
                 <!-- Ilustración destacada de saludo -->
@@ -100,9 +118,9 @@
             <!-- 2. DIRECTORIO DE CONTACTO DIRECTO Y REDES SOCIALES -->
             <section class="directory-section" aria-labelledby="directory-title">
                 <div class="section-title-wrap">
-                    <span class="section-tag">QUICK CONNECT</span>
-                    <h2 id="directory-title">How would you like to connect?</h2>
-                    <p class="section-subtitle">Choose your preferred channel below for fast answers, quick questions, or to see our latest party adventures!</p>
+                    <span class="section-tag" data-i18n="connectWhatsApp">QUICK CONNECT</span>
+                    <h2 id="directory-title" data-i18n="connectTitle">How would you like to connect?</h2>
+                    <p class="section-subtitle" data-i18n="connectSubtitle">Choose your preferred channel below for fast answers, quick questions, or to see our latest party adventures!</p>
                 </div>
 
                 <div class="channels-grid">
@@ -115,9 +133,9 @@
                             </svg>
                         </div>
                         <div class="channel-info">
-                            <span class="channel-label">TEXT US ON WHATSAPP</span>
+                            <span class="channel-label" data-i18n="connectWhatsApp">TEXT US ON WHATSAPP</span>
                             <strong class="channel-main-text">(737) 389-5627</strong>
-                            <span class="channel-subtext">Quick questions and party details</span>
+                            <span class="channel-subtext" data-i18n="connectWhatsAppText">Quick questions and party details</span>
                         </div>
                         <div class="channel-arrow" aria-hidden="true">&rarr;</div>
                     </a>
@@ -131,9 +149,9 @@
                                 </svg>
                             </div>
                             <div class="channel-info">
-                                <span class="channel-label">CALL US</span>
+                                <span class="channel-label" data-i18n="connectCall">CALL US</span>
                                 <strong class="channel-main-text">(512) 543-1343</strong>
-                                <span class="channel-subtext">Direct calls for bookings</span>
+                                <span class="channel-subtext" data-i18n="connectCallText">Direct calls for bookings</span>
                             </div>
                         </a>
                         <button class="channel-copy-btn" data-copy-text="(512) 543-1343" title="Copy phone number" aria-label="Copy phone number">
@@ -144,29 +162,34 @@
                     <!-- Tarjeta: Linktree -->
                     <a href="https://linktr.ee/AustinKidsEvents?utm_source=qr_code" target="_blank" rel="noopener noreferrer" class="channel-card card-email">
                         <div class="channel-icon-wrap">
-                            <svg class="channel-svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
-                                <path d="M10 3h4v4h-4V3zm-7 7h4v4H3V10zm18 0h4v4h-4v-4zM10 17h4v4h-4v-4zm-1-7h6v4H9v-4z"/>
+                            <svg class="channel-svg" viewBox="0 0 24 24" width="36" height="36" aria-hidden="true">
+                                <rect x="4" y="4" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.92"/>
+                                <rect x="14" y="4" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.92"/>
+                                <rect x="4" y="14" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.92"/>
+                                <rect x="14" y="14" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.92"/>
                             </svg>
                         </div>
                         <div class="channel-info">
-                            <span class="channel-label">LINKTREE</span>
+                            <span class="channel-label" data-i18n="connectLinktree">LINKTREE</span>
                             <strong class="channel-main-text">Austin Kids Events</strong>
-                            <span class="channel-subtext">See all our links in one place</span>
+                            <span class="channel-subtext" data-i18n="connectLinktreeText">See all our links in one place</span>
                         </div>
                         <div class="channel-arrow" aria-hidden="true">&rarr;</div>
                     </a>
 
                     <!-- Tarjeta: Instagram -->
-                    <a href="https://instagram.com/austinkidsevents" target="_blank" rel="noopener noreferrer" class="channel-card card-instagram">
+                                        <a href="https://instagram.com/austinkidsevents" target="_blank" rel="noopener noreferrer" class="channel-card card-instagram">
                         <div class="channel-icon-wrap">
-                            <svg class="channel-svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
-                                <path d="M12 2.163C15.204 2.163 15.584 2.175 16.85 2.233C18.02 2.286 18.65 2.482 19.07 2.646C19.63 2.864 20.03 3.125 20.45 3.546C20.87 3.967 21.13 4.367 21.35 4.927C21.51 5.347 21.71 5.977 21.76 7.147C21.82 8.413 21.83 8.793 21.83 12C21.83 15.207 21.82 15.587 21.76 16.853C21.71 18.023 21.51 18.653 21.35 19.073C21.13 19.633 20.87 20.033 20.45 20.454C20.03 20.875 19.63 21.135 19.07 21.354C18.65 21.518 18.02 21.714 16.85 21.767C15.58 21.825 15.2 21.837 12 21.837C8.796 21.837 8.416 21.825 7.15 21.767C5.98 21.714 5.35 21.518 4.93 21.354C4.37 21.135 3.97 20.875 3.55 20.454C3.13 20.033 2.87 19.633 2.65 19.073C2.49 18.653 2.29 18.023 2.24 16.853C2.18 15.587 2.17 15.207 2.17 12C2.17 8.793 2.18 8.413 2.24 7.147C2.29 5.977 2.49 5.347 2.65 4.927C2.87 4.367 3.13 3.967 3.55 3.546C3.97 3.125 4.37 2.864 4.93 2.646C5.35 2.482 5.98 2.286 7.15 2.233C8.42 2.175 8.8 2.163 12 2.163M12 0C8.74 0 8.33 0.014 7.05 0.072C5.77 0.13 4.9 0.334 4.14 0.63C3.35 0.937 2.68 1.353 2.01 2.02C1.34 2.69 0.925 3.36 0.618 4.15C0.322 4.91 0.118 5.78 0.06 7.06C0.002 8.34 0 8.75 0 12.01C0 15.27 0.014 15.68 0.072 16.96C0.13 18.24 0.334 19.11 0.63 19.87C0.937 20.66 1.353 21.33 2.02 22C2.69 22.67 3.36 23.085 4.15 23.392C4.91 23.688 5.78 23.892 7.06 23.95C8.34 24.008 8.75 24.022 12.01 24.022C15.27 24.022 15.68 24.008 16.96 23.95C18.24 23.892 19.11 23.688 19.87 23.392C20.66 23.085 21.33 22.67 22 22C22.67 21.33 23.085 20.66 23.392 19.87C23.688 19.11 23.892 18.24 23.95 16.96C24.008 15.68 24.022 15.27 24.022 12.01C24.022 8.75 24.008 8.34 23.95 7.06C23.892 5.78 23.688 4.91 23.392 4.15C23.085 3.36 22.67 2.69 22 2.02C21.33 1.35 20.66 0.937 19.87 0.63C19.11 0.334 18.24 0.13 16.96 0.072C15.68 0.014 15.27 0 12.01 0H12ZM12 5.838C8.6 5.838 5.838 8.6 5.838 12C5.838 15.4 8.6 16.162 12 16.162C15.4 16.162 18.162 15.4 18.162 12C18.162 8.6 15.4 5.838 12 5.838ZM12 14.338C10.71 14.338 9.662 13.29 9.662 12C9.662 10.71 10.71 9.662 12 9.662C13.29 9.662 14.338 10.71 14.338 12C14.338 13.29 13.29 14.338 12 14.338ZM18.406 4.155C17.61 4.155 16.965 4.8 16.965 5.596C16.965 6.392 17.61 7.037 18.406 7.037C19.202 7.037 19.847 6.392 19.847 5.596C19.847 4.8 19.202 4.155 18.406 4.155Z"/>
+                            <svg class="channel-svg" viewBox="0 0 24 24" width="36" height="36" aria-hidden="true">
+                                <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                                <circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                                <circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/>
                             </svg>
                         </div>
                         <div class="channel-info">
-                            <span class="channel-label">FOLLOW INSTAGRAM</span>
+                            <span class="channel-label" data-i18n="connectInstagram">FOLLOW INSTAGRAM</span>
                             <strong class="channel-main-text">@austinkidsevents</strong>
-                            <span class="channel-subtext">Photos, live videos &amp; party inspiration</span>
+                            <span class="channel-subtext" data-i18n="connectInstagramText">Photos, live videos &amp; party inspiration</span>
                         </div>
                         <div class="channel-arrow" aria-hidden="true">&rarr;</div>
                     </a>
@@ -179,9 +202,9 @@
                             </svg>
                         </div>
                         <div class="channel-info">
-                            <span class="channel-label">FACEBOOK PAGE</span>
+                            <span class="channel-label" data-i18n="connectFacebook">FACEBOOK PAGE</span>
                             <strong class="channel-main-text">Austin Kids Events</strong>
-                            <span class="channel-subtext">Community updates and events</span>
+                            <span class="channel-subtext" data-i18n="connectFacebookText">Community updates and events</span>
                         </div>
                         <div class="channel-arrow" aria-hidden="true">&rarr;</div>
                     </a>
@@ -189,132 +212,220 @@
                 </div>
             </section>
 
-            <!-- 3. ESCAPARATE DE PERSONAJES E ILUSTRACIONES EN ALTA DEFINICIÓN -->
-            <section class="characters-showcase-section" aria-labelledby="characters-title">
+            <!-- 3. MEET OUR PLAY WORLDS (DISEÑO EXACTO) -->
+            <section class="play-worlds-section" aria-labelledby="worlds-title">
                 <div class="section-title-wrap">
-                    <span class="section-tag">MEET THE WORLDS</span>
-                    <h2 id="characters-title">Our Themed Character Universe</h2>
-                    <p class="section-subtitle">Take a closer look at the adorable characters and vehicles that make every party set extraordinary! (Tap any character for fun!)</p>
+                    <span class="explore-pill" data-i18n="exploreExperiences">EXPLORE THE EXPERIENCES</span>
+                    <h2 id="worlds-title" class="worlds-main-title" data-i18n="worldsTitle">Meet Our Play Worlds</h2>
+                    <p class="section-subtitle" data-i18n="worldLead">
+                        Choose a themed play setup designed for real play, big imaginations and memorable photos &mdash; delivered and professionally set up at your party venue.
+                    </p>
                     
                     <!-- Botones de Filtrado de Mundos -->
-                    <div class="worlds-filter-bar" role="tablist" aria-label="Filter characters by theme">
-                        <button class="filter-btn active" data-world-filter="all">🌟 All Worlds</button>
-                        <button class="filter-btn" data-world-filter="ranch">🤠 Texas Ranch</button>
-                        <button class="filter-btn" data-world-filter="space">🚀 Space Explorers</button>
-                        <button class="filter-btn" data-world-filter="city">🚗 Mini City</button>
+                    <div class="worlds-filter-bar" role="tablist" aria-label="Filter play worlds by setup">
+                        <button class="filter-btn active" data-world-filter="all" data-i18n="filterAll">☀️ All Setups</button>
+                        <button class="filter-btn" data-world-filter="ranch" data-i18n="filterRanch">🤠 Texas Ranch</button>
+                        <button class="filter-btn" data-world-filter="space" data-i18n="filterSpace">🚀 Space Explorers</button>
+                        <button class="filter-btn" data-world-filter="mini-space" data-i18n="filterMiniSpace">👶 Baby Space Explorers</button>
+                        <button class="filter-btn" data-world-filter="city" data-i18n="filterCity">🚗 Mini City</button>
                     </div>
                 </div>
 
-                <div class="worlds-container">
+                <div class="worlds-cards-list">
                     
-                    <!-- Mundo 1: Texas Ranch -->
-                    <div class="world-card world-ranch">
-                        <div class="world-header">
-                            <span class="world-tag">THEME 01</span>
-                            <h3>Texas Ranch</h3>
-                            <p>Friendly farm animals, cowboy boots &amp; cheerful tractors.</p>
+                    <!-- CARD 1: TEXAS RANCH -->
+                    <article class="world-showcase-card card-ranch" data-theme="ranch">
+                        <div class="card-scene-wrapper scene-ranch">
+                            <img src="assets/DIRECTORY/texas.jpg" alt="Texas Ranch Theme" class="scene-full-img">
                         </div>
-                        <div class="world-illustrations-grid">
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/texas ranch/VECTORES/GRANJERO.png" alt="Texas Farmer illustration">
-                                <span>Farmer Friend</span>
+                        <div class="card-content-wrapper">
+                            <span class="theme-tag-pill tag-ranch" data-i18n="worldRanchTag">THEME 01</span>
+                            <h3 class="theme-title">Texas Ranch</h3>
+                            <h4 class="theme-tagline tagline-ranch" data-i18n="ranchTagline">A little piece of Texas made for big imaginations.</h4>
+                            <p class="theme-copy" data-i18n="ranchCopy">
+                                Little cowboys and cowgirls can ride, roam and play their way through a hands-on ranch adventure with horses, tractors, farm animals and classic Texas details.
+                            </p>
+                            <div class="theme-features-grid">
+                                <div class="feature-badge">
+                                    <img src="assets/setups/texas ranch/VECTORES/CABALLO1.png" alt="Ranch Play">
+                                    <span data-i18n="ranchFeature1">Ranch Play</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/texas ranch/VECTORES/CABALO2.png" alt="Horses">
+                                    <span data-i18n="ranchFeature2">Horses</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/texas ranch/VECTORES/vaca1.png" alt="Farm Animals">
+                                    <span data-i18n="ranchFeature3">Farm Animals</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/texas ranch/VECTORES/tractor1.png" alt="Tractors">
+                                    <span data-i18n="ranchFeature4">Tractors</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/texas ranch/VECTORES/granja.png" alt="Barn">
+                                    <span data-i18n="ranchFeature5">Barn</span>
+                                </div>
                             </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/texas ranch/VECTORES/granja.png" alt="Big Red Barn illustration">
-                                <span>Red Barn</span>
-                            </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/texas ranch/VECTORES/CABALLO1.png" alt="Horse illustration">
-                                <span>Playful Pony</span>
-                            </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/texas ranch/VECTORES/vaca1.png" alt="Spotted Cow illustration">
-                                <span>Spotted Cow</span>
-                            </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/texas ranch/VECTORES/tractor1.png" alt="Ranch Tractor illustration">
-                                <span>Ranch Tractor</span>
+                            <div class="card-action-row">
+                                <a href="/service-ranch" class="theme-btn btn-ranch" data-i18n="exploreRanch">Explore Texas Ranch &rarr;</a>
                             </div>
                         </div>
-                        <a href="/service-ranch" class="world-explore-btn">Explore Texas Ranch &rarr;</a>
-                    </div>
+                    </article>
 
-                    <!-- Mundo 2: Space Explorers -->
-                    <div class="world-card world-space">
-                        <div class="world-header">
-                            <span class="world-tag">THEME 02</span>
-                            <h3>Space Explorers</h3>
-                            <p>Intergalactic rockets, cosmic rovers &amp; colorful planets.</p>
+                    <!-- CARD 2: SPACE EXPLORERS -->
+                    <article class="world-showcase-card card-space" data-theme="space">
+                        <div class="card-scene-wrapper scene-space">
+                            <img src="assets/DIRECTORY/space.jpg" alt="Space Explorers Theme" class="scene-full-img">
                         </div>
-                        <div class="world-illustrations-grid">
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/space explorers/VECTORES/NAVE.png" alt="Rocket Ship illustration">
-                                <span>Star Rocket</span>
+                        <div class="card-content-wrapper">
+                            <span class="theme-tag-pill tag-space" data-i18n="worldSpaceTag">THEME 02</span>
+                            <h3 class="theme-title">Space Explorers</h3>
+                            <h4 class="theme-tagline tagline-space" data-i18n="spaceTagline">A mission built for curious little astronauts.</h4>
+                            <p class="theme-copy" data-i18n="spaceCopy">
+                                Rovers, space gear, lunar features and interactive activities turn the celebration into a hands-on mission where kids can explore, imagine and play beyond Earth.
+                            </p>
+                            <div class="theme-features-grid">
+                                <div class="feature-badge">
+                                    <img src="assets/setups/space explorers/VECTORES/CARRO1.png" alt="Space Rovers">
+                                    <span data-i18n="spaceFeature1">Space Rovers</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/space explorers/VECTORES/CARRO2.png" alt="Astronaut Gear">
+                                    <span data-i18n="spaceFeature2">Astronaut Gear</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/space explorers/VECTORES/CARRO3.png" alt="Lunar Command">
+                                    <span data-i18n="spaceFeature3">Lunar Command</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/space explorers/VECTORES/PLANETA2.png" alt="Moon Terrain">
+                                    <span data-i18n="spaceFeature4">Moon Terrain</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/space explorers/VECTORES/PLANETA1.png" alt="Space Play">
+                                    <span data-i18n="spaceFeature5">Space Play</span>
+                                </div>
                             </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/space explorers/VECTORES/CARRO1.png" alt="Space Rover illustration">
-                                <span>Moon Rover</span>
-                            </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/space explorers/VECTORES/PLANETA1.png" alt="Saturn Planet illustration">
-                                <span>Ringed Planet</span>
-                            </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/space explorers/VECTORES/PLANETA2.png" alt="Space Planet illustration">
-                                <span>Aqua Planet</span>
-                            </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/space explorers/VECTORES/CARRO3.png" alt="Space Cruiser illustration">
-                                <span>Star Cruiser</span>
+                            <div class="card-action-row">
+                                <a href="/service-space" class="theme-btn btn-space" data-i18n="exploreSpace">Explore Space Explorers &rarr;</a>
                             </div>
                         </div>
-                        <a href="/service-space" class="world-explore-btn">Explore Space Explorers &rarr;</a>
-                    </div>
+                    </article>
 
-                    <!-- Mundo 3: Mini City -->
-                    <div class="world-card world-city">
-                        <div class="world-header">
-                            <span class="world-tag">THEME 03</span>
-                            <h3>Mini City</h3>
-                            <p>Speedy town racers, traffic signals &amp; urban adventure.</p>
+                    <!-- CARD 3: BABY SPACE EXPLORERS -->
+                    <article class="world-showcase-card card-mini-space" data-theme="mini-space">
+                        <div class="card-scene-wrapper scene-mini-space">
+                            <img src="assets/DIRECTORY/mini.jpg" alt="Baby Space Explorers Theme" class="scene-full-img">
                         </div>
-                        <div class="world-illustrations-grid">
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/mini city/VECTORES/CARRO2.png" alt="Green Cruiser illustration">
-                                <span>Green Cruiser</span>
+                        <div class="card-content-wrapper">
+                            <span class="theme-tag-pill tag-mini-space" data-i18n="worldMiniTag">THEME 02B</span>
+                            <h3 class="theme-title">Baby Space Explorers</h3>
+                            <h4 class="theme-tagline tagline-mini-space" data-i18n="miniTagline">A first little adventure beyond Earth.</h4>
+                            <p class="theme-copy" data-i18n="miniCopy">
+                                Created for babies and toddlers up to 2½ years old, this softer lunar world combines sensory activities, space-themed play areas and age-appropriate exploration at their own pace.
+                            </p>
+                            <div class="theme-features-grid">
+                                <div class="feature-badge">
+                                    <img src="assets/setups/space explorers/VECTORES/PLANETA3.png" alt="Lunar Play Area">
+                                    <span data-i18n="miniFeature1">Lunar Play Area</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/brand/icon-mini.png" alt="Space Tents">
+                                    <span data-i18n="miniFeature2">Space Tents</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/space explorers/VECTORES/PLANETA4.png" alt="Sensory Play">
+                                    <span data-i18n="miniFeature3">Sensory Play</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/space explorers/VECTORES/PLANETA5.png" alt="Activity Boards">
+                                    <span data-i18n="miniFeature4">Activity Boards</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/space explorers/VECTORES/PLANETA6.png" alt="Little Explorers">
+                                    <span data-i18n="miniFeature5">Little Explorers</span>
+                                </div>
                             </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/mini city/VECTORES/CARRO1.png" alt="Blue Cruiser illustration">
-                                <span>City Patrol</span>
-                            </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/mini city/VECTORES/SEÑAL1.png" alt="Traffic Signal illustration">
-                                <span>Traffic Light</span>
-                            </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/mini city/VECTORES/SEÑAL2.png" alt="Stop Sign illustration">
-                                <span>Safety Sign</span>
-                            </div>
-                            <div class="art-figure" title="Click me!">
-                                <img src="assets/setups/mini city/VECTORES/CARRO3.png" alt="Yellow Car illustration">
-                                <span>Speedy Cab</span>
+                            <div class="card-action-row">
+                                <a href="/service-mini-space" class="theme-btn btn-mini-space" data-i18n="exploreMini">Explore Baby Space Explorers &rarr;</a>
                             </div>
                         </div>
-                        <a href="/service-city" class="world-explore-btn">Explore Mini City &rarr;</a>
-                    </div>
+                    </article>
+
+                    <!-- CARD 4: MINI CITY -->
+                    <article class="world-showcase-card card-city" data-theme="city">
+                        <div class="card-scene-wrapper scene-city">
+                            <img src="assets/DIRECTORY/city.jpg" alt="Mini City Theme" class="scene-full-img">
+                        </div>
+                        <div class="card-content-wrapper">
+                            <span class="theme-tag-pill tag-city" data-i18n="worldCityTag">THEME 03</span>
+                            <h3 class="theme-title">Mini City</h3>
+                            <h4 class="theme-tagline tagline-city" data-i18n="cityTagline">A whole little city made for little drivers.</h4>
+                            <p class="theme-copy" data-i18n="cityCopy">
+                                Ride-on cars, roads, traffic signs and imaginative city play give kids their own world to drive, explore and make up the rules as they go.
+                            </p>
+                            <div class="theme-features-grid">
+                                <div class="feature-badge">
+                                    <img src="assets/setups/mini city/VECTORES/CARRO2.png" alt="Ride-On Cars">
+                                    <span data-i18n="cityFeature1">Ride-On Cars</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/mini city/VECTORES/SÑEAL4.png" alt="Roads">
+                                    <span data-i18n="cityFeature2">Roads</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/mini city/VECTORES/SEÑAL1.png" alt="Traffic Signs">
+                                    <span data-i18n="cityFeature3">Traffic Signs</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/mini city/VECTORES/fondo.png" alt="City Play">
+                                    <span data-i18n="cityFeature4">City Play</span>
+                                </div>
+                                <div class="feature-badge">
+                                    <img src="assets/setups/mini city/VECTORES/CARRO1.png" alt="Little Drivers">
+                                    <span data-i18n="cityFeature5">Little Drivers</span>
+                                </div>
+                            </div>
+                            <div class="card-action-row">
+                                <a href="/service-city" class="theme-btn btn-city" data-i18n="exploreCity">Explore Mini City &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
 
                 </div>
-            </section>
 
-            <!-- 4. BANNER FINAL CTA PARA COTIZAR -->
-            <section class="cta-booking-card" aria-label="Book your event">
-                <div class="cta-booking-content">
-                    <h3>Ready to create magic for their special day?</h3>
-                    <p>Tell us your date and party venue to get an instant customized quote!</p>
+                <!-- VALUE PROPS TRUST BAR (COMO EN LA IMAGEN) -->
+                <div class="worlds-trust-footer">
+                    <div class="trust-footer-col">
+                        <div class="trust-footer-icon icon-pin">📍</div>
+                        <div class="trust-footer-text">
+                            <strong data-i18n="trustFooterTitle1">Serving Greater Austin</strong>
+                            <p data-i18n="trustFooterText1">and surrounding areas. Professional delivery and setup included.</p>
+                        </div>
+                    </div>
+                    <div class="trust-footer-col">
+                        <div class="trust-footer-icon icon-shield">🛡️</div>
+                        <div class="trust-footer-text">
+                            <strong data-i18n="trustFooterTitle2">Clean, Safe &amp; Inspected</strong>
+                            <p data-i18n="trustFooterText2">Our equipment is sanitized and safety-checked before every event.</p>
+                        </div>
+                    </div>
+                    <div class="trust-footer-col">
+                        <div class="trust-footer-icon icon-clock">⏰</div>
+                        <div class="trust-footer-text">
+                            <strong data-i18n="trustFooterTitle3">12-Hour Rental</strong>
+                            <p data-i18n="trustFooterText3">Plenty of time to enjoy! Typically delivered before 10 AM and picked up after 9 PM.</p>
+                        </div>
+                    </div>
+                    <div class="trust-footer-col">
+                        <div class="trust-footer-icon icon-heart">💖</div>
+                        <div class="trust-footer-text">
+                            <strong data-i18n="trustFooterTitle4">Made for Memories</strong>
+                            <p data-i18n="trustFooterText4">Designed for real play, beautiful photos and hassle-free celebrations.</p>
+                        </div>
+                    </div>
                 </div>
-                <a href="/contact-us" class="cta-booking-btn">
-                    <span>Request a Quote Now</span> &rarr;
-                </a>
             </section>
 
         </div>
@@ -330,6 +441,5 @@
     </div>
 
     <!-- SCRIPT DE INTERACTIVIDAD -->
-    <script src="js/directory.js" defer></script>
-</body>
+    <script src="js/directory.js" defer></script>    <script src="js/lang-switch.js" defer></script></body>
 </html>

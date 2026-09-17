@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/png" href="assets/brand/AUSTIN%20KE%20LOGO-2.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Austin Kids Events</title>
@@ -96,6 +97,11 @@
             <a href="/" aria-label="Austin Kids Events - Home">
                 <img src="assets/brand/AUSTIN KE LOGO-1.png" alt="Austin Kids Events" class="site-logo">
             </a>
+
+            <div class="header-lang-switch" aria-label="Language selector">
+                <button type="button" class="lang-option is-active" data-lang="es" aria-label="Cambiar a español" aria-pressed="true">ES</button>
+                <button type="button" class="lang-option" data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+            </div>
         </div>
     </header>
 
@@ -103,14 +109,14 @@
     <main class="site-main" role="main">
         <div class="hero-showcase-container">
             <div class="hero-copy">
-                <h1 aria-label="BIG IMAGINATIONS. LITTLE ADVENTURES."><span class="title-letter">B</span><span class="title-letter">I</span><span class="title-letter">G</span> <span class="title-letter">I</span><span class="title-letter">M</span><span class="title-letter">A</span><span class="title-letter">G</span><span class="title-letter">I</span><span class="title-letter">N</span><span class="title-letter">A</span><span class="title-letter">T</span><span class="title-letter">I</span><span class="title-letter">O</span><span class="title-letter">N</span><span class="title-letter">S</span><span class="title-letter">.</span> <span class="title-letter">L</span><span class="title-letter">I</span><span class="title-letter">T</span><span class="title-letter">T</span><span class="title-letter">L</span><span class="title-letter">E</span> <span class="title-letter">A</span><span class="title-letter">D</span><span class="title-letter">V</span><span class="title-letter">E</span><span class="title-letter">N</span><span class="title-letter">T</span><span class="title-letter">U</span><span class="title-letter">R</span><span class="title-letter">E</span><span class="title-letter">S</span><span class="title-letter">.</span></h1>
-                <p class="hero-subtitle">Themed kids&rsquo; party rentals &amp; interactive play setups in Greater Austin.</p>
-                <p class="hero-description">We bring imaginative play to your celebration with themed ride-ons, sensory activities and interactive experiences &mdash; delivered and professionally set up at your party venue.</p>
+                <h1 data-i18n="heroTitle" aria-label="BIG IMAGINATIONS. LITTLE ADVENTURES.">BIG IMAGINATIONS. LITTLE ADVENTURES.</h1>
+                <p class="hero-subtitle" data-i18n="heroSubtitle">Themed kids&rsquo; party rentals &amp; interactive play setups in Greater Austin.</p>
+                <p class="hero-description" data-i18n="heroDescription">We bring imaginative play to your celebration with themed ride-ons, sensory activities and interactive experiences &mdash; delivered and professionally set up at your party venue.</p>
             </div>
             
             <!-- Botón Izquierdo: Servicios -->
             <a href="/services" class="action-btn action-services" aria-label="View our services">
-                <span>View our services</span>
+                <span data-i18n="servicesBtn">View our services</span>
             </a>
 
             <!-- CARRUSEL (Tarjeta central con marco decorativo al frente) -->
@@ -121,13 +127,13 @@
                     <div class="carousel-track-container">
                         <ul class="carousel-track" data-carousel-track>
                             <li class="carousel-slide current" data-slide>
-                                <img src="assets/setups/texas ranch/1.jpg" alt="Texas Ranch setup" class="carousel-image">
+                                <img src="assets/setups/texas ranch/images/principal.jpeg" alt="Texas Ranch setup" class="carousel-image">
                             </li>
                             <li class="carousel-slide" data-slide>
-                                <img src="assets/setups/space explorers/1.jpeg" alt="Space Explorers setup" class="carousel-image">
+                                <img src="assets/setups/space explorers/images/principal.jpeg" alt="Space Explorers setup" class="carousel-image">
                             </li>
                             <li class="carousel-slide" data-slide>
-                                <img src="assets/setups/mini city/1.jpg" alt="Mini City setup" class="carousel-image">
+                                <img src="assets/setups/mini city/images/principal.png" alt="Mini City setup" class="carousel-image">
                             </li>
                         </ul>
                         <div class="carousel-caption" aria-live="polite">
@@ -143,7 +149,7 @@
 
             <!-- Botón Derecho: Contacto -->
             <a href="/contact-us" class="action-btn action-contact" aria-label="Contact us">
-                <span>Contact us</span>
+                <span data-i18n="contactBtn">Contact us</span>
             </a>
         </div>
     </main>
@@ -160,5 +166,6 @@
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
     <script src="js/theme-switcher.js" defer></script>
+    <script src="js/lang-switch.js" defer></script>
 </body>
 </html>

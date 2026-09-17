@@ -69,12 +69,6 @@ body[data-theme="city"] .hero-subtitle {
   color: #0A2540 !important;
 }
 
-body[data-theme="city"] .hero-copy h1 {
-  max-width: 860px;
-  font-size: 2.6rem;
-  line-height: 1;
-}
-
 body[data-theme="city"] .hero-subtitle {
   margin-top: 12px;
 }
@@ -228,10 +222,10 @@ body[data-theme="city"] .city-global-background {
   }
 
   body[data-theme="city"] .hero-copy h1 {
-    max-width: none;
-    font-size: clamp(0.82rem, 4.3vw, 1.12rem);
-    line-height: 1;
-    white-space: nowrap;
+    max-width: 100%;
+    font-size: clamp(1.35rem, 6vw, 2rem);
+    line-height: 0.85;
+    white-space: normal;
   }
 
   body[data-theme="city"] .hero-subtitle {

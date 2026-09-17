@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="assets/brand/AUSTIN%20KE%20LOGO-2.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baby Space Explorers - Austin Kids Events</title>
@@ -13,7 +14,10 @@
             <a href="/" aria-label="Austin Kids Events - Home">
                 <img src="assets/brand/AUSTIN KE LOGO-1.png" alt="Austin Kids Events" class="site-logo">
             </a>
-        </div>
+            <div class="header-lang-switch" aria-label="Language selector">
+                <button type="button" class="lang-option is-active" data-lang="es" aria-label="Cambiar a español" aria-pressed="true">ES</button>
+                <button type="button" class="lang-option" data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+            </div>        </div>
     </header>
 
     <main class="detail-main">
@@ -31,7 +35,7 @@
         </div>
         <div class="space-orbit space-orbit-one" aria-hidden="true"></div>
         <div class="space-orbit space-orbit-two" aria-hidden="true"></div>
-        <a class="back-link" href="/services">&larr; View all setups</a>
+        <a class="back-link" href="/services" data-i18n="miniBack">&larr; View all setups</a>
 
         <section class="detail-hero" aria-labelledby="service-title">
             <div class="detail-carousel" data-carousel>
@@ -50,30 +54,34 @@
                 <div class="carousel-dots" aria-label="Select photo"></div>
             </div>
             <div class="detail-intro">
-                <span class="detail-kicker">Space explorers for little ones</span>
+                <span class="detail-kicker" data-i18n="miniKicker">Space explorers for little ones</span>
                 <h1 id="service-title">BABY SPACE EXPLORERS</h1>
-                <div class="space-age-badge"><span>0-2.5</span> years</div>
-                <p class="detail-lead">A little lunar adventure designed for our youngest explorers — babies and toddlers up to 2½ years old.</p>
-                <a class="detail-cta" href="/contact-us?setup=baby-space-explorers">Book this adventure <span>&rarr;</span></a>
+                <a class="party-pill-btn btn-mini-space" href="/contact-us?setup=baby-space-explorers">
+                    <span class="party-btn-icon" aria-hidden="true">👶</span>
+                    <span class="party-btn-text">
+                        <span class="party-btn-line">BRING IT TO</span>
+                        <span class="party-btn-line">MY PARTY &rarr;</span>
+                    </span>
+                </a>
             </div>
         </section>
 
         <section class="space-mission" aria-labelledby="info-title">
             <div class="space-mission-copy">
-                <span class="detail-kicker">The mission briefing</span>
-                <h2 id="info-title">A playful moon-inspired space for early explorers.</h2>
-                <p>Baby Space Explorers creates a playful moon-inspired space where little ones can crawl, explore and discover at their own pace.</p>
-                <p>The setup combines a soft lunar play area, space-themed tents and age-appropriate interactive activities that encourage sensory play, curiosity and early exploration — all professionally delivered and set up for your celebration.</p>
+                <span class="detail-kicker" data-i18n="miniMissionKicker">The mission briefing</span>
+                <h2 id="info-title" data-i18n="miniMissionTitle">A playful moon-inspired space for early explorers.</h2>
+                <p data-i18n="miniMissionText1">Baby Space Explorers creates a playful moon-inspired space where little ones can crawl, explore and discover at their own pace.</p>
+                <p data-i18n="miniMissionText2">The setup combines a soft lunar play area, space-themed tents and age-appropriate interactive activities that encourage sensory play, curiosity and early exploration — all professionally delivered and set up for your celebration.</p>
             </div>
             <div class="space-command-panel">
-                <span class="command-panel-label">Mission control</span>
-                <div class="space-command-screen"><span class="signal-dot"></span><span>READY FOR LITTLE EXPLORERS</span></div>
+                <span class="command-panel-label" data-i18n="miniCommandLabel">Mission control</span>
+                <div class="space-command-screen"><span class="signal-dot"></span><span data-i18n="miniReady">READY FOR LITTLE EXPLORERS</span></div>
                 <dl class="spec-list">
-                    <div><dt>Age range</dt><dd>Up to 2½ years</dd></div>
-                    <div><dt>Rental window</dt><dd>Up to 12 hours</dd></div>
-                    <div><dt>Play zone</dt><dd>Greater Austin</dd></div>
+                    <div><dt data-i18n="miniSpecAge">Age range</dt><dd data-i18n="miniSpecUpTo">Up to 2½ years</dd></div>
+                    <div><dt data-i18n="miniSpecWindow">Rental window</dt><dd data-i18n="miniSpecHours">Up to 12 hours</dd></div>
+                    <div><dt data-i18n="miniSpecZone">Play zone</dt><dd data-i18n="miniSpecAustin">Greater Austin</dd></div>
                 </dl>
-                <p class="space-signoff">Small explorers, big discoveries.</p>
+                <p class="space-signoff" data-i18n="miniSpecSignoff">Small explorers, big discoveries.</p>
             </div>
         </section>
     </main>
@@ -82,5 +90,6 @@
         <span class="color-segment color-1"></span><span class="color-segment color-2"></span><span class="color-segment color-3"></span><span class="color-segment color-4"></span><span class="color-segment color-5"></span>
     </div>
     <script src="js/service-detail.js"></script>
+    <script src="js/lang-switch.js" defer></script>
 </body>
 </html>

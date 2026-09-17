@@ -48,15 +48,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. ENVÍO ASÍNCRONO DEL FORMULARIO (AJAX / FormSubmit)
+    // 4. ENVÍO ASÍNCRONO DEL FORMULARIO
     if (form) {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            const currentLang = document.body.dataset.lang || 'es';
+
             // Deshabilitar botón y mostrar estado de carga
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = '<span>Sending your request...</span> ⏳';
+                submitBtn.innerHTML = currentLang === 'es'
+                    ? '<span>Enviando tu solicitud...</span> ⏳'
+                    : '<span>Sending your request...</span> ⏳';
             }
 
             const formData = new FormData(form);
@@ -67,8 +71,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const eventDate = formData.get('Event Date') || '';
             const location = formData.get('Event Location') || 'Private home';
 
+            // DETECCIÓN INTELIGENTE DE ENTORNO:
+            // Si abres el archivo en tu PC localmente (file:// o localhost), usa el endpoint de prueba directo.
+            // Si está subido en tu hosting Namecheap (dominio web), usa send-email.php nativo.
+            const isLocal = window.location.protocol === 'file:' || 
+                            window.location.hostname === 'localhost' || 
+                            window.location.hostname === '127.0.0.1' ||
+                            !window.location.hostname;
+
+            let endpoint = form.getAttribute('action') || 'send-email.php';
+            if (isLocal) {
+                endpoint = 'https://formsubmit.co/ajax/gestionsaberesyemociones@gmail.com';
+                formData.append('_template', 'table');
+                formData.append('_subject', `🎉 Nueva Cotización (Prueba Local): ${setupName} - ${firstName}`);
+            }
+
             try {
-                const response = await fetch(form.action, {
+                const response = await fetch(endpoint, {
                     method: 'POST',
                     body: formData,
                     headers: {
@@ -92,10 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (error) {
                 console.error('Submission error:', error);
-                alert('We could not send your request at this moment. Please check your internet connection or reach us directly via WhatsApp / Phone!');
+                const currentLang = document.body.dataset.lang || 'es';
+                alert(currentLang === 'es'
+                    ? 'No pudimos enviar tu solicitud en este momento. Revisa tu conexión o contáctanos directamente por WhatsApp o teléfono.'
+                    : 'We could not send your request at this moment. Please check your internet connection or reach us directly via WhatsApp / Phone!');
                 if (submitBtn) {
                     submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<span class="btn-text">Request a quote</span> <span class="btn-arrow">→</span>';
+                    submitBtn.innerHTML = currentLang === 'es'
+                        ? '<span class="btn-text">Solicitar cotización</span> <span class="btn-arrow">→</span>'
+                        : '<span class="btn-text">Request a quote</span> <span class="btn-arrow">→</span>';
                 }
             }
         });
@@ -108,8 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
             form.style.display = 'grid';
             successCard.style.display = 'none';
             if (submitBtn) {
+                const currentLang = document.body.dataset.lang || 'es';
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = '<span class="btn-text">Request a quote</span> <span class="btn-arrow">→</span>';
+                submitBtn.innerHTML = currentLang === 'es'
+                    ? '<span class="btn-text">Solicitar cotización</span> <span class="btn-arrow">→</span>'
+                    : '<span class="btn-text">Request a quote</span> <span class="btn-arrow">→</span>';
             }
         });
     }
