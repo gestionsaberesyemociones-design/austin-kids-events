@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             window.location.hostname === '127.0.0.1' ||
                             !window.location.hostname;
 
-            let endpoint = form.getAttribute('action') || 'send-email.php';
+            let endpoint = new URL(form.getAttribute('action') || 'send-email.php', window.location.href).href;
             if (isLocal) {
                 endpoint = 'https://formsubmit.co/ajax/gestionsaberesyemociones@gmail.com';
                 formData.append('_template', 'table');
@@ -95,7 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                if (response.ok) {
+                const result = await response.json();
+
+                if (response.ok && result.success) {
                     // Ocultar formulario y mostrar tarjeta de éxito
                     form.style.display = 'none';
                     if (successCard) {
@@ -107,14 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                 } else {
-                    throw new Error('Form submission failed');
+                    throw new Error(result.message || 'Form submission failed');
                 }
             } catch (error) {
                 console.error('Submission error:', error);
                 const currentLang = document.body.dataset.lang || 'es';
                 alert(currentLang === 'es'
-                    ? 'No pudimos enviar tu solicitud en este momento. Revisa tu conexión o contáctanos directamente por WhatsApp o teléfono.'
-                    : 'We could not send your request at this moment. Please check your internet connection or reach us directly via WhatsApp / Phone!');
+                    ? `No pudimos enviar tu solicitud: ${error.message}`
+                    : `We could not send your request: ${error.message}`);
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = currentLang === 'es'
