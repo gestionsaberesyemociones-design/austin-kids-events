@@ -403,7 +403,11 @@
         document.querySelectorAll('[data-i18n]').forEach((element) => {
             const key = element.dataset.i18n;
             if (map[key]) {
-                element.textContent = map[key];
+                if (key === 'successLead') {
+                    element.innerHTML = map[key];
+                } else {
+                    element.textContent = map[key];
+                }
             }
         });
 

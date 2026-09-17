@@ -22,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // 1. RECEPTOR DEL CORREO
 $recipient_email = 'gestionsaberesyemociones@gmail.com';
+$server_domain = preg_replace('/^www\./', '', $_SERVER['SERVER_NAME'] ?? 'austinkidsevents.com');
+$from_email = 'no-reply@' . $server_domain;
 
 // 2. OBTENER DATOS (compatible con FormData y JSON)
 $input = $_POST;
@@ -179,7 +181,7 @@ $headers .= "Reply-To: {$full_name} <{$email}>\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
 // 8. ENVIAR CORREO MEDIANTE LA FUNCIÓN NATIVA MAIL() DE NAMECHEAP
-$sent = @mail($recipient_email, $subject, $email_html, $headers);
+$sent = @mail($recipient_email, $subject, $email_html, $headers, '-f' . $from_email);
 
 if ($sent) {
     echo json_encode([
