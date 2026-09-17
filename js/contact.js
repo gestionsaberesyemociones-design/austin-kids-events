@@ -101,10 +101,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Ocultar formulario y mostrar tarjeta de éxito
                     form.style.display = 'none';
                     if (successCard) {
-                        document.getElementById('successCustomerName').textContent = firstName;
-                        document.getElementById('successSetup').textContent = setupName;
-                        document.getElementById('successDate').textContent = eventDate;
-                        document.getElementById('successLocation').textContent = location;
+                        const successCustomerName = document.getElementById('successCustomerName');
+                        const successSetup = document.getElementById('successSetup');
+                        const successDate = document.getElementById('successDate');
+                        const successLocation = document.getElementById('successLocation');
+
+                        if (successCustomerName) successCustomerName.textContent = firstName;
+                        if (successSetup) successSetup.textContent = setupName;
+                        if (successDate) successDate.textContent = eventDate;
+                        if (successLocation) successLocation.textContent = location;
                         successCard.style.display = 'block';
                         successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
