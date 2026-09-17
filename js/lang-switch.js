@@ -278,7 +278,7 @@
             miniTagline: 'A first little adventure beyond Earth.',
             miniCopy: 'Created for babies and toddlers up to 2½ years old, this softer lunar world combines sensory activities, space-themed play areas and age-appropriate exploration at their own pace.',
             cityTagline: 'A whole little city made for little drivers.',
-            cityCopy: 'Ride-on cars, roads, traffic signs and imaginative city play give kids their own world to drive, explore and make up the rules as they go.',
+            cityCopy: 'Mini City turns the party space into an interactive world of ride-on cars, roads and traffic signs where kids can drive, explore and create their own adventures. Along the way, they practice coordination, spatial awareness and imaginative play — while the colorful city display becomes part of the party décor and a natural backdrop for great photos.',
             ranchFeature1: 'Ranch Play',
             ranchFeature2: 'Horses',
             ranchFeature3: 'Farm Animals',
