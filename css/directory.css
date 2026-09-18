@@ -292,6 +292,7 @@
     letter-spacing: 0.12em;
     color: #52B79A;
     margin-bottom: 14px;
+}
 
 .story-body p {
     color: #0A2540;
@@ -299,10 +300,11 @@
     line-height: 1.65;
     margin-bottom: 14px;
 }
+
+.story-quote {
     font-weight: 700;
     color: #0A2540 !important;
     font-style: italic;
-    border-left: 3px solid #FF5A60;
     margin-top: 18px !important;
     margin-bottom: 16px !important;
     padding-top: 10px;

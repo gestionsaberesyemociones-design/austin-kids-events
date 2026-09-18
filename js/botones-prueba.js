@@ -92,8 +92,23 @@ function initializeRentalCards() {
     });
 }
 
+function initializeSoundButtons() {
+    document.querySelectorAll('[data-sound]').forEach((button) => {
+        const playSound = () => {
+            const sound = new Audio(button.getAttribute('data-sound'));
+            sound.play().catch(() => {});
+        };
+
+        button.addEventListener('mouseenter', playSound);
+        button.addEventListener('focus', playSound);
+        button.addEventListener('click', playSound);
+    });
+}
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeRentalCards);
+    document.addEventListener('DOMContentLoaded', initializeSoundButtons);
 } else {
     initializeRentalCards();
+    initializeSoundButtons();
 }
