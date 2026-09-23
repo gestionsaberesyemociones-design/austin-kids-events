@@ -420,11 +420,11 @@
 
 .space-mission-copy p { max-width: 680px; margin: 0 0 18px; color: #CBD5E1; font-size: 1.04rem; line-height: 1.75; }
 .space-command-panel { align-self: start; padding: 24px; border: 1px solid rgba(158, 197, 230, 0.28); border-radius: 8px; background: rgba(11, 9, 26, 0.56); box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2); }
-.command-panel-label { display: block; margin-bottom: 14px; color: #FFB400; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
-.space-command-screen { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; padding: 12px; border: 1px solid rgba(82, 183, 154, 0.45); color: #52B79A; font-family: monospace; font-size: 0.75rem; letter-spacing: 0.08em; }
+.command-panel-label { display: block; margin-bottom: 14px; color: #FFB400; font-family: 'Fredoka', 'Quicksand', sans-serif; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.space-command-screen { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; padding: 12px; border: 1px solid rgba(82, 183, 154, 0.45); color: #52B79A; font-family: 'Fredoka', 'Quicksand', sans-serif; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; }
 .signal-dot { width: 8px; height: 8px; border-radius: 50%; background: #52B79A; box-shadow: 0 0 12px #52B79A; animation: signal-pulse 1.6s ease-in-out infinite; }
 .space-command-panel .spec-list div { border-bottom-color: rgba(158, 197, 230, 0.16); }
-.space-signoff { margin: 22px 0 0; color: #FFB400; font-family: Georgia, serif; font-size: 1.12rem; line-height: 1.45; }
+.space-signoff { margin: 22px 0 0; color: #FFB400; font-family: 'Fredoka', 'Quicksand', sans-serif; font-size: 1.12rem; font-weight: 800; line-height: 1.45; }
 .city-story { display: grid; grid-template-columns: 1fr 0.8fr; gap: 50px; margin-top: 56px; padding-top: 38px; border-top: 1px solid rgba(10, 37, 64, 0.16); }
 .city-story-copy p { max-width: 680px; margin: 0 0 18px; color: #334E68; font-size: 1.04rem; line-height: 1.75; }
 .city-control-panel { align-self: start; padding: 24px; border: 2px solid rgba(255, 90, 96, 0.32); border-radius: 8px; background: rgba(255, 255, 255, 0.78); box-shadow: 0 18px 45px rgba(10, 37, 64, 0.12); }

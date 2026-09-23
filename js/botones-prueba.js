@@ -6,6 +6,10 @@ function initializeRentalCards() {
     const cards = document.querySelectorAll('[data-rental-card]');
     let activeSound = null;
     let lastSoundTouch = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
+    const minimumTouchDuration = 180;
     const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0;
 
     const playSoundFromButton = (button) => {
@@ -73,8 +77,23 @@ function initializeRentalCards() {
             if (!isTouchDevice) return;
             event.preventDefault();
             event.stopPropagation();
+            touchStartX = event.clientX;
+            touchStartY = event.clientY;
+            touchStartTime = Date.now();
             playSoundFromButton(button);
-            navigateToDestination(button);
+        });
+
+        button?.addEventListener('pointerup', (event) => {
+            if (!isTouchDevice) return;
+            event.preventDefault();
+            event.stopPropagation();
+
+            const movedDistance = Math.hypot(event.clientX - touchStartX, event.clientY - touchStartY);
+            const touchDuration = Date.now() - touchStartTime;
+            if (movedDistance > 12) return;
+
+            const responseDelay = Math.max(0, minimumTouchDuration - touchDuration);
+            setTimeout(() => navigateToDestination(button), responseDelay);
         });
 
         button?.addEventListener('click', (event) => {

@@ -109,7 +109,7 @@ $email_html = <<<HTML
 <body>
     <div class="wrapper">
         <div class="header">
-            <img src="https://{$server_domain}/assets/brand/AUSTIN%20KE%20LOGO-1.png" alt="Austin Kids Events">
+            <img src="assets/brand/AUSTIN KE LOGO-1.png" alt="Austin Kids Events">
             <h1>AUSTIN KIDS EVENTS</h1>
             <p>Nueva Solicitud de Cotización Recibida</p>
         </div>

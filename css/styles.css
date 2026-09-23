@@ -86,11 +86,12 @@ body, html {
 
 /* Logo con gran protagonismo visual en la parte superior */
 .site-logo {
-    height: 110px;
+    height: 180px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
     display: block;
+    margin: 0 auto;
 }
 
 
@@ -531,7 +532,7 @@ body[data-theme="space"] .hero-description {
 
 @media (max-width: 768px) {
     .site-logo {
-        height: 52px;
+        height: 100px;
     }
 
     .site-main {
