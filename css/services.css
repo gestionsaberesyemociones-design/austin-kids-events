@@ -229,23 +229,6 @@
     font-weight: 800;
 }
 
-html[lang="es"] .party-btn-text {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 0.28rem;
-    width: 100%;
-}
-
-html[lang="es"] .party-btn-line:last-child {
-    display: none;
-}
-
-html[lang="es"] .party-btn-line {
-    white-space: nowrap;
-}
-
 /* Colores Temáticos Exactos (Según la imagen) */
 .btn-city,
 .service-feature-city {
